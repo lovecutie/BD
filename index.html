@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Niniitata ❤️</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#10040a;
+    color:white;
+    overflow:hidden;
+}
+
+/* ================= PAGES ================= */
+
+.page{
+    width:100%;
+    height:100vh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.page.active{
+    display:flex;
+}
+
+.content{
+    width:100%;
+    max-width:850px;
+    position:relative;
+    z-index:5;
+    animation:fadeIn 1.2s ease;
+}
+
+/* ================= BACKGROUND ================= */
+
+.glow1,
+.glow2,
+.glow3{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    pointer-events:none;
+}
+
+.glow1{
+    width:350px;
+    height:350px;
+    background:#ff3f78;
+    opacity:.13;
+    top:-150px;
+    left:-100px;
+}
+
+.glow2{
+    width:300px;
+    height:300px;
+    background:#ff7fa5;
+    opacity:.10;
+    bottom:-130px;
+    right:-100px;
+}
+
+.glow3{
+    width:200px;
+    height:200px;
+    background:#ff174f;
+    opacity:.08;
+    top:40%;
+    left:45%;
+}
+
+/* ================= TEXT ================= */
+
+.tiny{
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#e9b6c6;
+    margin-bottom:20px;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-weight:400;
+    font-size:clamp(65px,13vw,125px);
+    color:#ffabc4;
+    text-shadow:0 0 35px rgba(255,90,135,.4);
+}
+
+h2{
+    font-family:'Great Vibes',cursive;
+    font-weight:400;
+    font-size:clamp(45px,9vw,80px);
+    color:#ffabc4;
+}
+
+h3{
+    font-family:'Great Vibes',cursive;
+    font-weight:400;
+    font-size:42px;
+    color:#ffabc4;
+}
+
+p{
+    line-height:1.9;
+    color:#f5dce4;
+}
+
+/* ================= BUTTON ================= */
+
+.button{
+    margin-top:35px;
+    padding:14px 32px;
+    border:none;
+    border-radius:50px;
+    color:white;
+    background:linear-gradient(135deg,#ff5a88,#e72d61);
+    box-shadow:0 12px 35px rgba(255,40,90,.25);
+    cursor:pointer;
+    font-size:14px;
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 18px 45px rgba(255,40,90,.4);
+}
+
+/* ================= PAGE 1 ================= */
+
+.birthday-line{
+    margin-top:15px;
+    font-size:17px;
+    color:#f5dce4;
+}
+
+.special-line{
+    margin-top:12px;
+    font-size:13px;
+    color:#cfa4b1;
+}
+
+/* ================= PAGE 2 ================= */
+
+.intro-text{
+    max-width:650px;
+    margin:20px auto 0;
+    font-size:16px;
+}
+
+.highlight{
+    margin:35px auto 0;
+    max-width:700px;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,150,180,.16);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.highlight p{
+    font-size:16px;
+}
+
+.big-word{
+    font-family:'Great Vibes',cursive;
+    font-size:50px;
+    color:#ffabc4;
+    margin-bottom:10px;
+}
+
+/* ================= PAGE 3 ================= */
+
+.reason-grid{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-top:35px;
+}
+
+.reason{
+    width:220px;
+    min-height:190px;
+    padding:25px 18px;
+    border-radius:24px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,150,180,.15);
+    transition:.4s;
+}
+
+.reason:hover{
+    transform:translateY(-8px);
+    background:rgba(255,100,140,.08);
+    border-color:rgba(255,150,180,.3);
+}
+
+.reason-icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.reason h4{
+    font-size:16px;
+    color:#ffb3c9;
+    margin-bottom:10px;
+}
+
+.reason p{
+    font-size:13px;
+    line-height:1.7;
+    color:#dfc4cd;
+}
+
+/* ================= PAGE 4 ================= */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+
+.card{
+    width:180px;
+    height:210px;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+.card-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transition:transform .7s;
+    transform-style:preserve-3d;
+}
+
+.card.open .card-inner{
+    transform:rotateY(180deg);
+}
+
+.front,
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:22px;
+    backface-visibility:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.front{
+    background:linear-gradient(145deg,#35131f,#1d0810);
+    border:1px solid rgba(255,150,180,.2);
+    font-size:40px;
+}
+
+.back{
+    background:linear-gradient(145deg,#f54b7b,#ad204c);
+    transform:rotateY(180deg);
+    font-size:14px;
+    line-height:1.7;
+}
+
+.tap{
+    margin-top:20px;
+    font-size:12px;
+    color:#aa8791;
+}
+
+/* ================= SECRET ================= */
+
+.secret{
+    display:none;
+    max-width:650px;
+    margin:35px auto 0;
+    padding:30px 25px;
+    border-radius:25px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,90,130,.14),
+        rgba(255,255,255,.035)
+    );
+    border:1px solid rgba(255,150,180,.22);
+    animation:reveal .8s ease;
+}
+
+.secret.show{
+    display:block;
+}
+
+.secret p{
+    font-size:15px;
+}
+
+/* ================= PAGE 5 ================= */
+
+.her-text{
+    max-width:720px;
+    margin:25px auto;
+}
+
+.her-text p{
+    font-size:16px;
+}
+
+.final-box{
+    max-width:680px;
+    margin:30px auto 0;
+    padding:32px 25px;
+    border-radius:28px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,150,180,.18);
+}
+
+.final-box p{
+    font-size:15px;
+}
+
+.signature{
+    margin-top:25px;
+    font-family:'Great Vibes',cursive;
+    font-size:36px;
+    color:#ffabc4;
+}
+
+/* ================= HEARTS ================= */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    z-index:1;
+    pointer-events:none;
+    animation:floatUp linear forwards;
+    opacity:.8;
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:translateY(0) scale(.6) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:translateY(-110vh) scale(1.2) rotate(30deg);
+        opacity:0;
+    }
+
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes reveal{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .page{
+        padding:18px;
+    }
+
+    .reason{
+        width:160px;
+        min-height:180px;
+        padding:20px 12px;
+    }
+
+    .reason p{
+        font-size:12px;
+    }
+
+    .card{
+        width:145px;
+        height:175px;
+    }
+
+    .back{
+        font-size:12px;
+    }
+
+    .highlight{
+        padding:23px 18px;
+    }
+
+    .her-text p{
+        font-size:14px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+                    PAGE 1
+===================================================== -->
+
+<section class="page active" id="page1">
+
+    <div class="glow1"></div>
+    <div class="glow2"></div>
+    <div class="glow3"></div>
+
+    <div class="content">
+
+        <div class="tiny">
+            Today is about one person
+        </div>
+
+        <h1>Niniitata ❤️</h1>
+
+        <div class="birthday-line">
+            The girl who deserves to be celebrated today.
+        </div>
+
+        <div class="special-line">
+            Not because it's your birthday...
+            but because you are YOU.
+        </div>
+
+        <button class="button" onclick="nextPage()">
+            This is for you 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    PAGE 2
+===================================================== -->
+
+<section class="page" id="page2">
+
+    <div class="glow1"></div>
+    <div class="glow2"></div>
+
+    <div class="content">
+
+        <div class="tiny">
+            There is something you should know
+        </div>
+
+        <h2>You are rare. 🌷</h2>
+
+        <div class="intro-text">
+
+            <p>
+                There are so many people in this world,
+                but every once in a while,
+                someone comes along who feels different.
+            </p>
+
+        </div>
+
+        <div class="highlight">
+
+            <div class="big-word">
+                That's you.
+            </div>
+
+            <p>
+                You have your own way of making a moment feel special.
+                Your own way of making people smile.
+                Your own little world that makes you,
+                <b>you.</b>
+            </p>
+
+            <br>
+
+            <p>
+                And honestly, that's what makes you so beautiful.
+                Not perfection.
+                Not being like everyone else.
+                Just being completely, wonderfully yourself.
+            </p>
+
+        </div>
+
+        <button class="button" onclick="nextPage()">
+            Let me tell you why... ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    PAGE 3
+===================================================== -->
+
+<section class="page" id="page3">
+
+    <div class="glow2"></div>
+
+    <div class="content">
+
+        <div class="tiny">
+            If I had to describe you
+        </div>
+
+        <h2>I would say...</h2>
+
+        <div class="reason-grid">
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    🌸
+                </div>
+
+                <h4>You are beautiful</h4>
+
+                <p>
+                    Not just in the way you look,
+                    but in the little things you do,
+                    the way you care,
+                    and the person you are.
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    ✨
+                </div>
+
+                <h4>You are unforgettable</h4>
+
+                <p>
+                    Some people come into our lives
+                    and simply become a memory.
+                    You are the kind of person
+                    who becomes a part of the story.
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    🦋
+                </div>
+
+                <h4>You are uniquely you</h4>
+
+                <p>
+                    There is nobody else exactly like you.
+                    And that is something
+                    worth protecting and celebrating.
+                </p>
+
+            </div>
+
+
+            <div class="reason">
+
+                <div class="reason-icon">
+                    💗
+                </div>
+
+                <h4>You matter</h4>
+
+                <p>
+                    More than you probably realize.
+                    Your presence,
+                    your smile,
+                    and even your smallest moments
+                    can mean so much.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="button" onclick="nextPage()">
+            One little surprise remains... 💕
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    PAGE 4
+===================================================== -->
+
+<section class="page" id="page4">
+
+    <div class="glow1"></div>
+
+    <div class="content">
+
+        <div class="tiny">
+            Open these slowly
+        </div>
+
+        <h2>Little reminders for you 💗</h2>
+
+        <div class="cards">
+
+            <div class="card" onclick="openCard(this)">
+
+                <div class="card-inner">
+
+                    <div class="front">
+                        🌷
+                    </div>
+
+                    <div class="back">
+                        Never forget that
+                        there is something incredibly
+                        special about simply being you.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card" onclick="openCard(this)">
+
+                <div class="card-inner">
+
+                    <div class="front">
+                        🌙
+                    </div>
+
+                    <div class="back">
+                        On days when you doubt yourself,
+                        remember that someone out there
+                        sees how amazing you really are.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card" onclick="openCard(this)">
+
+                <div class="card-inner">
+
+                    <div class="front">
+                        💖
+                    </div>
+
+                    <div class="back">
+                        You don't have to become
+                        someone else to be special.
+                        You already are.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="tap">
+            Open all three ❤️
+        </div>
+
+
+        <div class="secret" id="secret">
+
+            <h3>And one more thing...</h3>
+
+            <p>
+                I hope this birthday reminds you
+                of just how precious you are.
+            </p>
+
+            <br>
+
+            <p>
+                I hope you keep smiling,
+                keep dreaming,
+                keep being the wonderful person you are,
+                and never forget that your existence
+                makes this world a little more beautiful.
+            </p>
+
+        </div>
+
+
+        <button
+            class="button"
+            id="lastButton"
+            onclick="nextPage()"
+            style="display:none;"
+        >
+            Something from my heart ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    PAGE 5
+===================================================== -->
+
+<section class="page" id="page5">
+
+    <div class="glow1"></div>
+    <div class="glow2"></div>
+
+    <div class="content">
+
+        <div class="tiny">
+            For you, Niniitata
+        </div>
+
+        <h2>Happy Birthday ❤️</h2>
+
+        <div class="her-text">
+
+            <p>
+                I hope life gives you all the happiness
+                you deserve.
+            </p>
+
+            <br>
+
+            <p>
+                I hope you always have reasons to smile,
+                people who appreciate your heart,
+                dreams that excite you,
+                and moments that make you stop and think,
+                <i>"I'm really happy."</i>
+            </p>
+
+            <br>
+
+            <p>
+                And whenever you forget how special you are,
+                I hope you come back to this little page
+                and remember:
+                <b>you are one of a kind.</b>
+            </p>
+
+        </div>
+
+
+        <div class="final-box">
+
+            <p>
+                And maybe I don't know what destiny has planned.
+                Maybe none of us really knows what tomorrow holds.
+            </p>
+
+            <br>
+
+            <p>
+                But whatever happens,
+                I hope we never forget to appreciate
+                the moments that make us smile today.
+            </p>
+
+            <br>
+
+            <p>
+                Because some people become memories,
+                some become chapters,
+                and some people simply leave
+                a beautiful mark on your heart.
+            </p>
+
+            <br>
+
+            <p>
+                <b>
+                You are special, Niniitata.
+                And you will always have a special place in my heart.
+                </b>
+            </p>
+
+            <div class="signature">
+                — Ak ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =====================================================
+                    PAGE SYSTEM
+===================================================== */
+
+let currentPage = 1;
+
+function nextPage(){
+
+    const oldPage =
+        document.getElementById("page" + currentPage);
+
+    oldPage.classList.remove("active");
+
+    currentPage++;
+
+    const newPage =
+        document.getElementById("page" + currentPage);
+
+    newPage.classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+
+/* =====================================================
+                    FLIP CARDS
+===================================================== */
+
+let openedCards = 0;
+
+function openCard(card){
+
+    if(!card.classList.contains("open")){
+
+        card.classList.add("open");
+
+        openedCards++;
+
+        if(openedCards === 3){
+
+            setTimeout(function(){
+
+                document
+                    .getElementById("secret")
+                    .classList.add("show");
+
+                document
+                    .getElementById("lastButton")
+                    .style.display = "inline-block";
+
+            },600);
+
+        }
+
+    }
+
+}
+
+
+
+/* =====================================================
+                    FLOATING HEARTS
+===================================================== */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const symbols = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💓",
+        "🌸",
+        "✨"
+    ];
+
+    heart.innerHTML =
+        symbols[
+            Math.floor(
+                Math.random() * symbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 18) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+
+        heart.remove();
+
+    },11000);
+
+}
+
+
+setInterval(createHeart,700);
+
+
+for(let i=0;i<10;i++){
+
+    setTimeout(
+        createHeart,
+        i * 250
+    );
+
+}
+
+</script>
+
+</body>
+</html>
