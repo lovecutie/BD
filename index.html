@@ -1,548 +1,943 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>For Niniitata ❤️</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet">
+
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+/* =====================================================
+   BASIC RESET
+===================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#10040a;
-    color:white;
-    overflow:hidden;
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #45152f 0%,
+            #1b0917 45%,
+            #080308 100%
+        );
+
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-/* ================= PAGES ================= */
 
-.page{
-    width:100%;
-    height:100vh;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:25px;
-    position:relative;
-    overflow:hidden;
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.background-glow {
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.20;
+
+    pointer-events: none;
+
+    z-index: 0;
 }
 
-.page.active{
-    display:flex;
+.glow1 {
+    background: #ff4f9a;
+
+    top: -100px;
+    left: -100px;
 }
 
-.content{
-    width:100%;
-    max-width:850px;
-    position:relative;
-    z-index:5;
-    animation:fadeIn 1.2s ease;
+.glow2 {
+    background: #a855f7;
+
+    right: -100px;
+    bottom: -100px;
 }
 
-/* ================= BACKGROUND ================= */
 
-.glow1,
-.glow2,
-.glow3{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(80px);
-    pointer-events:none;
+/* =====================================================
+   PAGES
+
+   IMPORTANT:
+   These pages DO NOT have a fixed height.
+===================================================== */
+
+.page {
+    display: none;
+
+    position: relative;
+
+    width: 100%;
+
+    /*
+       No height:100vh here.
+       No min-height requirement either.
+       The content determines the page height.
+    */
+
+    padding:
+        60px 20px
+        100px;
+
+    z-index: 2;
 }
 
-.glow1{
-    width:350px;
-    height:350px;
-    background:#ff3f78;
-    opacity:.13;
-    top:-150px;
-    left:-100px;
+.page.active {
+    display: block;
+
+    animation: pageAppear 0.6s ease;
 }
 
-.glow2{
-    width:300px;
-    height:300px;
-    background:#ff7fa5;
-    opacity:.10;
-    bottom:-130px;
-    right:-100px;
-}
+@keyframes pageAppear {
 
-.glow3{
-    width:200px;
-    height:200px;
-    background:#ff174f;
-    opacity:.08;
-    top:40%;
-    left:45%;
-}
-
-/* ================= TEXT ================= */
-
-.tiny{
-    font-size:12px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:#e9b6c6;
-    margin-bottom:20px;
-}
-
-h1{
-    font-family:'Great Vibes',cursive;
-    font-weight:400;
-    font-size:clamp(65px,13vw,125px);
-    color:#ffabc4;
-    text-shadow:0 0 35px rgba(255,90,135,.4);
-}
-
-h2{
-    font-family:'Great Vibes',cursive;
-    font-weight:400;
-    font-size:clamp(45px,9vw,80px);
-    color:#ffabc4;
-}
-
-h3{
-    font-family:'Great Vibes',cursive;
-    font-weight:400;
-    font-size:42px;
-    color:#ffabc4;
-}
-
-p{
-    line-height:1.9;
-    color:#f5dce4;
-}
-
-/* ================= BUTTON ================= */
-
-.button{
-    margin-top:35px;
-    padding:14px 32px;
-    border:none;
-    border-radius:50px;
-    color:white;
-    background:linear-gradient(135deg,#ff5a88,#e72d61);
-    box-shadow:0 12px 35px rgba(255,40,90,.25);
-    cursor:pointer;
-    font-size:14px;
-    transition:.3s;
-}
-
-.button:hover{
-    transform:translateY(-3px) scale(1.03);
-    box-shadow:0 18px 45px rgba(255,40,90,.4);
-}
-
-/* ================= PAGE 1 ================= */
-
-.birthday-line{
-    margin-top:15px;
-    font-size:17px;
-    color:#f5dce4;
-}
-
-.special-line{
-    margin-top:12px;
-    font-size:13px;
-    color:#cfa4b1;
-}
-
-/* ================= PAGE 2 ================= */
-
-.intro-text{
-    max-width:650px;
-    margin:20px auto 0;
-    font-size:16px;
-}
-
-.highlight{
-    margin:35px auto 0;
-    max-width:700px;
-    padding:30px;
-    border-radius:25px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,150,180,.16);
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-}
-
-.highlight p{
-    font-size:16px;
-}
-
-.big-word{
-    font-family:'Great Vibes',cursive;
-    font-size:50px;
-    color:#ffabc4;
-    margin-bottom:10px;
-}
-
-/* ================= PAGE 3 ================= */
-
-.reason-grid{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:18px;
-    margin-top:35px;
-}
-
-.reason{
-    width:220px;
-    min-height:190px;
-    padding:25px 18px;
-    border-radius:24px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,150,180,.15);
-    transition:.4s;
-}
-
-.reason:hover{
-    transform:translateY(-8px);
-    background:rgba(255,100,140,.08);
-    border-color:rgba(255,150,180,.3);
-}
-
-.reason-icon{
-    font-size:38px;
-    margin-bottom:15px;
-}
-
-.reason h4{
-    font-size:16px;
-    color:#ffb3c9;
-    margin-bottom:10px;
-}
-
-.reason p{
-    font-size:13px;
-    line-height:1.7;
-    color:#dfc4cd;
-}
-
-/* ================= PAGE 4 ================= */
-
-.cards{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
-    margin-top:35px;
-}
-
-.card{
-    width:180px;
-    height:210px;
-    perspective:1000px;
-    cursor:pointer;
-}
-
-.card-inner{
-    width:100%;
-    height:100%;
-    position:relative;
-    transition:transform .7s;
-    transform-style:preserve-3d;
-}
-
-.card.open .card-inner{
-    transform:rotateY(180deg);
-}
-
-.front,
-.back{
-    position:absolute;
-    width:100%;
-    height:100%;
-    border-radius:22px;
-    backface-visibility:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.front{
-    background:linear-gradient(145deg,#35131f,#1d0810);
-    border:1px solid rgba(255,150,180,.2);
-    font-size:40px;
-}
-
-.back{
-    background:linear-gradient(145deg,#f54b7b,#ad204c);
-    transform:rotateY(180deg);
-    font-size:14px;
-    line-height:1.7;
-}
-
-.tap{
-    margin-top:20px;
-    font-size:12px;
-    color:#aa8791;
-}
-
-/* ================= SECRET ================= */
-
-.secret{
-    display:none;
-    max-width:650px;
-    margin:35px auto 0;
-    padding:30px 25px;
-    border-radius:25px;
-    background:linear-gradient(
-        145deg,
-        rgba(255,90,130,.14),
-        rgba(255,255,255,.035)
-    );
-    border:1px solid rgba(255,150,180,.22);
-    animation:reveal .8s ease;
-}
-
-.secret.show{
-    display:block;
-}
-
-.secret p{
-    font-size:15px;
-}
-
-/* ================= PAGE 5 ================= */
-
-.her-text{
-    max-width:720px;
-    margin:25px auto;
-}
-
-.her-text p{
-    font-size:16px;
-}
-
-.final-box{
-    max-width:680px;
-    margin:30px auto 0;
-    padding:32px 25px;
-    border-radius:28px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,150,180,.18);
-}
-
-.final-box p{
-    font-size:15px;
-}
-
-.signature{
-    margin-top:25px;
-    font-family:'Great Vibes',cursive;
-    font-size:36px;
-    color:#ffabc4;
-}
-
-/* ================= HEARTS ================= */
-
-.heart{
-    position:fixed;
-    bottom:-30px;
-    z-index:1;
-    pointer-events:none;
-    animation:floatUp linear forwards;
-    opacity:.8;
-}
-
-@keyframes floatUp{
-
-    0%{
-        transform:translateY(0) scale(.6) rotate(0deg);
-        opacity:0;
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
 
-    15%{
-        opacity:.8;
-    }
-
-    100%{
-        transform:translateY(-110vh) scale(1.2) rotate(30deg);
-        opacity:0;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }
 
-/* ================= ANIMATIONS ================= */
 
-@keyframes fadeIn{
+/* =====================================================
+   CONTENT
+===================================================== */
 
-    from{
-        opacity:0;
-        transform:translateY(25px);
+.content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.small-text {
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.65;
+
+    margin-bottom: 20px;
+
+}
+
+h1 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size:
+        clamp(55px, 10vw, 100px);
+
+    font-weight: normal;
+
+    color: #ff9dcc;
+
+    line-height: 1.1;
+
+    margin:
+        0 0 25px;
+
+    text-shadow:
+        0 0 15px rgba(255,90,160,0.5),
+        0 0 35px rgba(255,90,160,0.25);
+
+}
+
+h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size:
+        clamp(42px, 7vw, 70px);
+
+    font-weight: normal;
+
+    color: #ffb6d9;
+
+    line-height: 1.2;
+
+    margin:
+        0 0 30px;
+
+}
+
+h3 {
+
+    font-size: 21px;
+
+    margin:
+        0 0 12px;
+
+}
+
+p {
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.next-btn {
+
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding:
+        14px 30px;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,0.25);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+
+    backdrop-filter: blur(10px);
+
+}
+
+.next-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,105,170,0.20);
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,60,150,0.20);
+
+}
+
+
+/* =====================================================
+   PAGE 1
+===================================================== */
+
+.birthday-line {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #ffd9ea;
+
+}
+
+.name-highlight {
+
+    color: #ff8fc5;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   PAGE 2
+===================================================== */
+
+.letter {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    padding:
+        35px 30px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.3);
+
+    backdrop-filter:
+        blur(15px);
+
+}
+
+.letter p {
+
+    margin:
+        0 0 20px;
+
+    color: #ffe8f2;
+
+}
+
+.letter p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =====================================================
+   REASON CARDS
+===================================================== */
+
+.reason-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+}
+
+.reason-card {
+
+    min-height: 180px;
+
+    padding:
+        30px 20px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+
+}
+
+.reason-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    background:
+        rgba(255,105,170,0.10);
+
+}
+
+.reason-icon {
+
+    font-size: 35px;
+
+    margin-bottom: 12px;
+
+}
+
+.reason-card p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    opacity: 0.8;
+
+}
+
+
+/* =====================================================
+   FLIP CARDS
+===================================================== */
+
+.flip-container {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-top: 40px;
+
+}
+
+.flip-card {
+
+    width: 100%;
+
+    height: 220px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+
+}
+
+.flip-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    transition:
+        transform 0.7s;
+
+    transform-style:
+        preserve-3d;
+
+}
+
+.flip-card.flipped
+.flip-inner {
+
+    transform:
+        rotateY(180deg);
+
+}
+
+.flip-front,
+.flip-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        rgba(255,255,255,0.06);
+
+    backdrop-filter:
+        blur(15px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    text-align: center;
+
+    backface-visibility:
+        hidden;
+
+}
+
+.flip-front {
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+}
+
+.flip-back {
+
+    transform:
+        rotateY(180deg);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #ffe6f1;
+
+}
+
+
+/* =====================================================
+   SECRET BOX
+===================================================== */
+
+.secret-box {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin:
+        35px auto 0;
+
+    padding:
+        30px 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,90,160,0.15),
+            rgba(160,80,255,0.10)
+        );
+
+    border:
+        1px solid
+        rgba(255,150,210,0.25);
+
+    box-shadow:
+        0 20px 60px
+        rgba(255,50,150,0.12);
+
+}
+
+.secret-box.show {
+
+    display: block;
+
+    animation:
+        secretAppear 0.8s ease;
+
+}
+
+.secret-box p {
+
+    margin: 0;
+
+    color: #ffe5f0;
+
+}
+
+@keyframes secretAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
     }
 
 }
 
-@keyframes reveal{
 
-    from{
-        opacity:0;
-        transform:scale(.9);
+/* =====================================================
+   FINAL PAGE
+===================================================== */
+
+.final-message {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    padding:
+        40px 30px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,0.35);
+
+}
+
+.final-message p {
+
+    margin:
+        0 0 22px;
+
+    color: #ffe7f1;
+
+}
+
+.final-message p:last-of-type {
+
+    margin-bottom: 0;
+
+}
+
+.signature {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 45px;
+
+    color: #ff9dcc;
+
+    margin-top: 35px;
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.heart {
+
+    position: fixed;
+
+    left: 0;
+
+    bottom: -30px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    animation:
+        floatHeart linear forwards;
+
+}
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
     }
 
-    to{
-        opacity:1;
-        transform:scale(1);
+    10% {
+
+        opacity: 0.7;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
     }
 
 }
 
-/* ================= MOBILE ================= */
 
-@media(max-width:600px){
+/* =====================================================
+   TABLET
+===================================================== */
 
-    .page{
-        padding:18px;
+@media (max-width: 700px) {
+
+    .page {
+
+        padding:
+            45px 16px
+            80px;
+
     }
 
-    .reason{
-        width:160px;
-        min-height:180px;
-        padding:20px 12px;
+    h1 {
+
+        font-size: 65px;
+
     }
 
-    .reason p{
-        font-size:12px;
+    h2 {
+
+        font-size: 48px;
+
     }
 
-    .card{
-        width:145px;
-        height:175px;
+    .birthday-line {
+
+        font-size: 16px;
+
     }
 
-    .back{
-        font-size:12px;
+    .letter {
+
+        padding:
+            28px 20px;
+
     }
 
-    .highlight{
-        padding:23px 18px;
+    .reason-grid {
+
+        grid-template-columns: 1fr;
+
     }
 
-    .her-text p{
-        font-size:14px;
+    .flip-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .flip-card {
+
+        height: 210px;
+
+    }
+
+    .final-message {
+
+        padding:
+            30px 20px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .page {
+
+        padding:
+            35px 14px
+            70px;
+
+    }
+
+    h1 {
+
+        font-size: 55px;
+
+    }
+
+    h2 {
+
+        font-size: 42px;
+
+    }
+
+    .flip-card {
+
+        height: 200px;
+
+    }
+
+}
+
+
+/* =====================================================
+   EXTRA SAFETY FOR VERY SMALL HEIGHT SCREENS
+
+   This makes sure nothing is vertically locked.
+===================================================== */
+
+@media (max-height: 600px) {
+
+    .page {
+
+        padding-top: 30px;
+        padding-bottom: 70px;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 
-<!-- =====================================================
-                    PAGE 1
-===================================================== -->
+<!-- BACKGROUND -->
 
-<section class="page active" id="page1">
-
-    <div class="glow1"></div>
-    <div class="glow2"></div>
-    <div class="glow3"></div>
-
-    <div class="content">
-
-        <div class="tiny">
-            Today is about one person
-        </div>
-
-        <h1>Niniitata ❤️</h1>
-
-        <div class="birthday-line">
-            The girl who deserves to be celebrated today.
-        </div>
-
-        <div class="special-line">
-            Not because it's your birthday...
-            but because you are YOU.
-        </div>
-
-        <button class="button" onclick="nextPage()">
-            This is for you 💌
-        </button>
-
-    </div>
-
-</section>
+<div class="background-glow glow1"></div>
+<div class="background-glow glow2"></div>
 
 
 
-<!-- =====================================================
-                    PAGE 2
-===================================================== -->
+<!-- ===================================================
+     PAGE 1
+=================================================== -->
 
-<section class="page" id="page2">
-
-    <div class="glow1"></div>
-    <div class="glow2"></div>
+<section
+    class="page active"
+    id="page1"
+>
 
     <div class="content">
 
-        <div class="tiny">
-            There is something you should know
+        <div class="small-text">
+            TODAY IS ABOUT ONE SPECIAL PERSON
         </div>
 
-        <h2>You are rare. 🌷</h2>
+        <h1>
+            Niniitata ❤️
+        </h1>
 
-        <div class="intro-text">
+        <p class="birthday-line">
 
-            <p>
-                There are so many people in this world,
-                but every once in a while,
-                someone comes along who feels different.
-            </p>
+            Today isn't just another day.
 
-        </div>
+            <br><br>
 
-        <div class="highlight">
+            Today is a reminder that someone as
+            <span class="name-highlight">
+                special as you
+            </span>
+            exists in this world.
 
-            <div class="big-word">
-                That's you.
-            </div>
+            <br><br>
 
-            <p>
-                You have your own way of making a moment feel special.
-                Your own way of making people smile.
-                Your own little world that makes you,
-                <b>you.</b>
-            </p>
+            And honestly...
 
             <br>
 
-            <p>
-                And honestly, that's what makes you so beautiful.
-                Not perfection.
-                Not being like everyone else.
-                Just being completely, wonderfully yourself.
-            </p>
+            the world is a little more beautiful
+            because you are in it. 🌷
 
-        </div>
+        </p>
 
-        <button class="button" onclick="nextPage()">
-            Let me tell you why... ✨
+        <button
+            class="next-btn"
+            onclick="nextPage(2)"
+        >
+            There is more for you ❤️
         </button>
 
     </div>
@@ -551,217 +946,178 @@ p{
 
 
 
-<!-- =====================================================
-                    PAGE 3
-===================================================== -->
+<!-- ===================================================
+     PAGE 2
+=================================================== -->
 
-<section class="page" id="page3">
-
-    <div class="glow2"></div>
+<section
+    class="page"
+    id="page2"
+>
 
     <div class="content">
 
-        <div class="tiny">
-            If I had to describe you
+        <div class="small-text">
+            BEFORE ANYTHING ELSE
         </div>
 
-        <h2>I would say...</h2>
+        <h2>
+            You are rare. 🥰
+        </h2>
+
+        <div class="letter">
+
+            <p>
+                Niniitata, there are some people who are
+                simply different.
+            </p>
+
+            <p>
+                Not because they try to be different,
+                but because there is something naturally
+                special about them.
+            </p>
+
+            <p>
+                The way they smile.
+                The way they talk.
+                The little things they do without
+                even realizing how much they mean.
+            </p>
+
+            <p>
+                And you are one of those people.
+            </p>
+
+            <p>
+                You don't have to prove that you are
+                special.
+            </p>
+
+            <p>
+                <strong>
+                    You simply are. ❤️
+                </strong>
+            </p>
+
+        </div>
+
+        <button
+            class="next-btn"
+            onclick="nextPage(3)"
+        >
+            Keep going 🌷
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================
+     PAGE 3
+=================================================== -->
+
+<section
+    class="page"
+    id="page3"
+>
+
+    <div class="content">
+
+        <div class="small-text">
+            JUST A FEW THINGS ABOUT YOU
+        </div>
+
+        <h2>
+            Why you are unforgettable ❤️
+        </h2>
+
 
         <div class="reason-grid">
 
-            <div class="reason">
 
-                <div class="reason-icon">
-                    🌸
-                </div>
-
-                <h4>You are beautiful</h4>
-
-                <p>
-                    Not just in the way you look,
-                    but in the little things you do,
-                    the way you care,
-                    and the person you are.
-                </p>
-
-            </div>
-
-
-            <div class="reason">
+            <div class="reason-card">
 
                 <div class="reason-icon">
                     ✨
                 </div>
 
-                <h4>You are unforgettable</h4>
+                <h3>
+                    Your presence
+                </h3>
 
                 <p>
-                    Some people come into our lives
-                    and simply become a memory.
-                    You are the kind of person
-                    who becomes a part of the story.
+                    Somehow, you make ordinary moments
+                    feel a little more meaningful.
                 </p>
 
             </div>
 
 
-            <div class="reason">
+            <div class="reason-card">
+
+                <div class="reason-icon">
+                    🌷
+                </div>
+
+                <h3>
+                    Your heart
+                </h3>
+
+                <p>
+                    There is a softness and warmth
+                    about you that makes you truly special.
+                </p>
+
+            </div>
+
+
+            <div class="reason-card">
 
                 <div class="reason-icon">
                     🦋
                 </div>
 
-                <h4>You are uniquely you</h4>
+                <h3>
+                    Your uniqueness
+                </h3>
 
                 <p>
-                    There is nobody else exactly like you.
-                    And that is something
-                    worth protecting and celebrating.
+                    There is nobody exactly like you.
+                    And that is what makes you irreplaceable.
                 </p>
 
             </div>
 
 
-            <div class="reason">
+            <div class="reason-card">
 
                 <div class="reason-icon">
                     💗
                 </div>
 
-                <h4>You matter</h4>
+                <h3>
+                    The way you matter
+                </h3>
 
                 <p>
-                    More than you probably realize.
-                    Your presence,
-                    your smile,
-                    and even your smallest moments
-                    can mean so much.
+                    You may not always realize it,
+                    but you mean more than you know.
                 </p>
 
             </div>
 
-        </div>
-
-        <button class="button" onclick="nextPage()">
-            One little surprise remains... 💕
-        </button>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-                    PAGE 4
-===================================================== -->
-
-<section class="page" id="page4">
-
-    <div class="glow1"></div>
-
-    <div class="content">
-
-        <div class="tiny">
-            Open these slowly
-        </div>
-
-        <h2>Little reminders for you 💗</h2>
-
-        <div class="cards">
-
-            <div class="card" onclick="openCard(this)">
-
-                <div class="card-inner">
-
-                    <div class="front">
-                        🌷
-                    </div>
-
-                    <div class="back">
-                        Never forget that
-                        there is something incredibly
-                        special about simply being you.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" onclick="openCard(this)">
-
-                <div class="card-inner">
-
-                    <div class="front">
-                        🌙
-                    </div>
-
-                    <div class="back">
-                        On days when you doubt yourself,
-                        remember that someone out there
-                        sees how amazing you really are.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" onclick="openCard(this)">
-
-                <div class="card-inner">
-
-                    <div class="front">
-                        💖
-                    </div>
-
-                    <div class="back">
-                        You don't have to become
-                        someone else to be special.
-                        You already are.
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="tap">
-            Open all three ❤️
-        </div>
-
-
-        <div class="secret" id="secret">
-
-            <h3>And one more thing...</h3>
-
-            <p>
-                I hope this birthday reminds you
-                of just how precious you are.
-            </p>
-
-            <br>
-
-            <p>
-                I hope you keep smiling,
-                keep dreaming,
-                keep being the wonderful person you are,
-                and never forget that your existence
-                makes this world a little more beautiful.
-            </p>
 
         </div>
 
 
         <button
-            class="button"
-            id="lastButton"
-            onclick="nextPage()"
-            style="display:none;"
+            class="next-btn"
+            onclick="nextPage(4)"
         >
-            Something from my heart ❤️
+            One little surprise ❤️
         </button>
 
     </div>
@@ -770,88 +1126,311 @@ p{
 
 
 
-<!-- =====================================================
-                    PAGE 5
-===================================================== -->
+<!-- ===================================================
+     PAGE 4
+=================================================== -->
 
-<section class="page" id="page5">
-
-    <div class="glow1"></div>
-    <div class="glow2"></div>
+<section
+    class="page"
+    id="page4"
+>
 
     <div class="content">
 
-        <div class="tiny">
-            For you, Niniitata
+        <div class="small-text">
+            OPEN THESE ONE BY ONE
         </div>
 
-        <h2>Happy Birthday ❤️</h2>
+        <h2>
+            Three little reminders for you 💌
+        </h2>
 
-        <div class="her-text">
+
+        <div class="flip-container">
+
+
+            <!-- CARD 1 -->
+
+            <div
+                class="flip-card"
+                onclick="flipCard(this)"
+            >
+
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+
+                        🌸
+                        <br>
+                        You are beautiful
+
+                    </div>
+
+                    <div class="flip-back">
+
+                        Not just because of how you look,
+                        but because of the person you are.
+
+                        <br><br>
+
+                        Your smile, your personality,
+                        your little habits...
+
+                        all of it makes you uniquely you.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+
+            <div
+                class="flip-card"
+                onclick="flipCard(this)"
+            >
+
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+
+                        ✨
+                        <br>
+                        You are important
+
+                    </div>
+
+                    <div class="flip-back">
+
+                        Never underestimate the space
+                        you occupy in someone's heart.
+
+                        <br><br>
+
+                        You matter.
+
+                        <br>
+
+                        More than you probably realize.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+
+            <div
+                class="flip-card"
+                onclick="flipCard(this)"
+            >
+
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+
+                        🦋
+                        <br>
+                        Stay exactly you
+
+                    </div>
+
+                    <div class="flip-back">
+
+                        You don't need to become someone else
+                        to be worthy of love,
+                        happiness or beautiful moments.
+
+                        <br><br>
+
+                        The person you already are
+                        is more than enough.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             SECRET BOX
+             ONLY APPEARS AFTER ALL 3 CARDS ARE OPEN
+        ================================================== -->
+
+        <div
+            class="secret-box"
+            id="secretBox"
+        >
+
+            <h3>
+                And one more thing... ❤️
+            </h3>
 
             <p>
-                I hope life gives you all the happiness
-                you deserve.
-            </p>
 
-            <br>
+                Wherever life takes you,
+                I hope you never forget how special
+                you are.
 
-            <p>
-                I hope you always have reasons to smile,
-                people who appreciate your heart,
-                dreams that excite you,
-                and moments that make you stop and think,
-                <i>"I'm really happy."</i>
-            </p>
+                <br><br>
 
-            <br>
+                I hope you keep smiling,
+                keep dreaming,
+                and keep being the wonderful person
+                that you are.
 
-            <p>
-                And whenever you forget how special you are,
-                I hope you come back to this little page
-                and remember:
-                <b>you are one of a kind.</b>
+                <br><br>
+
+                Because someone like you deserves
+                every beautiful thing life can give.
+
             </p>
 
         </div>
 
 
-        <div class="final-box">
+
+        <!-- FINAL BUTTON -->
+
+        <button
+            class="next-btn"
+            id="finalButton"
+            style="display:none;"
+            onclick="nextPage(5)"
+        >
+            One last thing for you ❤️
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================
+     PAGE 5
+=================================================== -->
+
+<section
+    class="page"
+    id="page5"
+>
+
+    <div class="content">
+
+        <div class="small-text">
+            FOR YOU, NINIITATA
+        </div>
+
+        <h1>
+            Happy Birthday ❤️
+        </h1>
+
+
+        <div class="final-message">
+
 
             <p>
-                And maybe I don't know what destiny has planned.
-                Maybe none of us really knows what tomorrow holds.
+                I hope this year gives you
+                countless reasons to smile.
             </p>
 
-            <br>
+
+            <p>
+                I hope you experience beautiful moments,
+                achieve the things you dream about,
+                and always remember how capable
+                and wonderful you are.
+            </p>
+
+
+            <p>
+                Keep your beautiful smile.
+
+                <br>
+
+                Keep your kindness.
+
+                <br>
+
+                Keep your little quirks.
+
+                <br>
+
+                Keep being Niniitata.
+            </p>
+
+
+            <p>
+                Because there is something incredibly
+                special about the person you are.
+            </p>
+
+
+            <p>
+                And if life ever makes you doubt yourself,
+                come back to this little page and remember:
+            </p>
+
+
+            <p>
+
+                <strong>
+                    You are special.
+                </strong>
+
+                <br><br>
+
+                And you will always have a special place
+                in my heart.
+
+            </p>
+
+
+            <p>
+                I don't know what destiny has planned.
+
+                <br>
+
+                I don't know what the future looks like.
+            </p>
+
 
             <p>
                 But whatever happens,
-                I hope we never forget to appreciate
-                the moments that make us smile today.
+                I just want to enjoy every little second
+                that life gives us.
             </p>
 
-            <br>
 
             <p>
-                Because some people become memories,
-                some become chapters,
-                and some people simply leave
-                a beautiful mark on your heart.
+                And maybe that's enough...
+
+                <br><br>
+
+                To appreciate the moments,
+                cherish the memories,
+                and be grateful that someone like you
+                exists in my life.
             </p>
 
-            <br>
-
-            <p>
-                <b>
-                You are special, Niniitata.
-                And you will always have a special place in my heart.
-                </b>
-            </p>
 
             <div class="signature">
                 — Ak ❤️
             </div>
+
 
         </div>
 
@@ -864,130 +1443,189 @@ p{
 <script>
 
 /* =====================================================
-                    PAGE SYSTEM
+   PAGE NAVIGATION
 ===================================================== */
 
-let currentPage = 1;
+function nextPage(pageNumber) {
 
-function nextPage(){
+    const pages =
+        document.querySelectorAll('.page');
 
-    const oldPage =
-        document.getElementById("page" + currentPage);
+    pages.forEach(function(page) {
 
-    oldPage.classList.remove("active");
+        page.classList.remove('active');
 
-    currentPage++;
-
-    const newPage =
-        document.getElementById("page" + currentPage);
-
-    newPage.classList.add("active");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
     });
-}
 
 
+    const next =
+        document.getElementById(
+            'page' + pageNumber
+        );
 
-/* =====================================================
-                    FLIP CARDS
-===================================================== */
 
-let openedCards = 0;
+    if (next) {
 
-function openCard(card){
+        next.classList.add('active');
 
-    if(!card.classList.contains("open")){
+        /*
+           Scroll to absolute top.
+           This makes sure the new page
+           always starts from the beginning.
+        */
 
-        card.classList.add("open");
-
-        openedCards++;
-
-        if(openedCards === 3){
-
-            setTimeout(function(){
-
-                document
-                    .getElementById("secret")
-                    .classList.add("show");
-
-                document
-                    .getElementById("lastButton")
-                    .style.display = "inline-block";
-
-            },600);
-
-        }
+        window.scrollTo(0, 0);
 
     }
 
 }
 
 
-
 /* =====================================================
-                    FLOATING HEARTS
+   FLIP CARDS
 ===================================================== */
 
-function createHeart(){
+let flippedCards = 0;
+
+
+function flipCard(card) {
+
+    /*
+       Don't count the same card twice.
+    */
+
+    if (
+        card.classList.contains('flipped')
+    ) {
+
+        return;
+
+    }
+
+
+    card.classList.add('flipped');
+
+    flippedCards++;
+
+
+    /*
+       When all THREE cards are opened,
+       reveal the big box.
+    */
+
+    if (flippedCards === 3) {
+
+        setTimeout(function() {
+
+            const secretBox =
+                document.getElementById(
+                    'secretBox'
+                );
+
+            const finalButton =
+                document.getElementById(
+                    'finalButton'
+                );
+
+
+            secretBox.classList.add('show');
+
+            finalButton.style.display =
+                'inline-block';
+
+
+            /*
+               Scroll slightly down so
+               the newly revealed box becomes visible.
+            */
+
+            setTimeout(function() {
+
+                secretBox.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+            }, 100);
+
+        }, 500);
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+function createHeart() {
 
     const heart =
-        document.createElement("div");
+        document.createElement('div');
 
-    heart.className = "heart";
+    heart.className =
+        'heart';
 
-    const symbols = [
-        "❤️",
-        "💕",
-        "💗",
-        "💖",
-        "💓",
-        "🌸",
-        "✨"
+
+    const hearts = [
+        '❤️',
+        '💕',
+        '💗',
+        '💖',
+        '💓',
+        '🌸'
     ];
 
+
     heart.innerHTML =
-        symbols[
+        hearts[
             Math.floor(
-                Math.random() * symbols.length
+                Math.random() *
+                hearts.length
             )
         ];
 
+
     heart.style.left =
-        Math.random() * 100 + "vw";
+        Math.random() * 100 + 'vw';
+
 
     heart.style.fontSize =
-        (12 + Math.random() * 18) + "px";
+        (
+            12 +
+            Math.random() * 20
+        ) + 'px';
+
 
     heart.style.animationDuration =
-        (5 + Math.random() * 6) + "s";
+        (
+            5 +
+            Math.random() * 5
+        ) + 's';
 
-    document.body.appendChild(heart);
 
-    setTimeout(function(){
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(function() {
 
         heart.remove();
 
-    },11000);
+    }, 10000);
 
 }
 
 
-setInterval(createHeart,700);
-
-
-for(let i=0;i<10;i++){
-
-    setTimeout(
-        createHeart,
-        i * 250
-    );
-
-}
+setInterval(
+    createHeart,
+    700
+);
 
 </script>
+
 
 </body>
 </html>
