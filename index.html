@@ -1,21 +1,16 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>For Niniitata ❤️</title>
+<title>Happy Birthday Niniitata ❤️</title>
 
 <style>
-
-/* =====================================================
-   BASIC RESET
-===================================================== */
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -23,991 +18,521 @@ html {
 }
 
 body {
-    min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
     font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+    color: #4a3546;
 }
 
-
-/* =====================================================
-   COMMON PAGE
-===================================================== */
+/* =========================
+   COMMON
+========================= */
 
 .page {
-    display: none;
     min-height: 100vh;
-    padding: 35px 18px 70px;
+    width: 100%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 20px;
+    overflow: hidden;
 }
 
-.page.active {
-    display: block;
-}
-
-.content {
+.page-content {
     width: 100%;
     max-width: 900px;
-    margin: auto;
     text-align: center;
-}
-
-button {
-    font-family: Georgia, "Times New Roman", serif;
-    cursor: pointer;
-    border: none;
-}
-
-.next-btn {
-    margin-top: 35px;
-    padding: 15px 32px;
-    border-radius: 50px;
-    font-size: 17px;
-    background: rgba(255,255,255,0.92);
-    color: #674b65;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    transition: 0.3s ease;
-}
-
-.next-btn:hover {
-    transform: translateY(-3px);
-}
-
-.next-btn.locked {
-    opacity: 0.35;
-    pointer-events: none;
-    cursor: not-allowed;
+    position: relative;
+    z-index: 2;
 }
 
 .hidden {
     display: none !important;
 }
 
-
-/* =====================================================
-   PAGE 1 - LILAC
-===================================================== */
-
-#page1 {
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(255,255,255,0.55),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #d9c5e9,
-            #cbb0df,
-            #e7d5ef
-        );
-
-    color: #503b59;
-}
-
-.top-message {
-    margin-top: 5px;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-}
-
-.page1-title {
-    margin-top: 22px;
-    font-size: clamp(55px, 10vw, 90px);
-    font-style: italic;
-    color: #4e3658;
-    text-shadow: 2px 4px 12px rgba(255,255,255,0.5);
-}
-
-.subtitle {
-    margin-top: 8px;
-    font-size: 18px;
-    color: #6d5575;
-}
-
-.countdown-box {
-    max-width: 720px;
-    margin: 45px auto 25px;
-    padding: 32px 20px;
-    border-radius: 30px;
-
-    background: rgba(255,255,255,0.42);
-    backdrop-filter: blur(10px);
-
-    box-shadow:
-        0 15px 40px rgba(70,40,80,0.15);
-}
-
-.countdown-title {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.time-box {
-    min-width: 90px;
-    padding: 16px 12px;
-
-    border-radius: 18px;
-
-    background: rgba(255,255,255,0.68);
-
-    box-shadow:
-        0 6px 15px rgba(70,40,80,0.12);
-}
-
-.time-box span {
-    display: block;
-    font-size: 34px;
-    font-weight: bold;
-}
-
-.time-box small {
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
-.current-time {
-    margin-top: 20px;
-    font-size: 15px;
-    opacity: 0.8;
-}
-
-.excited-box {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 25px;
-
-    border-radius: 25px;
-
-    background: rgba(255,255,255,0.46);
-
-    box-shadow:
-        0 10px 25px rgba(70,40,80,0.12);
-
+button {
+    font-family: inherit;
+    border: none;
     cursor: pointer;
 }
 
-.excited-box h2 {
-    font-size: 27px;
-    margin-bottom: 8px;
-}
-
-
-/* =====================================================
-   PAGE 2 - CANDLE / CAKE
-===================================================== */
-
-#page2 {
-
-    background:
-        radial-gradient(
-            circle at 50% 45%,
-            rgba(255,165,60,0.08),
-            transparent 30%
-        ),
-        #020202;
-
-    color: white;
-
-    transition:
-        background 2.5s ease,
-        color 2.5s ease;
-}
-
-#page2.lights-on {
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            #fff4df 0%,
-            #f9e2d4 35%,
-            #eed0d1 70%,
-            #e7c7cf 100%
-        );
-
-    color: #65434d;
-}
-
-.birthday-content {
-    position: relative;
-    z-index: 2;
-}
-
-
-/* SAME SIZE FOR HAPPY BIRTHDAY AND NAME */
-
-.birthday-heading,
-.birthday-name {
-
-    font-size: clamp(42px, 8vw, 72px);
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    line-height: 1.1;
-
-    transition:
-        color 2.5s ease,
-        text-shadow 2.5s ease;
-}
-
-.birthday-heading {
-    padding-top: 15px;
-    color: #ffffff;
-    text-shadow:
-        0 0 12px rgba(255,255,255,0.15);
-}
-
-.birthday-name {
-    margin-top: 8px;
-    color: #ffffff;
-}
-
-#page2.lights-on .birthday-heading,
-#page2.lights-on .birthday-name {
-
-    color: #754652;
-
-    text-shadow: none;
-}
-
-
-/* =====================================================
-   CAKE AREA
-===================================================== */
-
-.cake-area {
-
-    position: relative;
-
-    width: 360px;
-    max-width: 90vw;
-
-    height: 410px;
-
-    margin: 25px auto 5px;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    transition: 2s ease;
-}
-
-
-/* =====================================================
-   CANDLE GLOW
-===================================================== */
-
-.candle-glow {
-
-    position: absolute;
-
-    width: 290px;
-    height: 290px;
-
-    left: 50%;
-    top: 0;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,210,110,0.45) 0%,
-            rgba(255,180,60,0.25) 25%,
-            rgba(255,150,40,0.08) 50%,
-            transparent 72%
-        );
-
-    filter: blur(12px);
-
-    z-index: 1;
-
-    transition: opacity 2s ease;
-}
-
-
-/* =====================================================
-   CSS CAKE
-===================================================== */
-
-.cake {
-
-    position: absolute;
-
-    bottom: 45px;
-
-    width: 320px;
-    max-width: 85vw;
-
-    height: 235px;
-
-    z-index: 2;
-}
-
-
-/* Cake plate */
-
-.plate {
-
-    position: absolute;
-
-    bottom: 0;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 350px;
-    max-width: 95vw;
-
-    height: 28px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #f9f4f1,
-            #d8c5c0
-        );
-
-    box-shadow:
-        0 8px 15px rgba(0,0,0,0.45);
-}
-
-
-/* Bottom cake */
-
-.cake-bottom {
-
-    position: absolute;
-
-    bottom: 22px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 290px;
-    height: 105px;
-
-    border-radius:
-        18px 18px 28px 28px;
-
-    background:
-        linear-gradient(
-            to right,
-            #8f4f42,
-            #c6785e 20%,
-            #d99172 50%,
-            #b76350 80%,
-            #87463d
-        );
-
-    box-shadow:
-        inset 0 -15px 20px rgba(80,25,20,0.25),
-        0 8px 15px rgba(0,0,0,0.35);
-}
-
-
-/* Bottom cream layer */
-
-.bottom-cream {
-
-    position: absolute;
-
-    bottom: 105px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 300px;
-    height: 28px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #fffaf2,
-            #f0d9d0
-        );
-
-    z-index: 3;
-}
-
-
-/* Middle cake */
-
-.cake-middle {
-
-    position: absolute;
-
-    bottom: 108px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 250px;
-    height: 75px;
-
-    border-radius:
-        16px 16px 22px 22px;
-
-    background:
-        linear-gradient(
-            to right,
-            #f0b59c,
-            #ffd0b9 50%,
-            #eaa88e
-        );
-
-    box-shadow:
-        inset 0 -10px 15px rgba(120,60,45,0.15);
-}
-
-
-/* Middle cream */
-
-.middle-cream {
-
-    position: absolute;
-
-    bottom: 160px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 260px;
-    height: 28px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #fffdf8,
-            #f0ddd6
-        );
-
-    z-index: 4;
-}
-
-
-/* Top cake */
-
-.cake-top {
-
-    position: absolute;
-
-    bottom: 163px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 215px;
-    height: 60px;
-
-    border-radius:
-        20px 20px 12px 12px;
-
-    background:
-        linear-gradient(
-            to right,
-            #d98c72,
-            #f2b59d 50%,
-            #d9846e
-        );
-
-    box-shadow:
-        inset 0 -8px 12px rgba(110,50,40,0.15);
-}
-
-
-/* Frosting top */
-
-.frosting {
-
-    position: absolute;
-
-    bottom: 201px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 230px;
-    height: 55px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            to bottom,
-            #fffaf5,
-            #f2d9d2
-        );
-
-    z-index: 5;
-
-    box-shadow:
-        0 5px 10px rgba(0,0,0,0.15);
-}
-
-
-/* Frosting drips */
-
-.drip {
-
-    position: absolute;
-
-    width: 24px;
-    height: 35px;
-
-    border-radius:
-        0 0 15px 15px;
-
-    background: #f4ddd6;
-
-    bottom: 184px;
-
-    z-index: 6;
-}
-
-.drip1 {
-    left: 105px;
-}
-
-.drip2 {
-    left: 150px;
-    height: 43px;
-}
-
-.drip3 {
-    left: 195px;
-    height: 30px;
-}
-
-
-/* Cake decorations */
-
-.decoration {
-
-    position: absolute;
-
-    width: 13px;
-    height: 13px;
-
-    border-radius: 50%;
-
-    background: #b85f72;
-
-    z-index: 7;
-}
-
-.dec1 {
-    left: 125px;
-    bottom: 216px;
-}
-
-.dec2 {
-    left: 160px;
-    bottom: 226px;
-}
-
-.dec3 {
-    left: 190px;
-    bottom: 213px;
-}
-
-.dec4 {
-    left: 145px;
-    bottom: 197px;
-}
-
-
-/* =====================================================
-   CANDLE
-===================================================== */
-
-.candle {
-
-    position: absolute;
-
-    left: 50%;
-    top: 5px;
-
-    transform: translateX(-50%);
-
-    width: 20px;
-    height: 105px;
-
-    border-radius: 5px;
-
-    background:
-        repeating-linear-gradient(
-            -45deg,
-            #fff4dc,
-            #fff4dc 8px,
-            #e9b9b7 8px,
-            #e9b9b7 13px
-        );
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,0.45);
-
-    z-index: 10;
-}
-
-
-/* Candle wick */
-
-.candle::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 3px;
-    height: 12px;
-
-    top: -9px;
-    left: 8px;
-
-    background: #222;
-
-    border-radius: 2px;
-}
-
-
-/* =====================================================
-   FLAME
-===================================================== */
-
-.flame {
-
-    position: absolute;
-
-    width: 30px;
-    height: 48px;
-
-    top: -58px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    border-radius:
-        50% 50% 45% 45%;
-
-    background:
-        radial-gradient(
-            ellipse at center bottom,
-            #fffbd0 0%,
-            #ffe26b 30%,
-            #ff9b2f 60%,
-            transparent 72%
-        );
-
-    filter:
-        drop-shadow(0 0 10px #ffb43b)
-        drop-shadow(0 0 20px #ff9d32);
-
-    animation:
-        flameFlicker 0.15s infinite alternate;
-
-    transition:
-        opacity 0.5s ease,
-        transform 0.5s ease;
-}
-
-.flame::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 10px;
-    height: 22px;
-
-    bottom: 5px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    background: #fffde2;
-}
-
-.flame.off {
-
-    opacity: 0;
-
-    transform:
-        translateX(-50%)
-        scale(0);
-
-    animation: none;
-}
-
-@keyframes flameFlicker {
-
-    from {
-        transform:
-            translateX(-50%)
-            scale(1)
-            rotate(-2deg);
-    }
-
-    to {
-        transform:
-            translateX(-50%)
-            scale(1.08)
-            rotate(2deg);
-    }
-}
-
-
-/* =====================================================
-   BLOW BUTTON
-===================================================== */
-
-.blow-text {
-
-    margin-top: 5px;
-
-    font-size: 20px;
-
-    color: #e8e0df;
-
-    transition:
-        color 2s ease;
-}
-
-#page2.lights-on .blow-text {
-    color: #754652;
-}
-
-.blow-btn {
-
-    margin-top: 22px;
-
-    padding: 15px 32px;
-
-    border-radius: 50px;
-
+.next-btn {
+    margin-top: 30px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: #ffffff;
+    color: #704f68;
     font-size: 17px;
-
-    color: #55343d;
-
-    background: #fff;
-
-    box-shadow:
-        0 8px 30px rgba(255,255,255,0.12);
-
+    box-shadow: 0 8px 25px rgba(80, 45, 75, 0.18);
     transition: 0.3s ease;
 }
 
-.blow-btn:hover {
-    transform: scale(1.04);
+.next-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(80, 45, 75, 0.25);
 }
 
-.blow-btn:disabled {
+.next-btn.locked {
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* =========================
+   PAGE 1
+========================= */
+
+#page1 {
+    background:
+        radial-gradient(circle at top left, #eadcf2, transparent 35%),
+        linear-gradient(135deg, #d9c5e9, #cbb0df, #e7d5ef);
+}
+
+#page1 h1 {
+    font-size: clamp(25px, 5vw, 44px);
+    color: #684c72;
+    margin-bottom: 35px;
+}
+
+#page1 .intro {
+    font-size: clamp(18px, 3vw, 25px);
+    margin-bottom: 25px;
+    color: #654c69;
+}
+
+#page1 .countdown-box {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 25px;
+    margin: 20px auto 35px;
+    max-width: 650px;
+    box-shadow: 0 15px 40px rgba(75,45,85,0.12);
+}
+
+#page1 .countdown-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    min-width: 85px;
+    padding: 15px 10px;
+    background: rgba(255,255,255,0.72);
+    border-radius: 18px;
+}
+
+.time-number {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: #684c72;
+}
+
+.time-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     opacity: 0.7;
 }
 
-
-/* Wish message */
-
-.wish-message {
-
-    max-width: 600px;
-
-    margin: 25px auto 0;
-
-    padding: 22px;
-
-    border-radius: 20px;
-
-    background: rgba(255,255,255,0.65);
-
-    color: #69404a;
-
-    font-size: 19px;
-
-    animation: fadeUp 1s ease;
+.excited-title {
+    font-size: clamp(24px, 5vw, 36px);
+    margin-bottom: 20px;
+    color: #604462;
 }
 
+.excited-options {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
 
-/* =====================================================
-   PAGE 3 - SOFT ROSE
-===================================================== */
+.excitement-btn {
+    padding: 16px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    background: #fff;
+    color: #704f68;
+    box-shadow: 0 8px 22px rgba(70,40,70,0.15);
+    transition: 0.3s;
+}
+
+.excitement-btn:hover {
+    transform: scale(1.05);
+    background: #fff8ff;
+}
+
+#page1Message {
+    margin-top: 20px;
+    font-size: 19px;
+    color: #684c72;
+}
+
+/* =========================
+   PAGE 2
+========================= */
+
+#page2 {
+    background: #020202;
+    color: white;
+    transition: background 2.5s ease, color 2s ease;
+}
+
+#page2.lights-on {
+    background:
+        radial-gradient(circle at center top, #fff8e8 0%, transparent 35%),
+        linear-gradient(135deg, #fff4df, #f9e2d4, #eed0d1, #e7c7cf);
+    color: #593d4e;
+}
+
+#page2 h1,
+#page2 .birthday-name {
+    font-size: clamp(42px, 8vw, 72px);
+    font-weight: bold;
+    line-height: 1.05;
+    letter-spacing: 1px;
+}
+
+#page2 h1 {
+    margin-bottom: 8px;
+}
+
+#page2 .birthday-name {
+    margin-bottom: 35px;
+}
+
+.birthday-subtitle {
+    font-size: 19px;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+/* Candle glow */
+
+.candle-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 190, 70, 0.35),
+        rgba(255, 130, 30, 0.12),
+        transparent 70%
+    );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+/* Cake */
+
+.cake-wrapper {
+    width: 360px;
+    max-width: 90vw;
+    height: 300px;
+    margin: 10px auto 15px;
+    position: relative;
+}
+
+.plate {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    max-width: 90%;
+    height: 28px;
+    background: linear-gradient(#fff, #ddd);
+    border-radius: 50%;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.35);
+}
+
+.cake-bottom {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 270px;
+    height: 100px;
+    background: linear-gradient(90deg, #b96d54, #d58a67, #b96d54);
+    border-radius: 12px 12px 18px 18px;
+    box-shadow: inset 0 -12px 0 rgba(100,40,30,0.12);
+}
+
+.cake-middle {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+    height: 75px;
+    background: linear-gradient(90deg, #c97b5e, #e3a077, #c97b5e);
+    border-radius: 12px;
+}
+
+.cream-bottom {
+    position: absolute;
+    bottom: 118px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 25px;
+    background: #fff4e9;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.frosting {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 38px;
+    background: #fff4e9;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+.drip {
+    position: absolute;
+    width: 22px;
+    height: 32px;
+    background: #fff4e9;
+    border-radius: 0 0 15px 15px;
+    z-index: 4;
+}
+
+.drip1 {
+    bottom: 158px;
+    left: 31%;
+}
+
+.drip2 {
+    bottom: 160px;
+    left: 45%;
+}
+
+.drip3 {
+    bottom: 158px;
+    right: 31%;
+}
+
+.decoration {
+    position: absolute;
+    bottom: 193px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #e7a7b6;
+    z-index: 5;
+}
+
+.dot1 { left: 39%; }
+.dot2 { left: 49%; background: #d7a3df; }
+.dot3 { right: 38%; background: #f0c77b; }
+
+.candle {
+    position: absolute;
+    bottom: 212px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 78px;
+    border-radius: 8px 8px 4px 4px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #f6b9c8 0px,
+        #f6b9c8 8px,
+        #fff0f4 8px,
+        #fff0f4 16px
+    );
+    z-index: 6;
+}
+
+.wick {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 11px;
+    background: #2e2020;
+    border-radius: 3px;
+}
+
+.flame {
+    position: absolute;
+    top: -48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 27px;
+    height: 42px;
+    background: linear-gradient(#fff7b0, #ff9e38, #ff5b22);
+    border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+    box-shadow:
+        0 0 15px #ffad42,
+        0 0 35px rgba(255,145,35,0.8);
+    animation: flicker 0.7s infinite alternate;
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.flame.off {
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+}
+
+@keyframes flicker {
+    from {
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+    }
+    to {
+        transform: translateX(-50%) scale(1.08) rotate(3deg);
+    }
+}
+
+.blow-button {
+    padding: 15px 28px;
+    border-radius: 30px;
+    background: #fff;
+    color: #4f3447;
+    font-size: 18px;
+    box-shadow: 0 8px 25px rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.blow-button:hover {
+    transform: translateY(-3px);
+}
+
+.blow-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.wish-area {
+    margin-top: 20px;
+}
+
+.wish-instruction {
+    font-size: clamp(20px, 4vw, 30px);
+    margin-bottom: 15px;
+}
+
+.wish-countdown {
+    font-size: clamp(65px, 15vw, 110px);
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 0 25px rgba(255,255,255,0.4);
+    margin: 10px 0;
+}
+
+.wish-small {
+    font-size: 16px;
+    opacity: 0.75;
+}
+
+.wish-complete {
+    font-size: clamp(24px, 5vw, 38px);
+    margin-top: 20px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   PAGE 3
+========================= */
 
 #page3 {
-
     background:
-        radial-gradient(
-            circle at top right,
-            rgba(255,255,255,0.6),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #f4dfe0,
-            #efd1d6,
-            #e7c8d1
-        );
-
-    color: #613f49;
+        radial-gradient(circle at top right, #f8e9eb, transparent 35%),
+        linear-gradient(135deg, #f4dfe0, #efd1d6, #e7c8d1);
 }
 
 .note-card {
-
-    max-width: 730px;
-
-    margin: 55px auto 0;
-
-    padding: 45px 32px;
-
-    border-radius: 30px;
-
-    background:
-        rgba(255,255,255,0.65);
-
-    box-shadow:
-        0 20px 50px rgba(110,65,80,0.15);
-
-    border:
-        1px solid rgba(255,255,255,0.6);
+    max-width: 720px;
+    margin: auto;
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(12px);
+    border-radius: 28px;
+    padding: 45px 35px;
+    box-shadow: 0 18px 50px rgba(100,55,75,0.15);
 }
 
-.note-card h1 {
-
-    font-size:
-        clamp(38px, 7vw, 60px);
-
-    color: #714550;
-
+.note-card h2 {
+    font-size: clamp(30px, 6vw, 45px);
     margin-bottom: 30px;
+    color: #744d5d;
 }
 
 .note-card p {
-
-    font-size: 19px;
-
-    line-height: 1.9;
-
-    color: #694750;
-
+    font-size: clamp(17px, 3vw, 21px);
+    line-height: 1.8;
     margin-bottom: 20px;
+    color: #624956;
 }
 
 .signature {
-
-    margin-top: 30px;
-
-    font-size: 24px;
-
-    font-style: italic;
-
-    color: #704451;
+    font-size: 24px !important;
+    margin-top: 25px;
 }
 
-#page3 .next-btn {
-
-    color: #714550;
-
-    background:
-        rgba(255,255,255,0.9);
-}
-
-
-/* =====================================================
-   PAGE 4 - LAVENDER / ROSE
-===================================================== */
+/* =========================
+   PAGE 4
+========================= */
 
 #page4 {
-
     background:
-        radial-gradient(
-            circle at top left,
-            rgba(255,255,255,0.65),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #e8dced,
-            #decce5,
-            #f1d9df
-        );
-
-    color: #5d4664;
+        radial-gradient(circle at bottom left, #f4e6f3, transparent 40%),
+        linear-gradient(135deg, #e8dced, #decce5, #f1d9df);
 }
 
-.page4-title {
-
-    margin-top: 20px;
-
-    font-size:
-        clamp(38px, 7vw, 62px);
-
-    color: #62476a;
+#page4 h2 {
+    font-size: clamp(30px, 6vw, 46px);
+    margin-bottom: 35px;
+    color: #674b69;
 }
 
-.page4-subtitle {
-
-    margin-top: 12px;
-
-    font-size: 18px;
-
-    color: #745a78;
-}
-
-
-/* Flip cards */
-
-.flip-container {
-
+.cards {
     display: flex;
-
     justify-content: center;
-
+    gap: 20px;
     flex-wrap: wrap;
-
-    gap: 22px;
-
-    margin-top: 45px;
 }
 
 .flip-card {
-
-    width: 235px;
-    height: 255px;
-
+    width: 220px;
+    height: 180px;
     perspective: 1000px;
-
     cursor: pointer;
 }
 
 .flip-inner {
-
+    position: relative;
     width: 100%;
     height: 100%;
-
-    position: relative;
-
-    transition:
-        transform 0.7s;
-
+    transition: transform 0.7s;
     transform-style: preserve-3d;
 }
 
@@ -1017,996 +542,626 @@ button {
 
 .flip-front,
 .flip-back {
-
     position: absolute;
-
     width: 100%;
     height: 100%;
-
     backface-visibility: hidden;
-
-    border-radius: 25px;
-
+    border-radius: 22px;
     display: flex;
-
-    align-items: center;
     justify-content: center;
-
-    padding: 22px;
-
-    box-shadow:
-        0 12px 30px rgba(80,50,90,0.14);
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(80,50,85,0.15);
 }
 
 .flip-front {
-
-    background:
-        rgba(255,255,255,0.68);
-
-    color: #634967;
-
-    font-size: 23px;
+    background: rgba(255,255,255,0.65);
+    color: #684e6a;
+    font-size: 22px;
 }
 
 .flip-back {
-
-    background:
-        rgba(255,248,250,0.9);
-
-    color: #684651;
-
+    background: rgba(255,255,255,0.9);
+    color: #684e6a;
     transform: rotateY(180deg);
-
     font-size: 19px;
-
-    line-height: 1.6;
+    line-height: 1.5;
 }
-
-
-/* Secret box */
 
 .secret-box {
-
-    max-width: 700px;
-
+    max-width: 600px;
     margin: 45px auto 0;
-
-    padding: 35px 25px;
-
+    background: rgba(255,255,255,0.75);
     border-radius: 28px;
-
-    background:
-        rgba(255,255,255,0.72);
-
-    box-shadow:
-        0 15px 40px rgba(70,40,80,0.15);
-
-    animation:
-        fadeUp 1s ease;
+    padding: 35px 25px;
+    box-shadow: 0 15px 40px rgba(80,45,75,0.15);
+    animation: fadeIn 1s ease;
 }
 
-.secret-box h2 {
-
-    font-size: 30px;
-
-    color: #704653;
-
-    margin-bottom: 15px;
+.secret-box h3 {
+    font-size: clamp(28px, 6vw, 42px);
+    color: #704a62;
+    margin-bottom: 25px;
 }
 
-.secret-box p {
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    color: #694650;
+.mine-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
+.mine-btn {
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: #fff;
+    color: #704a62;
+    font-size: 17px;
+    box-shadow: 0 7px 20px rgba(80,45,75,0.12);
+    transition: 0.3s;
+}
 
-/* =====================================================
+.mine-btn:hover {
+    transform: scale(1.05);
+}
+
+.answer-message {
+    margin-top: 20px;
+    font-size: 21px;
+    color: #704a62;
+}
+
+/* =========================
    PAGE 5
-===================================================== */
+========================= */
 
 #page5 {
-
     background:
-        radial-gradient(
-            circle at top,
-            rgba(255,255,255,0.65),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #e8cbd4,
-            #ddc1ce,
-            #d7c2df
-        );
-
-    color: #593e52;
+        radial-gradient(circle at top left, #f4e0e7, transparent 35%),
+        linear-gradient(135deg, #e8cbd4, #ddc1ce, #d7c2df);
 }
 
 .final-card {
-
     max-width: 760px;
-
-    margin: 65px auto 0;
-
-    padding: 45px 30px;
-
+    background: rgba(255,255,255,0.68);
+    backdrop-filter: blur(12px);
+    padding: 50px 35px;
     border-radius: 30px;
-
-    background:
-        rgba(255,255,255,0.58);
-
-    border:
-        1px solid rgba(255,255,255,0.7);
-
-    box-shadow:
-        0 20px 60px rgba(90,55,80,0.15);
+    box-shadow: 0 18px 55px rgba(80,45,75,0.15);
 }
 
-.final-card h1 {
-
-    font-size:
-        clamp(40px, 8vw, 68px);
-
-    color: #684457;
-
+.final-card h2 {
+    font-size: clamp(32px, 7vw, 52px);
+    color: #684659;
     margin-bottom: 30px;
 }
 
 .final-card p {
-
-    font-size: 20px;
-
-    line-height: 1.9;
-
-    color: #634652;
-
+    font-size: clamp(17px, 3vw, 21px);
+    line-height: 1.85;
     margin-bottom: 18px;
+    color: #614754;
 }
 
 .final-signature {
-
-    margin-top: 35px;
-
-    font-size: 28px;
-
-    font-style: italic;
-
-    color: #704653;
+    font-size: 24px !important;
+    margin-top: 30px;
 }
 
-
-/* =====================================================
-   FLOATING HEARTS
-===================================================== */
-
-.heart {
-
-    position: fixed;
-
-    bottom: -30px;
-
-    pointer-events: none;
-
-    z-index: 100;
-
-    opacity: 0.7;
-
-    animation:
-        floatHeart 5s linear forwards;
-}
-
-@keyframes floatHeart {
-
-    0% {
-        transform:
-            translateY(0)
-            scale(0.8);
-
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 0.8;
-    }
-
-    100% {
-
-        transform:
-            translateY(-110vh)
-            scale(1.3)
-            rotate(20deg);
-
-        opacity: 0;
-    }
-}
-
-
-/* =====================================================
-   FADE ANIMATION
-===================================================== */
-
-@keyframes fadeUp {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(15px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
 @media (max-width: 600px) {
 
     .page {
-        padding:
-            25px
-            14px
-            60px;
+        padding: 55px 16px;
+    }
+
+    #countdown {
+        gap: 8px;
     }
 
     .time-box {
-        min-width: 72px;
+        min-width: 70px;
+        padding: 12px 7px;
     }
 
-    .time-box span {
-        font-size: 27px;
+    .time-number {
+        font-size: 23px;
     }
 
-    .cake-area {
-        height: 350px;
+    .time-label {
+        font-size: 10px;
     }
 
-    .cake {
-        transform: scale(0.85);
-        transform-origin: bottom center;
-    }
-
-    .candle {
-        top: 15px;
-    }
-
-    .birthday-heading,
-    .birthday-name {
-        font-size: 43px;
+    .cake-wrapper {
+        transform: scale(0.82);
+        transform-origin: center;
+        margin-top: -5px;
+        margin-bottom: -25px;
     }
 
     .note-card,
     .final-card {
-        padding: 35px 20px;
-        margin-top: 40px;
-    }
-
-    .note-card p,
-    .final-card p {
-        font-size: 17px;
+        padding: 35px 22px;
     }
 
     .flip-card {
-        width: 90%;
-        max-width: 300px;
+        width: 150px;
+        height: 155px;
+    }
+
+    .flip-front {
+        font-size: 17px;
+    }
+
+    .flip-back {
+        font-size: 15px;
     }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
+<!-- =========================
      PAGE 1
-===================================================== -->
+========================= -->
 
-<section
-    class="page active"
-    id="page1"
->
+<section class="page" id="page1">
 
-<div class="content">
+    <div class="page-content">
 
-    <div class="top-message">
-        Today is about one very special person ✨
-    </div>
+        <h1>Today is about one very special person ✨</h1>
 
-    <h1 class="page1-title">
-        Niniitata
-    </h1>
-
-    <p class="subtitle">
-        And this little surprise is just for you ❤️
-    </p>
-
-
-    <div class="countdown-box">
-
-        <div class="countdown-title">
-            Something beautiful is coming... 💕
-        </div>
-
-        <div class="countdown">
-
-            <div class="time-box">
-                <span id="days">00</span>
-                <small>DAYS</small>
-            </div>
-
-            <div class="time-box">
-                <span id="hours">00</span>
-                <small>HOURS</small>
-            </div>
-
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <small>MINUTES</small>
-            </div>
-
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <small>SECONDS</small>
-            </div>
-
-        </div>
-
-        <div class="current-time">
-            Current time:
-            <span id="currentTime">
-                Loading...
-            </span>
-        </div>
-
-    </div>
-
-
-    <div
-        class="excited-box"
-        onclick="completePage1()"
-    >
-
-        <h2>
-            Are you excited? 👀
-        </h2>
-
-        <p>
-            Because there's something waiting for you...
+        <p class="intro">
+            And that person is none other than <strong>Niniitata ❤️</strong>
         </p>
 
+        <div class="countdown-box">
+
+            <div class="countdown-title">
+                The wait is almost over... 🎂
+            </div>
+
+            <div id="countdown">
+
+                <div class="time-box">
+                    <span class="time-number" id="days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+
+                <div class="time-box">
+                    <span class="time-number" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+
+                <div class="time-box">
+                    <span class="time-number" id="minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+
+                <div class="time-box">
+                    <span class="time-number" id="seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <h2 class="excited-title">
+            Are you excited? 🥰
+        </h2>
+
+        <div class="excited-options">
+
+            <button class="excitement-btn" onclick="completePage1()">
+                Yes 🥰
+            </button>
+
+            <button class="excitement-btn" onclick="completePage1()">
+                Very excited! 💕
+            </button>
+
+        </div>
+
+        <p id="page1Message"></p>
+
+        <button
+            id="page1Next"
+            class="next-btn locked"
+            onclick="nextPage(2)"
+        >
+            Continue ✨
+        </button>
+
     </div>
-
-
-    <button
-        id="page1Next"
-        class="next-btn locked"
-        onclick="nextPage(2)"
-    >
-        Continue to your surprise 💕
-    </button>
-
-</div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================
      PAGE 2
-===================================================== -->
+========================= -->
 
-<section
-    class="page"
-    id="page2"
->
+<section class="page" id="page2">
 
-<div class="content birthday-content">
+    <div class="candle-glow" id="candleGlow"></div>
 
+    <div class="page-content">
 
-    <h1 class="birthday-heading">
-        HAPPY BIRTHDAY
-    </h1>
+        <h1>HAPPY BIRTHDAY</h1>
 
-    <div class="birthday-name">
-        Niniitata
-    </div>
+        <div class="birthday-name">
+            Niniitata ❤️
+        </div>
 
+        <p class="birthday-subtitle">
+            Make a wish before the light comes back... ✨
+        </p>
 
-    <div class="cake-area">
-
-
-        <!-- Candle glow -->
-
-        <div
-            class="candle-glow"
-            id="candleGlow"
-        ></div>
-
-
-        <!-- CSS CAKE -->
-
-        <div class="cake">
-
-
-            <!-- Plate -->
+        <div class="cake-wrapper">
 
             <div class="plate"></div>
 
-
-            <!-- Bottom cake -->
-
             <div class="cake-bottom"></div>
-
-
-            <!-- Bottom cream -->
-
-            <div class="bottom-cream"></div>
-
-
-            <!-- Middle cake -->
 
             <div class="cake-middle"></div>
 
-
-            <!-- Middle cream -->
-
-            <div class="middle-cream"></div>
-
-
-            <!-- Top cake -->
-
-            <div class="cake-top"></div>
-
-
-            <!-- Frosting -->
+            <div class="cream-bottom"></div>
 
             <div class="frosting"></div>
-
-
-            <!-- Frosting drips -->
 
             <div class="drip drip1"></div>
             <div class="drip drip2"></div>
             <div class="drip drip3"></div>
 
-
-            <!-- Decorations -->
-
-            <div class="decoration dec1"></div>
-            <div class="decoration dec2"></div>
-            <div class="decoration dec3"></div>
-            <div class="decoration dec4"></div>
-
-
-            <!-- Candle -->
+            <div class="decoration dot1"></div>
+            <div class="decoration dot2"></div>
+            <div class="decoration dot3"></div>
 
             <div class="candle">
 
+                <div class="wick"></div>
+
                 <div
-                    id="flame"
                     class="flame"
+                    id="flame"
                 ></div>
 
             </div>
 
-
         </div>
-
-    </div>
-
-
-    <div class="blow-text">
-        🕯️ Blow the candle & make a wish ✨
-    </div>
-
-
-    <button
-        id="blowButton"
-        class="blow-btn"
-        onclick="blowCandle()"
-    >
-        Blow the candle 💨
-    </button>
-
-
-    <div
-        id="wishMessage"
-        class="wish-message hidden"
-    >
-
-        The candle is out... ✨
-        <br>
-
-        The lights are on... 💡
-
-        <br><br>
-
-        Now make your wish, birthday girl. ❤️
-
-    </div>
-
-
-    <button
-        id="page2Next"
-        class="next-btn locked"
-        onclick="nextPage(3)"
-    >
-        Continue ❤️
-    </button>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PAGE 3
-===================================================== -->
-
-<section
-    class="page"
-    id="page3"
->
-
-<div class="content">
-
-
-    <div class="note-card">
-
-        <h1>
-            A little note for you 💌
-        </h1>
-
-
-        <p>
-            This time, I'm sending you this digital cake instead. 🎂
-        </p>
-
-
-        <p>
-            I know it's not the same as actually being there,
-            sitting beside you, watching you smile,
-            cutting the cake together and making a wish.
-        </p>
-
-
-        <p>
-            But I really hope that next year,
-            we won't need a digital cake anymore.
-        </p>
-
-
-        <p>
-            Maybe next year we'll celebrate together,
-            cut a real cake, make a real wish,
-            laugh about silly things and create a memory
-            that we'll remember for a very long time. ❤️
-        </p>
-
-
-        <p>
-            Until then, consider this little cake
-            a tiny piece of my wish reaching you from here.
-        </p>
-
-
-        <p>
-            Happy Birthday once again, Niniitata. ❤️
-        </p>
-
-
-        <div class="signature">
-            — Ak
-        </div>
-
-    </div>
-
-
-    <!-- IMPORTANT:
-         This button now directly completes Page 3
-         BEFORE moving to Page 4.
-    -->
-
-    <button
-        class="next-btn"
-        onclick="completePage3AndContinue()"
-    >
-        There's something else... 👀
-    </button>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PAGE 4
-===================================================== -->
-
-<section
-    class="page"
-    id="page4"
->
-
-<div class="content">
-
-
-    <h1 class="page4-title">
-        Three little things ❤️
-    </h1>
-
-
-    <p class="page4-subtitle">
-        Open them one by one...
-    </p>
-
-
-    <div class="flip-container">
-
-
-        <!-- CARD 1 -->
-
-        <div
-            class="flip-card"
-            onclick="flipCard(this, 1)"
-        >
-
-            <div class="flip-inner">
-
-                <div class="flip-front">
-                    Open me 💌
-                </div>
-
-                <div class="flip-back">
-
-                    Your smile ❤️
-
-                    <br>
-
-                    It has a way of making
-                    everything feel a little better.
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- CARD 2 -->
-
-        <div
-            class="flip-card"
-            onclick="flipCard(this, 2)"
-        >
-
-            <div class="flip-inner">
-
-                <div class="flip-front">
-                    Open me ✨
-                </div>
-
-                <div class="flip-back">
-
-                    Your existence ✨
-
-                    <br>
-
-                    I'm genuinely glad
-                    that you exist in this world.
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- CARD 3 -->
-
-        <div
-            class="flip-card"
-            onclick="flipCard(this, 3)"
-        >
-
-            <div class="flip-inner">
-
-                <div class="flip-front">
-                    Open me ❤️
-                </div>
-
-                <div class="flip-back">
-
-                    Your place ❤️
-
-                    <br>
-
-                    Somehow, you've created
-                    a place in my heart that is yours.
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- SECRET BOX -->
-
-    <div
-        id="secretBox"
-        class="secret-box hidden"
-    >
-
-        <h2>
-            One last little thing... 🥰
-        </h2>
-
-
-        <p>
-
-            Some things are difficult to explain with words.
-
-            Some feelings don't fit inside a message.
-
-            So maybe I'll just leave this one simple...
-
-            <br><br>
-
-            Will you be mine? ❤️
-
-        </p>
-
 
         <button
-            class="next-btn"
-            onclick="nextPage(5)"
+            id="blowButton"
+            class="blow-button"
+            onclick="blowCandle()"
         >
-            One final message 💌
+            Blow the candle 🕯️
+        </button>
+
+        <!-- 15 second wish countdown -->
+
+        <div
+            id="wishArea"
+            class="wish-area hidden"
+        >
+
+            <div class="wish-instruction">
+                Close your eyes... make a wish ✨
+            </div>
+
+            <div
+                id="wishCountdown"
+                class="wish-countdown"
+            >
+                15
+            </div>
+
+            <div class="wish-small">
+                You have 15 seconds... make it a beautiful one ❤️
+            </div>
+
+            <div
+                id="wishComplete"
+                class="wish-complete hidden"
+            >
+                Wish made! ❤️✨
+            </div>
+
+        </div>
+
+        <button
+            id="page2Next"
+            class="next-btn locked"
+            onclick="nextPage(3)"
+        >
+            Continue 💕
         </button>
 
     </div>
 
-
-</div>
-
 </section>
 
 
+<!-- =========================
+     PAGE 3
+========================= -->
 
-<!-- =====================================================
-     PAGE 5
-===================================================== -->
+<section class="page" id="page3">
 
-<section
-    class="page"
-    id="page5"
->
+    <div class="page-content">
 
-<div class="content">
+        <div class="note-card">
 
+            <h2>A Little Note For You 💌</h2>
 
-    <div class="final-card">
+            <p>
+                This time, I'm sending you this digital cake instead. 🎂
+            </p>
 
+            <p>
+                I know it's not the same as being there, sitting beside you,
+                watching you smile, cutting the cake and making a wish.
+            </p>
 
-        <h1>
-            Happy Birthday Niniitata 🥰
-        </h1>
+            <p>
+                But I'm hoping next year we won't need a digital cake.
+                Maybe we'll celebrate together, cut a real cake,
+                make a real wish, laugh together and create a memory
+                that we can keep forever. ❤️
+            </p>
 
+            <p>
+                Until then, consider this little cake a tiny piece of my
+                wish reaching you from here.
+            </p>
 
-        <p>
-            You are special and you will always have
-            a place in my heart.
-        </p>
+            <p>
+                Happy Birthday once again, Niniitata. ❤️
+            </p>
 
+            <p class="signature">
+                — Ak
+            </p>
 
-        <p>
-            I just miss you each and every time.
-            Somehow, you are always in my mind
-            and always in my heart.
-        </p>
+            <button
+                class="next-btn"
+                onclick="completePage3AndContinue()"
+            >
+                There's more... 💕
+            </button>
 
-
-        <p>
-            I'm not sure what destiny has planned,
-            or what the future will look like.
-        </p>
-
-
-        <p>
-            But one thing I know...
-        </p>
-
-
-        <p>
-            I want to enjoy each and every second
-            while it lasts.
-        </p>
-
-
-        <p>
-            Every little moment.
-            Every smile.
-            Every memory.
-        </p>
-
-
-        <p>
-            Because some people come into your life
-            and simply become unforgettable.
-        </p>
-
-
-        <p>
-            And you are one of those people. ❤️
-        </p>
-
-
-        <div class="final-signature">
-            — Ak ❤️
         </div>
-
 
     </div>
 
-</div>
+</section>
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
+<section class="page" id="page4">
+
+    <div class="page-content">
+
+        <h2>There are a few things I want you to know... 💭</h2>
+
+        <div class="cards">
+
+            <div
+                class="flip-card"
+                onclick="openCard(this, 1)"
+            >
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+                        Tap to open 💌
+                    </div>
+
+                    <div class="flip-back">
+                        You make ordinary moments feel a little more special. ❤️
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div
+                class="flip-card"
+                onclick="openCard(this, 2)"
+            >
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+                        Open me 🥰
+                    </div>
+
+                    <div class="flip-back">
+                        Somehow, you always manage to stay on my mind.
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div
+                class="flip-card"
+                onclick="openCard(this, 3)"
+            >
+                <div class="flip-inner">
+
+                    <div class="flip-front">
+                        One more 💕
+                    </div>
+
+                    <div class="flip-back">
+                        Some people become unforgettable without even trying.
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Secret box appears after all cards -->
+
+        <div
+            id="secretBox"
+            class="secret-box hidden"
+        >
+
+            <h3>
+                Will you be mine? ❤️
+            </h3>
+
+            <div class="mine-options">
+
+                <button
+                    class="mine-btn"
+                    onclick="answerMine('loved')"
+                >
+                    Loved to be 🥰
+                </button>
+
+                <button
+                    class="mine-btn"
+                    onclick="answerMine('always')"
+                >
+                    Always ❤️
+                </button>
+
+            </div>
+
+            <div
+                id="answerMessage"
+                class="answer-message"
+            ></div>
+
+            <button
+                id="page4Next"
+                class="next-btn locked"
+                onclick="nextPage(5)"
+            >
+                One last thing... 💗
+            </button>
+
+        </div>
+
+    </div>
 
 </section>
 
+
+<!-- =========================
+     PAGE 5
+========================= -->
+
+<section class="page" id="page5">
+
+    <div class="page-content">
+
+        <div class="final-card">
+
+            <h2>
+                Happy Birthday Niniitata 🥰
+            </h2>
+
+            <p>
+                You are special and you will always have a place in my heart.
+            </p>
+
+            <p>
+                I just miss you each and every time.
+                Somehow, you are always in my mind
+                and always in my heart.
+            </p>
+
+            <p>
+                I'm not sure what destiny has planned,
+                or what the future will look like.
+            </p>
+
+            <p>
+                But one thing I know...
+            </p>
+
+            <p>
+                I want to enjoy each and every second while it lasts.
+            </p>
+
+            <p>
+                Every little moment.
+                Every smile.
+                Every memory.
+            </p>
+
+            <p>
+                Because some people come into your life
+                and simply become unforgettable.
+            </p>
+
+            <p>
+                And you are one of those people. ❤️
+            </p>
+
+            <p class="final-signature">
+                — Ak ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <script>
 
-
-/* =====================================================
-   PAGE STATUS
-===================================================== */
+/* ==========================================
+   PAGE CONTROL
+========================================== */
 
 let page1Completed = false;
-
 let page2Completed = false;
-
 let page3Completed = false;
-
 let page4Completed = false;
 
+function nextPage(pageNumber) {
 
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-const targetDate =
-    new Date(
-        "2026-09-21T01:00:00+05:30"
-    );
-
-
-function updateCountdown() {
-
-    const now = new Date();
-
-    const difference =
-        targetDate - now;
-
-
-    if (difference <= 0) {
-
-        document.getElementById("days")
-            .textContent = "00";
-
-        document.getElementById("hours")
-            .textContent = "00";
-
-        document.getElementById("minutes")
-            .textContent = "00";
-
-        document.getElementById("seconds")
-            .textContent = "00";
-
-    } else {
-
-        const days =
-            Math.floor(
-                difference /
-                (1000 * 60 * 60 * 24)
-            );
-
-        const hours =
-            Math.floor(
-                (difference /
-                (1000 * 60 * 60)) % 24
-            );
-
-        const minutes =
-            Math.floor(
-                (difference /
-                (1000 * 60)) % 60
-            );
-
-        const seconds =
-            Math.floor(
-                (difference / 1000) % 60
-            );
-
-
-        document.getElementById("days")
-            .textContent =
-            String(days).padStart(2, "0");
-
-
-        document.getElementById("hours")
-            .textContent =
-            String(hours).padStart(2, "0");
-
-
-        document.getElementById("minutes")
-            .textContent =
-            String(minutes).padStart(2, "0");
-
-
-        document.getElementById("seconds")
-            .textContent =
-            String(seconds).padStart(2, "0");
-
+    if (pageNumber === 2 && !page1Completed) {
+        return;
     }
 
+    if (pageNumber === 3 && !page2Completed) {
+        return;
+    }
 
-    /* Live Indian time */
+    if (pageNumber === 4 && !page3Completed) {
+        return;
+    }
 
-    document.getElementById("currentTime")
-        .textContent =
-        now.toLocaleString(
-            "en-IN",
-            {
-                timeZone: "Asia/Kolkata",
+    if (pageNumber === 5 && !page4Completed) {
+        return;
+    }
 
-                day: "2-digit",
-                month: "short",
-                year: "numeric",
-
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-
-                hour12: true
-            }
-        );
+    document
+        .getElementById("page" + pageNumber)
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 }
 
 
-updateCountdown();
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-/* =====================================================
+/* ==========================================
    PAGE 1
-===================================================== */
+========================================== */
 
 function completePage1() {
 
@@ -2016,220 +1171,311 @@ function completePage1() {
 
     page1Completed = true;
 
+    document.getElementById("page1Message").innerHTML =
+        "Yay! I knew you would be excited! 🥰❤️";
+
     document
         .getElementById("page1Next")
-        .classList.remove("locked");
+        .classList
+        .remove("locked");
 }
 
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/* ==========================================
+   COUNTDOWN TO BIRTHDAY
+========================================== */
 
-function nextPage(pageNumber) {
+const targetDate =
+    new Date("2026-09-21T01:00:00+05:30");
 
+function updateCountdown() {
 
-    /* Page 1 → Page 2 */
+    const now = new Date();
 
-    if (
-        pageNumber === 2 &&
-        !page1Completed
-    ) {
+    const difference =
+        targetDate.getTime() - now.getTime();
+
+    if (difference <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
         return;
     }
 
-
-    /* Page 2 → Page 3 */
-
-    if (
-        pageNumber === 3 &&
-        !page2Completed
-    ) {
-        return;
-    }
-
-
-    /* Page 3 → Page 4 */
-
-    if (
-        pageNumber === 4 &&
-        !page3Completed
-    ) {
-        return;
-    }
-
-
-    /* Page 4 → Page 5 */
-
-    if (
-        pageNumber === 5 &&
-        !page4Completed
-    ) {
-        return;
-    }
-
-
-    /* Hide all pages */
-
-    document
-        .querySelectorAll(".page")
-        .forEach(
-            page => {
-                page.classList.remove("active");
-            }
+    const days =
+        Math.floor(
+            difference / (1000 * 60 * 60 * 24)
         );
 
-
-    /* Show requested page */
-
-    const destination =
-        document.getElementById(
-            "page" + pageNumber
+    const hours =
+        Math.floor(
+            (difference / (1000 * 60 * 60)) % 24
         );
 
+    const minutes =
+        Math.floor(
+            (difference / (1000 * 60)) % 60
+        );
 
-    destination.classList.add("active");
+    const seconds =
+        Math.floor(
+            (difference / 1000) % 60
+        );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
 
 
-    /* Always start new page at top */
+/* ==========================================
+   HAPPY BIRTHDAY MUSIC
+   Browser-generated melody
+========================================== */
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+let audioContext = null;
 
+function playHappyBirthday() {
+
+    try {
+
+        audioContext =
+            new (window.AudioContext ||
+            window.webkitAudioContext)();
+
+        const notes = [
+
+            // Happy Birthday melody
+            ["G4", 0.00, 0.28],
+            ["G4", 0.30, 0.28],
+            ["A4", 0.60, 0.55],
+            ["G4", 1.20, 0.55],
+            ["C5", 1.80, 0.55],
+            ["B4", 2.40, 1.00],
+
+            ["G4", 3.55, 0.28],
+            ["G4", 3.85, 0.28],
+            ["A4", 4.15, 0.55],
+            ["G4", 4.75, 0.55],
+            ["D5", 5.35, 0.55],
+            ["C5", 5.95, 1.00],
+
+            ["G4", 7.10, 0.28],
+            ["G4", 7.40, 0.28],
+            ["G5", 7.70, 0.55],
+            ["E5", 8.30, 0.55],
+            ["C5", 8.90, 0.55],
+            ["B4", 9.50, 0.55],
+            ["A4", 10.10, 1.00],
+
+            ["F5", 11.25, 0.28],
+            ["F5", 11.55, 0.28],
+            ["E5", 11.85, 0.55],
+            ["C5", 12.45, 0.55],
+            ["D5", 13.05, 0.55],
+            ["C5", 13.65, 1.20]
+
+        ];
+
+        const frequencies = {
+            "A4": 440,
+            "B4": 493.88,
+            "C5": 523.25,
+            "D5": 587.33,
+            "E5": 659.25,
+            "F5": 698.46,
+            "G4": 392,
+            "G5": 783.99
+        };
+
+        notes.forEach(function(note) {
+
+            const name = note[0];
+            const start = note[1];
+            const duration = note[2];
+
+            const oscillator =
+                audioContext.createOscillator();
+
+            const gain =
+                audioContext.createGain();
+
+            oscillator.type = "sine";
+
+            oscillator.frequency.value =
+                frequencies[name];
+
+            oscillator.connect(gain);
+            gain.connect(audioContext.destination);
+
+            const startTime =
+                audioContext.currentTime + start;
+
+            const endTime =
+                startTime + duration;
+
+            gain.gain.setValueAtTime(
+                0,
+                startTime
+            );
+
+            gain.gain.linearRampToValueAtTime(
+                0.18,
+                startTime + 0.03
+            );
+
+            gain.gain.linearRampToValueAtTime(
+                0,
+                endTime
+            );
+
+            oscillator.start(startTime);
+            oscillator.stop(endTime + 0.03);
+
+        });
+
+    } catch (error) {
+
+        console.log(
+            "Music could not be played:",
+            error
+        );
+
+    }
 }
 
 
-/* =====================================================
-   PAGE 2 - BLOW CANDLE
-===================================================== */
+/* ==========================================
+   PAGE 2 — BLOW CANDLE
+========================================== */
 
 function blowCandle() {
-
 
     if (page2Completed) {
         return;
     }
 
-
     const flame =
-        document.getElementById(
-            "flame"
-        );
-
+        document.getElementById("flame");
 
     const glow =
-        document.getElementById(
-            "candleGlow"
-        );
-
-
-    const page2 =
-        document.getElementById(
-            "page2"
-        );
-
+        document.getElementById("candleGlow");
 
     const button =
-        document.getElementById(
-            "blowButton"
-        );
+        document.getElementById("blowButton");
 
+    const wishArea =
+        document.getElementById("wishArea");
 
-    const message =
-        document.getElementById(
-            "wishMessage"
-        );
+    const wishCountdown =
+        document.getElementById("wishCountdown");
 
+    const wishComplete =
+        document.getElementById("wishComplete");
 
-    /* Flame goes out */
+    const page2 =
+        document.getElementById("page2");
+
+    /* Candle goes out */
 
     flame.classList.add("off");
 
-
-    /* Candle glow disappears */
-
     glow.style.opacity = "0";
-
-
-    /* Give the flame a moment to disappear */
-
-    setTimeout(
-        function() {
-
-            /*
-                Lights gradually turn on
-            */
-
-            page2.classList.add(
-                "lights-on"
-            );
-
-        },
-        700
-    );
-
-
-    /* Change button */
-
-    button.textContent =
-        "Wish made! ✨";
 
     button.disabled = true;
 
+    button.textContent =
+        "Candle blown ✨";
 
-    /* Show wish */
+    /* Show wish countdown */
 
-    setTimeout(
-        function() {
+    wishArea.classList.remove("hidden");
 
-            message.classList.remove(
-                "hidden"
-            );
+    let count = 15;
 
-        },
-        1400
-    );
-
+    wishCountdown.textContent = count;
 
     /*
-        Unlock Page 3
-        after the lights have come on.
+       Keep the room dark for the entire
+       15 second wish countdown.
     */
 
-    setTimeout(
-        function() {
+    const wishTimer =
+        setInterval(function() {
 
-            page2Completed = true;
+            count--;
 
+            if (count > 0) {
 
-            document
-                .getElementById("page2Next")
-                .classList.remove(
-                    "locked"
+                wishCountdown.textContent =
+                    count;
+
+            } else {
+
+                clearInterval(wishTimer);
+
+                wishCountdown.textContent =
+                    "0";
+
+                wishComplete.classList.remove(
+                    "hidden"
                 );
 
-        },
-        2200
-    );
+                /*
+                   NOW the romantic lights
+                   turn on.
+                */
 
+                page2.classList.add(
+                    "lights-on"
+                );
+
+                /*
+                   Start Happy Birthday melody.
+                */
+
+                playHappyBirthday();
+
+                /*
+                   Unlock Page 3.
+                */
+
+                setTimeout(function() {
+
+                    page2Completed = true;
+
+                    document
+                        .getElementById("page2Next")
+                        .classList
+                        .remove("locked");
+
+                }, 1800);
+            }
+
+        }, 1000);
 }
 
 
-/* =====================================================
-   PAGE 3 FIX
-===================================================== */
+/* ==========================================
+   PAGE 3
+========================================== */
 
 function completePage3AndContinue() {
-
-    /*
-        THIS was the problem in the
-        previous version.
-
-        Page 3 is now marked complete
-        BEFORE nextPage(4) is called.
-    */
 
     page3Completed = true;
 
@@ -2237,151 +1483,78 @@ function completePage3AndContinue() {
 }
 
 
-/* =====================================================
-   PAGE 4 FLIP CARDS
-===================================================== */
+/* ==========================================
+   PAGE 4 — FLIP CARDS
+========================================== */
 
 const openedCards =
     new Set();
 
+function openCard(card, cardNumber) {
 
-function flipCard(card, number) {
+    if (!card.classList.contains("open")) {
 
+        card.classList.add("open");
 
-    /* Don't close an already opened card */
-
-    if (
-        openedCards.has(number)
-    ) {
-        return;
-    }
-
-
-    /* Flip */
-
-    card.classList.add("open");
-
-
-    /* Remember */
-
-    openedCards.add(number);
-
-
-    /*
-        When all 3 are open,
-        reveal the secret box.
-    */
-
-    if (
-        openedCards.size === 3
-    ) {
-
-        page4Completed = true;
-
-
-        setTimeout(
-            function() {
-
-                const secretBox =
-                    document.getElementById(
-                        "secretBox"
-                    );
-
-
-                secretBox.classList.remove(
-                    "hidden"
-                );
-
-
-                setTimeout(
-                    function() {
-
-                        secretBox.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
-
-                    },
-                    150
-                );
-
-
-            },
-            500
-        );
+        openedCards.add(cardNumber);
 
     }
 
+    if (openedCards.size === 3) {
+
+        document
+            .getElementById("secretBox")
+            .classList
+            .remove("hidden");
+
+        setTimeout(function() {
+
+            document
+                .getElementById("secretBox")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+        }, 500);
+
+    }
 }
 
 
-/* =====================================================
-   FLOATING HEARTS
-===================================================== */
+/* ==========================================
+   PAGE 4 — WILL YOU BE MINE
+========================================== */
 
-function createHeart() {
+function answerMine(answer) {
 
-    const heart =
-        document.createElement(
-            "div"
+    const answerMessage =
+        document.getElementById(
+            "answerMessage"
         );
 
+    if (answer === "loved") {
 
-    heart.className =
-        "heart";
+        answerMessage.innerHTML =
+            "That made my heart smile. 🥰❤️";
 
+    } else {
 
-    heart.textContent =
-        Math.random() > 0.5
-            ? "❤️"
-            : "💕";
+        answerMessage.innerHTML =
+            "Always sounds perfect to me. ❤️✨";
 
+    }
 
-    heart.style.left =
-        Math.random() * 100 +
-        "vw";
+    page4Completed = true;
 
-
-    heart.style.fontSize =
-        (
-            14 +
-            Math.random() * 14
-        ) +
-        "px";
-
-
-    heart.style.animationDuration =
-        (
-            4 +
-            Math.random() * 3
-        ) +
-        "s";
-
-
-    document.body.appendChild(
-        heart
-    );
-
-
-    setTimeout(
-        function() {
-
-            heart.remove();
-
-        },
-        7000
-    );
-
+    document
+        .getElementById("page4Next")
+        .classList
+        .remove("locked");
 }
-
-
-setInterval(
-    createHeart,
-    900
-);
-
 
 </script>
 
 </body>
 </html>
+```
