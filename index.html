@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Niniitata ❤️</title>
 
 <style>
+
+/* =====================================================
+   BASIC RESET
+===================================================== */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -20,21 +26,19 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: "Georgia", serif;
-    background: #111;
-    color: white;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
-/* =========================
-   COMMON
-========================= */
+
+/* =====================================================
+   COMMON PAGE
+===================================================== */
 
 .page {
     display: none;
     min-height: 100vh;
-    padding: 35px 20px 70px;
+    padding: 35px 18px 70px;
     position: relative;
-    overflow: hidden;
 }
 
 .page.active {
@@ -49,10 +53,9 @@ body {
 }
 
 button {
-    border: none;
+    font-family: Georgia, "Times New Roman", serif;
     cursor: pointer;
-    font-family: inherit;
-    transition: 0.3s ease;
+    border: none;
 }
 
 .next-btn {
@@ -60,66 +63,79 @@ button {
     padding: 15px 32px;
     border-radius: 50px;
     font-size: 17px;
-    background: rgba(255,255,255,0.9);
-    color: #5a405d;
+    background: rgba(255,255,255,0.92);
+    color: #674b65;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
 }
 
 .next-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
 .next-btn.locked {
     opacity: 0.35;
-    cursor: not-allowed;
     pointer-events: none;
+    cursor: not-allowed;
 }
 
 .hidden {
     display: none !important;
 }
 
-/* =========================
+
+/* =====================================================
    PAGE 1 - LILAC
-========================= */
+===================================================== */
 
 #page1 {
     background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.4), transparent 35%),
-        linear-gradient(135deg, #d9c2e9, #c9a9dc, #e5d2ef);
-    color: #4d3854;
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,0.55),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #d9c5e9,
+            #cbb0df,
+            #e7d5ef
+        );
+
+    color: #503b59;
 }
 
 .top-message {
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 20px;
-    letter-spacing: 1px;
-    color: #684a70;
+    letter-spacing: 0.5px;
 }
 
 .page1-title {
-    font-size: clamp(50px, 10vw, 90px);
-    margin-top: 25px;
-    color: #4d3458;
+    margin-top: 22px;
+    font-size: clamp(55px, 10vw, 90px);
     font-style: italic;
-    text-shadow: 2px 3px 10px rgba(255,255,255,0.5);
+    color: #4e3658;
+    text-shadow: 2px 4px 12px rgba(255,255,255,0.5);
 }
 
 .subtitle {
+    margin-top: 8px;
     font-size: 18px;
-    margin-top: 10px;
-    color: #6c5274;
+    color: #6d5575;
 }
 
 .countdown-box {
+    max-width: 720px;
     margin: 45px auto 25px;
-    max-width: 700px;
-    padding: 35px 20px;
+    padding: 32px 20px;
     border-radius: 30px;
-    background: rgba(255,255,255,0.38);
+
+    background: rgba(255,255,255,0.42);
     backdrop-filter: blur(10px);
-    box-shadow: 0 15px 40px rgba(82,49,92,0.18);
+
+    box-shadow:
+        0 15px 40px rgba(70,40,80,0.15);
 }
 
 .countdown-title {
@@ -135,21 +151,25 @@ button {
 }
 
 .time-box {
-    min-width: 95px;
-    padding: 17px 12px;
+    min-width: 90px;
+    padding: 16px 12px;
+
     border-radius: 18px;
-    background: rgba(255,255,255,0.65);
-    box-shadow: 0 6px 15px rgba(70,40,80,0.12);
+
+    background: rgba(255,255,255,0.68);
+
+    box-shadow:
+        0 6px 15px rgba(70,40,80,0.12);
 }
 
 .time-box span {
     display: block;
-    font-size: 35px;
+    font-size: 34px;
     font-weight: bold;
 }
 
 .time-box small {
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 1px;
 }
 
@@ -160,12 +180,18 @@ button {
 }
 
 .excited-box {
-    margin: 30px auto;
     max-width: 600px;
+    margin: 30px auto;
     padding: 25px;
+
     border-radius: 25px;
-    background: rgba(255,255,255,0.45);
-    box-shadow: 0 10px 25px rgba(70,40,80,0.12);
+
+    background: rgba(255,255,255,0.46);
+
+    box-shadow:
+        0 10px 25px rgba(70,40,80,0.12);
+
+    cursor: pointer;
 }
 
 .excited-box h2 {
@@ -173,21 +199,40 @@ button {
     margin-bottom: 8px;
 }
 
-/* =========================
-   PAGE 2 - BIRTHDAY
-========================= */
+
+/* =====================================================
+   PAGE 2 - CANDLE / CAKE
+===================================================== */
 
 #page2 {
-    background: #050505;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,165,60,0.08),
+            transparent 30%
+        ),
+        #020202;
+
     color: white;
-    transition: background 2.5s ease, color 2.5s ease;
+
+    transition:
+        background 2.5s ease,
+        color 2.5s ease;
 }
 
 #page2.lights-on {
+
     background:
-        radial-gradient(circle at 50% 35%, rgba(255,240,190,0.55), transparent 25%),
-        linear-gradient(135deg, #f4d9c8, #e9c0c5, #f7e4d4);
-    color: #4d3038;
+        radial-gradient(
+            circle at 50% 20%,
+            #fff4df 0%,
+            #f9e2d4 35%,
+            #eed0d1 70%,
+            #e7c7cf 100%
+        );
+
+    color: #65434d;
 }
 
 .birthday-content {
@@ -195,290 +240,774 @@ button {
     z-index: 2;
 }
 
-.before-light {
-    opacity: 0.9;
-}
 
-#page2.lights-on .before-light {
-    opacity: 1;
+/* SAME SIZE FOR HAPPY BIRTHDAY AND NAME */
+
+.birthday-heading,
+.birthday-name {
+
+    font-size: clamp(42px, 8vw, 72px);
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    line-height: 1.1;
+
+    transition:
+        color 2.5s ease,
+        text-shadow 2.5s ease;
 }
 
 .birthday-heading {
-    padding-top: 20px;
-    font-size: clamp(45px, 9vw, 85px);
-    letter-spacing: 5px;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(255,255,255,0.2);
-}
-
-#page2.lights-on .birthday-heading {
-    color: #7b4352;
-    text-shadow: none;
+    padding-top: 15px;
+    color: #ffffff;
+    text-shadow:
+        0 0 12px rgba(255,255,255,0.15);
 }
 
 .birthday-name {
-    font-size: 28px;
-    margin-top: 10px;
-    color: #ddd;
+    margin-top: 8px;
+    color: #ffffff;
 }
 
+#page2.lights-on .birthday-heading,
 #page2.lights-on .birthday-name {
-    color: #754451;
+
+    color: #754652;
+
+    text-shadow: none;
 }
 
-/* Cake area */
+
+/* =====================================================
+   CAKE AREA
+===================================================== */
 
 .cake-area {
+
     position: relative;
-    width: min(90vw, 650px);
-    height: 440px;
-    margin: 35px auto 10px;
+
+    width: 360px;
+    max-width: 90vw;
+
+    height: 410px;
+
+    margin: 25px auto 5px;
+
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
+    transition: 2s ease;
 }
 
-/* Candle glow */
+
+/* =====================================================
+   CANDLE GLOW
+===================================================== */
 
 .candle-glow {
+
     position: absolute;
-    width: 250px;
-    height: 250px;
-    top: 0;
+
+    width: 290px;
+    height: 290px;
+
     left: 50%;
+    top: 0;
+
     transform: translateX(-50%);
+
     border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        rgba(255,194,83,0.38) 0%,
-        rgba(255,165,60,0.18) 30%,
-        rgba(255,140,50,0.05) 55%,
-        transparent 75%
-    );
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,210,110,0.45) 0%,
+            rgba(255,180,60,0.25) 25%,
+            rgba(255,150,40,0.08) 50%,
+            transparent 72%
+        );
+
     filter: blur(12px);
-    transition: opacity 2s ease;
+
     z-index: 1;
+
+    transition: opacity 2s ease;
 }
 
-/* Realistic cake photograph */
 
-.real-cake {
-    width: min(90vw, 600px);
-    max-height: 390px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow:
-        0 15px 45px rgba(0,0,0,0.8),
-        0 0 25px rgba(255,170,60,0.12);
-    position: relative;
+/* =====================================================
+   CSS CAKE
+===================================================== */
+
+.cake {
+
+    position: absolute;
+
+    bottom: 45px;
+
+    width: 320px;
+    max-width: 85vw;
+
+    height: 235px;
+
     z-index: 2;
-    transition: filter 2.5s ease, box-shadow 2.5s ease;
 }
 
-/* Candle */
+
+/* Cake plate */
+
+.plate {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 350px;
+    max-width: 95vw;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f9f4f1,
+            #d8c5c0
+        );
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,0.45);
+}
+
+
+/* Bottom cake */
+
+.cake-bottom {
+
+    position: absolute;
+
+    bottom: 22px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 290px;
+    height: 105px;
+
+    border-radius:
+        18px 18px 28px 28px;
+
+    background:
+        linear-gradient(
+            to right,
+            #8f4f42,
+            #c6785e 20%,
+            #d99172 50%,
+            #b76350 80%,
+            #87463d
+        );
+
+    box-shadow:
+        inset 0 -15px 20px rgba(80,25,20,0.25),
+        0 8px 15px rgba(0,0,0,0.35);
+}
+
+
+/* Bottom cream layer */
+
+.bottom-cream {
+
+    position: absolute;
+
+    bottom: 105px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 300px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fffaf2,
+            #f0d9d0
+        );
+
+    z-index: 3;
+}
+
+
+/* Middle cake */
+
+.cake-middle {
+
+    position: absolute;
+
+    bottom: 108px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 250px;
+    height: 75px;
+
+    border-radius:
+        16px 16px 22px 22px;
+
+    background:
+        linear-gradient(
+            to right,
+            #f0b59c,
+            #ffd0b9 50%,
+            #eaa88e
+        );
+
+    box-shadow:
+        inset 0 -10px 15px rgba(120,60,45,0.15);
+}
+
+
+/* Middle cream */
+
+.middle-cream {
+
+    position: absolute;
+
+    bottom: 160px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 260px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fffdf8,
+            #f0ddd6
+        );
+
+    z-index: 4;
+}
+
+
+/* Top cake */
+
+.cake-top {
+
+    position: absolute;
+
+    bottom: 163px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 215px;
+    height: 60px;
+
+    border-radius:
+        20px 20px 12px 12px;
+
+    background:
+        linear-gradient(
+            to right,
+            #d98c72,
+            #f2b59d 50%,
+            #d9846e
+        );
+
+    box-shadow:
+        inset 0 -8px 12px rgba(110,50,40,0.15);
+}
+
+
+/* Frosting top */
+
+.frosting {
+
+    position: absolute;
+
+    bottom: 201px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 230px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fffaf5,
+            #f2d9d2
+        );
+
+    z-index: 5;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,0.15);
+}
+
+
+/* Frosting drips */
+
+.drip {
+
+    position: absolute;
+
+    width: 24px;
+    height: 35px;
+
+    border-radius:
+        0 0 15px 15px;
+
+    background: #f4ddd6;
+
+    bottom: 184px;
+
+    z-index: 6;
+}
+
+.drip1 {
+    left: 105px;
+}
+
+.drip2 {
+    left: 150px;
+    height: 43px;
+}
+
+.drip3 {
+    left: 195px;
+    height: 30px;
+}
+
+
+/* Cake decorations */
+
+.decoration {
+
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #b85f72;
+
+    z-index: 7;
+}
+
+.dec1 {
+    left: 125px;
+    bottom: 216px;
+}
+
+.dec2 {
+    left: 160px;
+    bottom: 226px;
+}
+
+.dec3 {
+    left: 190px;
+    bottom: 213px;
+}
+
+.dec4 {
+    left: 145px;
+    bottom: 197px;
+}
+
+
+/* =====================================================
+   CANDLE
+===================================================== */
 
 .candle {
+
     position: absolute;
-    z-index: 4;
+
     left: 50%;
-    top: 30px;
+    top: 5px;
+
     transform: translateX(-50%);
+
     width: 20px;
-    height: 100px;
+    height: 105px;
+
     border-radius: 5px;
-    background: linear-gradient(
-        90deg,
-        #f0d2b4,
-        #fff2df,
-        #dcb18f
-    );
-    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #fff4dc,
+            #fff4dc 8px,
+            #e9b9b7 8px,
+            #e9b9b7 13px
+        );
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.45);
+
+    z-index: 10;
 }
+
+
+/* Candle wick */
 
 .candle::after {
+
     content: "";
+
     position: absolute;
-    width: 2px;
-    height: 13px;
+
+    width: 3px;
+    height: 12px;
+
+    top: -9px;
+    left: 8px;
+
     background: #222;
-    top: -10px;
-    left: 9px;
+
+    border-radius: 2px;
 }
 
-/* Flame */
+
+/* =====================================================
+   FLAME
+===================================================== */
 
 .flame {
+
     position: absolute;
-    width: 28px;
-    height: 45px;
+
+    width: 30px;
+    height: 48px;
+
     top: -58px;
     left: 50%;
+
     transform: translateX(-50%);
-    border-radius: 50% 50% 45% 45%;
+
+    border-radius:
+        50% 50% 45% 45%;
+
     background:
         radial-gradient(
             ellipse at center bottom,
-            #fff8bd 0%,
-            #ffd45a 35%,
-            #ff8a22 65%,
-            transparent 70%
+            #fffbd0 0%,
+            #ffe26b 30%,
+            #ff9b2f 60%,
+            transparent 72%
         );
-    filter: drop-shadow(0 0 12px #ffad35);
-    animation: flicker 0.16s infinite alternate;
+
+    filter:
+        drop-shadow(0 0 10px #ffb43b)
+        drop-shadow(0 0 20px #ff9d32);
+
+    animation:
+        flameFlicker 0.15s infinite alternate;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
 }
 
 .flame::after {
+
     content: "";
+
     position: absolute;
-    width: 9px;
-    height: 20px;
-    background: #fff8d0;
-    border-radius: 50%;
+
+    width: 10px;
+    height: 22px;
+
     bottom: 5px;
     left: 50%;
-    transform: translateX(-50%);
-}
 
-@keyframes flicker {
-    from {
-        transform: translateX(-50%) scale(1) rotate(-2deg);
-    }
-    to {
-        transform: translateX(-50%) scale(1.08) rotate(2deg);
-    }
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #fffde2;
 }
 
 .flame.off {
+
     opacity: 0;
-    transform: translateX(-50%) scale(0);
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
     animation: none;
 }
 
+@keyframes flameFlicker {
+
+    from {
+        transform:
+            translateX(-50%)
+            scale(1)
+            rotate(-2deg);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            scale(1.08)
+            rotate(2deg);
+    }
+}
+
+
+/* =====================================================
+   BLOW BUTTON
+===================================================== */
+
 .blow-text {
-    font-size: 21px;
-    margin-top: 15px;
-    color: #ddd;
+
+    margin-top: 5px;
+
+    font-size: 20px;
+
+    color: #e8e0df;
+
+    transition:
+        color 2s ease;
 }
 
 #page2.lights-on .blow-text {
-    color: #754451;
+    color: #754652;
 }
 
 .blow-btn {
-    margin-top: 25px;
-    padding: 16px 32px;
+
+    margin-top: 22px;
+
+    padding: 15px 32px;
+
     border-radius: 50px;
-    background: #fff;
-    color: #4a2d34;
+
     font-size: 17px;
-    box-shadow: 0 8px 30px rgba(255,255,255,0.12);
+
+    color: #55343d;
+
+    background: #fff;
+
+    box-shadow:
+        0 8px 30px rgba(255,255,255,0.12);
+
+    transition: 0.3s ease;
 }
 
 .blow-btn:hover {
     transform: scale(1.04);
 }
 
+.blow-btn:disabled {
+    opacity: 0.7;
+}
+
+
+/* Wish message */
+
 .wish-message {
-    margin: 25px auto 0;
+
     max-width: 600px;
+
+    margin: 25px auto 0;
+
     padding: 22px;
+
     border-radius: 20px;
-    background: rgba(255,255,255,0.5);
-    color: #643b45;
+
+    background: rgba(255,255,255,0.65);
+
+    color: #69404a;
+
     font-size: 19px;
+
     animation: fadeUp 1s ease;
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-/* =========================
-   PAGE 3
-========================= */
+/* =====================================================
+   PAGE 3 - SOFT ROSE
+===================================================== */
 
 #page3 {
+
     background:
-        radial-gradient(circle at top right, rgba(173,112,140,0.25), transparent 35%),
-        linear-gradient(135deg, #24151d, #35202d, #1d141a);
+        radial-gradient(
+            circle at top right,
+            rgba(255,255,255,0.6),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #f4dfe0,
+            #efd1d6,
+            #e7c8d1
+        );
+
+    color: #613f49;
 }
 
 .note-card {
-    max-width: 720px;
-    margin: 70px auto 0;
-    padding: 45px 30px;
+
+    max-width: 730px;
+
+    margin: 55px auto 0;
+
+    padding: 45px 32px;
+
     border-radius: 30px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+    background:
+        rgba(255,255,255,0.65);
+
+    box-shadow:
+        0 20px 50px rgba(110,65,80,0.15);
+
+    border:
+        1px solid rgba(255,255,255,0.6);
 }
 
 .note-card h1 {
-    font-size: clamp(35px, 7vw, 60px);
+
+    font-size:
+        clamp(38px, 7vw, 60px);
+
+    color: #714550;
+
     margin-bottom: 30px;
 }
 
 .note-card p {
+
     font-size: 19px;
+
     line-height: 1.9;
-    color: #f3dfe8;
+
+    color: #694750;
+
     margin-bottom: 20px;
 }
 
 .signature {
+
     margin-top: 30px;
-    font-size: 23px;
+
+    font-size: 24px;
+
     font-style: italic;
+
+    color: #704451;
 }
 
-/* =========================
-   PAGE 4
-========================= */
+#page3 .next-btn {
+
+    color: #714550;
+
+    background:
+        rgba(255,255,255,0.9);
+}
+
+
+/* =====================================================
+   PAGE 4 - LAVENDER / ROSE
+===================================================== */
 
 #page4 {
+
     background:
-        linear-gradient(135deg, #ead9e9, #d9c3dd, #f2dce3);
-    color: #523b55;
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,0.65),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #e8dced,
+            #decce5,
+            #f1d9df
+        );
+
+    color: #5d4664;
 }
 
 .page4-title {
-    font-size: clamp(38px, 7vw, 65px);
-    margin-top: 25px;
+
+    margin-top: 20px;
+
+    font-size:
+        clamp(38px, 7vw, 62px);
+
+    color: #62476a;
 }
 
 .page4-subtitle {
+
     margin-top: 12px;
+
     font-size: 18px;
+
+    color: #745a78;
 }
 
+
+/* Flip cards */
+
 .flip-container {
+
     display: flex;
+
     justify-content: center;
-    gap: 20px;
+
     flex-wrap: wrap;
+
+    gap: 22px;
+
     margin-top: 45px;
 }
 
 .flip-card {
-    width: 240px;
-    height: 260px;
+
+    width: 235px;
+    height: 255px;
+
     perspective: 1000px;
+
     cursor: pointer;
 }
 
 .flip-inner {
+
     width: 100%;
     height: 100%;
+
     position: relative;
-    transition: transform 0.7s;
+
+    transition:
+        transform 0.7s;
+
     transform-style: preserve-3d;
 }
 
@@ -488,104 +1017,195 @@ button {
 
 .flip-front,
 .flip-back {
+
     position: absolute;
+
     width: 100%;
     height: 100%;
+
     backface-visibility: hidden;
+
     border-radius: 25px;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    box-shadow: 0 12px 30px rgba(80,50,90,0.15);
+
+    padding: 22px;
+
+    box-shadow:
+        0 12px 30px rgba(80,50,90,0.14);
 }
 
 .flip-front {
-    background: rgba(255,255,255,0.65);
+
+    background:
+        rgba(255,255,255,0.68);
+
+    color: #634967;
+
     font-size: 23px;
 }
 
 .flip-back {
-    background: rgba(255,245,250,0.9);
+
+    background:
+        rgba(255,248,250,0.9);
+
+    color: #684651;
+
     transform: rotateY(180deg);
-    font-size: 21px;
+
+    font-size: 19px;
+
     line-height: 1.6;
 }
 
+
+/* Secret box */
+
 .secret-box {
+
     max-width: 700px;
+
     margin: 45px auto 0;
+
     padding: 35px 25px;
+
     border-radius: 28px;
-    background: rgba(255,255,255,0.7);
-    box-shadow: 0 15px 40px rgba(70,40,80,0.15);
-    animation: fadeUp 1s ease;
+
+    background:
+        rgba(255,255,255,0.72);
+
+    box-shadow:
+        0 15px 40px rgba(70,40,80,0.15);
+
+    animation:
+        fadeUp 1s ease;
 }
 
 .secret-box h2 {
+
     font-size: 30px;
+
+    color: #704653;
+
     margin-bottom: 15px;
 }
 
 .secret-box p {
+
     font-size: 18px;
+
     line-height: 1.8;
+
+    color: #694650;
 }
 
-/* =========================
+
+/* =====================================================
    PAGE 5
-========================= */
+===================================================== */
 
 #page5 {
+
     background:
-        radial-gradient(circle at center, #54263e, #21131d 65%);
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,0.65),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e8cbd4,
+            #ddc1ce,
+            #d7c2df
+        );
+
+    color: #593e52;
 }
 
 .final-card {
+
     max-width: 760px;
-    margin: 80px auto 0;
-    padding: 45px 28px;
+
+    margin: 65px auto 0;
+
+    padding: 45px 30px;
+
     border-radius: 30px;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+
+    background:
+        rgba(255,255,255,0.58);
+
+    border:
+        1px solid rgba(255,255,255,0.7);
+
+    box-shadow:
+        0 20px 60px rgba(90,55,80,0.15);
 }
 
 .final-card h1 {
-    font-size: clamp(40px, 8vw, 70px);
+
+    font-size:
+        clamp(40px, 8vw, 68px);
+
+    color: #684457;
+
     margin-bottom: 30px;
 }
 
 .final-card p {
+
     font-size: 20px;
+
     line-height: 1.9;
-    color: #f4dfe8;
+
+    color: #634652;
+
     margin-bottom: 18px;
 }
 
 .final-signature {
+
     margin-top: 35px;
+
     font-size: 28px;
+
     font-style: italic;
+
+    color: #704653;
 }
 
-/* =========================
+
+/* =====================================================
    FLOATING HEARTS
-========================= */
+===================================================== */
 
 .heart {
+
     position: fixed;
+
     bottom: -30px;
-    font-size: 18px;
+
     pointer-events: none;
-    animation: floatHeart 5s linear forwards;
+
+    z-index: 100;
+
     opacity: 0.7;
-    z-index: 50;
+
+    animation:
+        floatHeart 5s linear forwards;
 }
 
 @keyframes floatHeart {
+
     0% {
-        transform: translateY(0) scale(0.8);
+        transform:
+            translateY(0)
+            scale(0.8);
+
         opacity: 0;
     }
 
@@ -594,23 +1214,56 @@ button {
     }
 
     100% {
-        transform: translateY(-110vh) scale(1.3) rotate(20deg);
+
+        transform:
+            translateY(-110vh)
+            scale(1.3)
+            rotate(20deg);
+
         opacity: 0;
     }
 }
 
-/* =========================
+
+/* =====================================================
+   FADE ANIMATION
+===================================================== */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 600px) {
 
     .page {
-        padding: 25px 15px 60px;
+        padding:
+            25px
+            14px
+            60px;
     }
 
     .time-box {
-        min-width: 70px;
+        min-width: 72px;
     }
 
     .time-box span {
@@ -618,149 +1271,230 @@ button {
     }
 
     .cake-area {
-        height: 330px;
+        height: 350px;
     }
 
-    .real-cake {
-        max-height: 300px;
+    .cake {
+        transform: scale(0.85);
+        transform-origin: bottom center;
     }
 
     .candle {
-        top: 20px;
-        height: 75px;
+        top: 15px;
     }
 
-    .flip-card {
-        width: 90%;
-        max-width: 300px;
+    .birthday-heading,
+    .birthday-name {
+        font-size: 43px;
     }
 
     .note-card,
     .final-card {
         padding: 35px 20px;
-        margin-top: 45px;
+        margin-top: 40px;
     }
 
     .note-card p,
     .final-card p {
         font-size: 17px;
     }
+
+    .flip-card {
+        width: 90%;
+        max-width: 300px;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      PAGE 1
 ===================================================== -->
 
-<section class="page active" id="page1">
+<section
+    class="page active"
+    id="page1"
+>
 
-    <div class="content">
+<div class="content">
 
-        <div class="top-message">
-            Today is about one very special person ✨
+    <div class="top-message">
+        Today is about one very special person ✨
+    </div>
+
+    <h1 class="page1-title">
+        Niniitata
+    </h1>
+
+    <p class="subtitle">
+        And this little surprise is just for you ❤️
+    </p>
+
+
+    <div class="countdown-box">
+
+        <div class="countdown-title">
+            Something beautiful is coming... 💕
         </div>
 
-        <h1 class="page1-title">
-            Niniitata
-        </h1>
+        <div class="countdown">
 
-        <p class="subtitle">
-            And this little surprise is just for you ❤️
-        </p>
-
-        <div class="countdown-box">
-
-            <div class="countdown-title">
-                Something beautiful is coming... 💕
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>DAYS</small>
             </div>
 
-            <div class="countdown">
-
-                <div class="time-box">
-                    <span id="days">00</span>
-                    <small>DAYS</small>
-                </div>
-
-                <div class="time-box">
-                    <span id="hours">00</span>
-                    <small>HOURS</small>
-                </div>
-
-                <div class="time-box">
-                    <span id="minutes">00</span>
-                    <small>MINUTES</small>
-                </div>
-
-                <div class="time-box">
-                    <span id="seconds">00</span>
-                    <small>SECONDS</small>
-                </div>
-
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>HOURS</small>
             </div>
 
-            <div class="current-time">
-                Current time:
-                <span id="currentTime">Loading...</span>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>SECONDS</small>
             </div>
 
         </div>
 
-        <div class="excited-box">
-
-            <h2>
-                Are you excited? 👀
-            </h2>
-
-            <p>
-                Because there's something waiting for you...
-            </p>
-
+        <div class="current-time">
+            Current time:
+            <span id="currentTime">
+                Loading...
+            </span>
         </div>
-
-        <button
-            id="page1Next"
-            class="next-btn locked"
-            onclick="nextPage(2)"
-        >
-            Continue to your surprise 💕
-        </button>
 
     </div>
 
+
+    <div
+        class="excited-box"
+        onclick="completePage1()"
+    >
+
+        <h2>
+            Are you excited? 👀
+        </h2>
+
+        <p>
+            Because there's something waiting for you...
+        </p>
+
+    </div>
+
+
+    <button
+        id="page1Next"
+        class="next-btn locked"
+        onclick="nextPage(2)"
+    >
+        Continue to your surprise 💕
+    </button>
+
+</div>
+
 </section>
+
 
 
 <!-- =====================================================
      PAGE 2
 ===================================================== -->
 
-<section class="page" id="page2">
+<section
+    class="page"
+    id="page2"
+>
 
-    <div class="content birthday-content">
+<div class="content birthday-content">
 
-        <h1 class="birthday-heading">
-            HAPPY BIRTHDAY
-        </h1>
 
-        <div class="birthday-name">
-            Niniitata 🎂
-        </div>
+    <h1 class="birthday-heading">
+        HAPPY BIRTHDAY
+    </h1>
 
-        <div class="cake-area">
+    <div class="birthday-name">
+        Niniitata
+    </div>
 
-            <div class="candle-glow" id="candleGlow"></div>
 
-            <!-- Realistic cake photograph -->
-            <img
-                class="real-cake"
-                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=90"
-                alt="Birthday cake"
-            >
+    <div class="cake-area">
+
+
+        <!-- Candle glow -->
+
+        <div
+            class="candle-glow"
+            id="candleGlow"
+        ></div>
+
+
+        <!-- CSS CAKE -->
+
+        <div class="cake">
+
+
+            <!-- Plate -->
+
+            <div class="plate"></div>
+
+
+            <!-- Bottom cake -->
+
+            <div class="cake-bottom"></div>
+
+
+            <!-- Bottom cream -->
+
+            <div class="bottom-cream"></div>
+
+
+            <!-- Middle cake -->
+
+            <div class="cake-middle"></div>
+
+
+            <!-- Middle cream -->
+
+            <div class="middle-cream"></div>
+
+
+            <!-- Top cake -->
+
+            <div class="cake-top"></div>
+
+
+            <!-- Frosting -->
+
+            <div class="frosting"></div>
+
+
+            <!-- Frosting drips -->
+
+            <div class="drip drip1"></div>
+            <div class="drip drip2"></div>
+            <div class="drip drip3"></div>
+
+
+            <!-- Decorations -->
+
+            <div class="decoration dec1"></div>
+            <div class="decoration dec2"></div>
+            <div class="decoration dec3"></div>
+            <div class="decoration dec4"></div>
+
 
             <!-- Candle -->
+
             <div class="candle">
 
                 <div
@@ -770,319 +1504,392 @@ button {
 
             </div>
 
+
         </div>
-
-        <div class="blow-text">
-            🕯️ Blow the candle & make a wish ✨
-        </div>
-
-        <button
-            id="blowButton"
-            class="blow-btn"
-            onclick="blowCandle()"
-        >
-            Blow the candle 💨
-        </button>
-
-        <div
-            id="wishMessage"
-            class="wish-message hidden"
-        >
-            The candle is out... ✨<br>
-            The lights are on... 💡<br><br>
-            Now make your wish, birthday girl. ❤️
-        </div>
-
-        <button
-            id="page2Next"
-            class="next-btn locked"
-            onclick="nextPage(3)"
-        >
-            Continue ❤️
-        </button>
 
     </div>
 
+
+    <div class="blow-text">
+        🕯️ Blow the candle & make a wish ✨
+    </div>
+
+
+    <button
+        id="blowButton"
+        class="blow-btn"
+        onclick="blowCandle()"
+    >
+        Blow the candle 💨
+    </button>
+
+
+    <div
+        id="wishMessage"
+        class="wish-message hidden"
+    >
+
+        The candle is out... ✨
+        <br>
+
+        The lights are on... 💡
+
+        <br><br>
+
+        Now make your wish, birthday girl. ❤️
+
+    </div>
+
+
+    <button
+        id="page2Next"
+        class="next-btn locked"
+        onclick="nextPage(3)"
+    >
+        Continue ❤️
+    </button>
+
+
+</div>
+
 </section>
+
 
 
 <!-- =====================================================
      PAGE 3
 ===================================================== -->
 
-<section class="page" id="page3">
+<section
+    class="page"
+    id="page3"
+>
 
-    <div class="content">
+<div class="content">
 
-        <div class="note-card">
 
-            <h1>
-                A little note for you 💌
-            </h1>
+    <div class="note-card">
 
-            <p>
-                This time, I'm sending you this digital cake instead. 🎂
-            </p>
+        <h1>
+            A little note for you 💌
+        </h1>
 
-            <p>
-                I know it's not the same as actually being there,
-                sitting beside you, watching you smile,
-                cutting the cake together and making a wish.
-            </p>
 
-            <p>
-                But I really hope that next year,
-                we won't need a digital cake anymore.
-            </p>
+        <p>
+            This time, I'm sending you this digital cake instead. 🎂
+        </p>
 
-            <p>
-                Maybe next year we'll celebrate together,
-                cut a real cake, make a real wish,
-                laugh about silly things and create a memory
-                that we'll remember for a very long time. ❤️
-            </p>
 
-            <p>
-                Until then, consider this little cake
-                a tiny piece of my wish reaching you from here.
-            </p>
+        <p>
+            I know it's not the same as actually being there,
+            sitting beside you, watching you smile,
+            cutting the cake together and making a wish.
+        </p>
 
-            <p>
-                Happy Birthday once again, Niniitata. ❤️
-            </p>
 
-            <div class="signature">
-                — Ak
-            </div>
+        <p>
+            But I really hope that next year,
+            we won't need a digital cake anymore.
+        </p>
 
+
+        <p>
+            Maybe next year we'll celebrate together,
+            cut a real cake, make a real wish,
+            laugh about silly things and create a memory
+            that we'll remember for a very long time. ❤️
+        </p>
+
+
+        <p>
+            Until then, consider this little cake
+            a tiny piece of my wish reaching you from here.
+        </p>
+
+
+        <p>
+            Happy Birthday once again, Niniitata. ❤️
+        </p>
+
+
+        <div class="signature">
+            — Ak
         </div>
-
-        <button
-            class="next-btn"
-            onclick="nextPage(4)"
-        >
-            There's something else... 👀
-        </button>
 
     </div>
 
+
+    <!-- IMPORTANT:
+         This button now directly completes Page 3
+         BEFORE moving to Page 4.
+    -->
+
+    <button
+        class="next-btn"
+        onclick="completePage3AndContinue()"
+    >
+        There's something else... 👀
+    </button>
+
+
+</div>
+
 </section>
+
 
 
 <!-- =====================================================
      PAGE 4
 ===================================================== -->
 
-<section class="page" id="page4">
+<section
+    class="page"
+    id="page4"
+>
 
-    <div class="content">
-
-        <h1 class="page4-title">
-            Three little things ❤️
-        </h1>
-
-        <p class="page4-subtitle">
-            Open them one by one...
-        </p>
-
-        <div class="flip-container">
-
-            <!-- CARD 1 -->
-
-            <div
-                class="flip-card"
-                id="card1"
-                onclick="flipCard(this, 1)"
-            >
-
-                <div class="flip-inner">
-
-                    <div class="flip-front">
-                        Open me 💌
-                    </div>
-
-                    <div class="flip-back">
-                        Your smile ❤️
-                        <br>
-                        It has a way of making everything feel a little better.
-                    </div>
-
-                </div>
-
-            </div>
+<div class="content">
 
 
-            <!-- CARD 2 -->
-
-            <div
-                class="flip-card"
-                id="card2"
-                onclick="flipCard(this, 2)"
-            >
-
-                <div class="flip-inner">
-
-                    <div class="flip-front">
-                        Open me ✨
-                    </div>
-
-                    <div class="flip-back">
-                        Your existence ✨
-                        <br>
-                        I'm genuinely glad that you exist in this world.
-                    </div>
-
-                </div>
-
-            </div>
+    <h1 class="page4-title">
+        Three little things ❤️
+    </h1>
 
 
-            <!-- CARD 3 -->
-
-            <div
-                class="flip-card"
-                id="card3"
-                onclick="flipCard(this, 3)"
-            >
-
-                <div class="flip-inner">
-
-                    <div class="flip-front">
-                        Open me ❤️
-                    </div>
-
-                    <div class="flip-back">
-                        Your place ❤️
-                        <br>
-                        Somehow, you've created a place in my heart that is yours.
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+    <p class="page4-subtitle">
+        Open them one by one...
+    </p>
 
 
-        <!-- SECRET BOX -->
+    <div class="flip-container">
+
+
+        <!-- CARD 1 -->
 
         <div
-            id="secretBox"
-            class="secret-box hidden"
+            class="flip-card"
+            onclick="flipCard(this, 1)"
         >
 
-            <h2>
-                One last little thing... 🥰
-            </h2>
+            <div class="flip-inner">
 
-            <p>
-                Some things are difficult to explain with words.
-                Some feelings don't fit inside a message.
-                So maybe I'll just leave this one simple...
-                <br><br>
-                Will you be mine? ❤️
-            </p>
+                <div class="flip-front">
+                    Open me 💌
+                </div>
 
-            <button
-                class="next-btn"
-                onclick="nextPage(5)"
-            >
-                One final message 💌
-            </button>
+                <div class="flip-back">
+
+                    Your smile ❤️
+
+                    <br>
+
+                    It has a way of making
+                    everything feel a little better.
+
+                </div>
+
+            </div>
 
         </div>
+
+
+        <!-- CARD 2 -->
+
+        <div
+            class="flip-card"
+            onclick="flipCard(this, 2)"
+        >
+
+            <div class="flip-inner">
+
+                <div class="flip-front">
+                    Open me ✨
+                </div>
+
+                <div class="flip-back">
+
+                    Your existence ✨
+
+                    <br>
+
+                    I'm genuinely glad
+                    that you exist in this world.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div
+            class="flip-card"
+            onclick="flipCard(this, 3)"
+        >
+
+            <div class="flip-inner">
+
+                <div class="flip-front">
+                    Open me ❤️
+                </div>
+
+                <div class="flip-back">
+
+                    Your place ❤️
+
+                    <br>
+
+                    Somehow, you've created
+                    a place in my heart that is yours.
+
+                </div>
+
+            </div>
+
+        </div>
+
 
     </div>
 
+
+    <!-- SECRET BOX -->
+
+    <div
+        id="secretBox"
+        class="secret-box hidden"
+    >
+
+        <h2>
+            One last little thing... 🥰
+        </h2>
+
+
+        <p>
+
+            Some things are difficult to explain with words.
+
+            Some feelings don't fit inside a message.
+
+            So maybe I'll just leave this one simple...
+
+            <br><br>
+
+            Will you be mine? ❤️
+
+        </p>
+
+
+        <button
+            class="next-btn"
+            onclick="nextPage(5)"
+        >
+            One final message 💌
+        </button>
+
+    </div>
+
+
+</div>
+
 </section>
+
 
 
 <!-- =====================================================
      PAGE 5
 ===================================================== -->
 
-<section class="page" id="page5">
+<section
+    class="page"
+    id="page5"
+>
 
-    <div class="content">
+<div class="content">
 
-        <div class="final-card">
 
-            <h1>
-                Happy Birthday Niniitata 🥰
-            </h1>
+    <div class="final-card">
 
-            <p>
-                You are special and you will always have a place
-                in my heart.
-            </p>
 
-            <p>
-                I just miss you each and every time.
-                Somehow, you are always in my mind
-                and always in my heart.
-            </p>
+        <h1>
+            Happy Birthday Niniitata 🥰
+        </h1>
 
-            <p>
-                I'm not sure what destiny has planned,
-                or what the future will look like.
-            </p>
 
-            <p>
-                But one thing I know...
-            </p>
+        <p>
+            You are special and you will always have
+            a place in my heart.
+        </p>
 
-            <p>
-                I want to enjoy each and every second
-                while it lasts.
-            </p>
 
-            <p>
-                Every little moment.
-                Every smile.
-                Every memory.
-            </p>
+        <p>
+            I just miss you each and every time.
+            Somehow, you are always in my mind
+            and always in my heart.
+        </p>
 
-            <p>
-                Because some people come into your life
-                and simply become unforgettable.
-            </p>
 
-            <p>
-                And you are one of those people. ❤️
-            </p>
+        <p>
+            I'm not sure what destiny has planned,
+            or what the future will look like.
+        </p>
 
-            <div class="final-signature">
-                — Ak ❤️
-            </div>
 
+        <p>
+            But one thing I know...
+        </p>
+
+
+        <p>
+            I want to enjoy each and every second
+            while it lasts.
+        </p>
+
+
+        <p>
+            Every little moment.
+            Every smile.
+            Every memory.
+        </p>
+
+
+        <p>
+            Because some people come into your life
+            and simply become unforgettable.
+        </p>
+
+
+        <p>
+            And you are one of those people. ❤️
+        </p>
+
+
+        <div class="final-signature">
+            — Ak ❤️
         </div>
 
+
     </div>
+
+</div>
 
 </section>
 
 
+
 <script>
 
+
 /* =====================================================
-   PAGE CONTROL
+   PAGE STATUS
 ===================================================== */
 
-let currentPage = 1;
-
-
-/*
-   Completion status
-
-   Page 1 = completed when Continue is clicked
-   Page 2 = completed when candle is blown
-   Page 3 = automatically completed when Continue clicked
-   Page 4 = completed when all 3 cards are opened
-*/
-
 let page1Completed = false;
+
 let page2Completed = false;
+
 let page3Completed = false;
+
 let page4Completed = false;
 
 
@@ -1090,187 +1897,207 @@ let page4Completed = false;
    COUNTDOWN
 ===================================================== */
 
-/*
-   Target:
-   21 September 2026
-   1:00 AM
-   India Standard Time (+05:30)
-*/
-
-const targetDate = new Date(
-    "2026-09-21T01:00:00+05:30"
-);
+const targetDate =
+    new Date(
+        "2026-09-21T01:00:00+05:30"
+    );
 
 
 function updateCountdown() {
 
     const now = new Date();
 
-    const difference = targetDate - now;
+    const difference =
+        targetDate - now;
+
 
     if (difference <= 0) {
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        document.getElementById("days")
+            .textContent = "00";
+
+        document.getElementById("hours")
+            .textContent = "00";
+
+        document.getElementById("minutes")
+            .textContent = "00";
+
+        document.getElementById("seconds")
+            .textContent = "00";
 
     } else {
 
-        const days = Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        );
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
 
-        const hours = Math.floor(
-            (difference / (1000 * 60 * 60)) % 24
-        );
+        const hours =
+            Math.floor(
+                (difference /
+                (1000 * 60 * 60)) % 24
+            );
 
-        const minutes = Math.floor(
-            (difference / (1000 * 60)) % 60
-        );
+        const minutes =
+            Math.floor(
+                (difference /
+                (1000 * 60)) % 60
+            );
 
-        const seconds = Math.floor(
-            (difference / 1000) % 60
-        );
+        const seconds =
+            Math.floor(
+                (difference / 1000) % 60
+            );
 
-        document.getElementById("days").textContent =
+
+        document.getElementById("days")
+            .textContent =
             String(days).padStart(2, "0");
 
-        document.getElementById("hours").textContent =
+
+        document.getElementById("hours")
+            .textContent =
             String(hours).padStart(2, "0");
 
-        document.getElementById("minutes").textContent =
+
+        document.getElementById("minutes")
+            .textContent =
             String(minutes).padStart(2, "0");
 
-        document.getElementById("seconds").textContent =
+
+        document.getElementById("seconds")
+            .textContent =
             String(seconds).padStart(2, "0");
+
     }
 
 
-    /* Current live time */
+    /* Live Indian time */
 
-    document.getElementById("currentTime").textContent =
-        now.toLocaleString("en-IN", {
-            timeZone: "Asia/Kolkata",
-            day: "2-digit",
-            month: "short",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: true
-        });
+    document.getElementById("currentTime")
+        .textContent =
+        now.toLocaleString(
+            "en-IN",
+            {
+                timeZone: "Asia/Kolkata",
+
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+
+                hour12: true
+            }
+        );
 }
 
 
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
+setInterval(
+    updateCountdown,
+    1000
+);
 
 
 /* =====================================================
-   PAGE 1 COMPLETION
+   PAGE 1
 ===================================================== */
 
 function completePage1() {
 
+    if (page1Completed) {
+        return;
+    }
+
     page1Completed = true;
 
-    const button = document.getElementById("page1Next");
-
-    button.classList.remove("locked");
-
+    document
+        .getElementById("page1Next")
+        .classList.remove("locked");
 }
 
 
-/* Allow Page 2 only after Page 1 is completed */
-
-document.getElementById("page1Next").addEventListener(
-    "click",
-    function() {
-
-        if (!page1Completed) {
-            return;
-        }
-
-    }
-);
-
-
-/*
-   We consider the user ready after interacting
-   with the Continue button.
-*/
-
-document.querySelector("#page1 .excited-box").addEventListener(
-    "click",
-    function() {
-
-        completePage1();
-
-    }
-);
-
-
 /* =====================================================
-   PAGE NAVIGATION
+   NAVIGATION
 ===================================================== */
 
 function nextPage(pageNumber) {
 
-    /* PAGE 2 */
 
-    if (pageNumber === 2 && !page1Completed) {
+    /* Page 1 → Page 2 */
+
+    if (
+        pageNumber === 2 &&
+        !page1Completed
+    ) {
         return;
     }
 
 
-    /* PAGE 3 */
+    /* Page 2 → Page 3 */
 
-    if (pageNumber === 3 && !page2Completed) {
+    if (
+        pageNumber === 3 &&
+        !page2Completed
+    ) {
         return;
     }
 
 
-    /* PAGE 4 */
+    /* Page 3 → Page 4 */
 
-    if (pageNumber === 4 && !page3Completed) {
+    if (
+        pageNumber === 4 &&
+        !page3Completed
+    ) {
         return;
     }
 
 
-    /* PAGE 5 */
+    /* Page 4 → Page 5 */
 
-    if (pageNumber === 5 && !page4Completed) {
+    if (
+        pageNumber === 5 &&
+        !page4Completed
+    ) {
         return;
     }
 
+
+    /* Hide all pages */
 
     document
         .querySelectorAll(".page")
-        .forEach(page => {
-            page.classList.remove("active");
-        });
+        .forEach(
+            page => {
+                page.classList.remove("active");
+            }
+        );
 
+
+    /* Show requested page */
 
     const destination =
-        document.getElementById("page" + pageNumber);
+        document.getElementById(
+            "page" + pageNumber
+        );
+
 
     destination.classList.add("active");
 
-    currentPage = pageNumber;
+
+    /* Always start new page at top */
 
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
 
-
-    /* Mark page 3 as completed */
-
-    if (pageNumber === 4) {
-        page3Completed = true;
-    }
 }
 
 
@@ -1280,41 +2107,68 @@ function nextPage(pageNumber) {
 
 function blowCandle() {
 
+
     if (page2Completed) {
         return;
     }
 
 
     const flame =
-        document.getElementById("flame");
+        document.getElementById(
+            "flame"
+        );
+
 
     const glow =
-        document.getElementById("candleGlow");
+        document.getElementById(
+            "candleGlow"
+        );
+
 
     const page2 =
-        document.getElementById("page2");
+        document.getElementById(
+            "page2"
+        );
+
 
     const button =
-        document.getElementById("blowButton");
+        document.getElementById(
+            "blowButton"
+        );
+
 
     const message =
-        document.getElementById("wishMessage");
+        document.getElementById(
+            "wishMessage"
+        );
 
 
-    /* Turn flame off */
+    /* Flame goes out */
 
     flame.classList.add("off");
+
+
+    /* Candle glow disappears */
 
     glow.style.opacity = "0";
 
 
-    /* Slowly turn the lights on */
+    /* Give the flame a moment to disappear */
 
-    setTimeout(function() {
+    setTimeout(
+        function() {
 
-        page2.classList.add("lights-on");
+            /*
+                Lights gradually turn on
+            */
 
-    }, 700);
+            page2.classList.add(
+                "lights-on"
+            );
+
+        },
+        700
+    );
 
 
     /* Change button */
@@ -1324,78 +2178,140 @@ function blowCandle() {
 
     button.disabled = true;
 
-    button.style.cursor = "default";
+
+    /* Show wish */
+
+    setTimeout(
+        function() {
+
+            message.classList.remove(
+                "hidden"
+            );
+
+        },
+        1400
+    );
 
 
-    /* Show message */
+    /*
+        Unlock Page 3
+        after the lights have come on.
+    */
 
-    setTimeout(function() {
+    setTimeout(
+        function() {
 
-        message.classList.remove("hidden");
-
-    }, 1500);
+            page2Completed = true;
 
 
-    /* Unlock Page 3 */
+            document
+                .getElementById("page2Next")
+                .classList.remove(
+                    "locked"
+                );
 
-    setTimeout(function() {
+        },
+        2200
+    );
 
-        page2Completed = true;
-
-        const nextButton =
-            document.getElementById("page2Next");
-
-        nextButton.classList.remove("locked");
-
-    }, 2200);
 }
 
 
 /* =====================================================
-   PAGE 4 - FLIP CARDS
+   PAGE 3 FIX
 ===================================================== */
 
-const openedCards = new Set();
+function completePage3AndContinue() {
+
+    /*
+        THIS was the problem in the
+        previous version.
+
+        Page 3 is now marked complete
+        BEFORE nextPage(4) is called.
+    */
+
+    page3Completed = true;
+
+    nextPage(4);
+}
+
+
+/* =====================================================
+   PAGE 4 FLIP CARDS
+===================================================== */
+
+const openedCards =
+    new Set();
 
 
 function flipCard(card, number) {
 
-    if (openedCards.has(number)) {
+
+    /* Don't close an already opened card */
+
+    if (
+        openedCards.has(number)
+    ) {
         return;
     }
 
 
+    /* Flip */
+
     card.classList.add("open");
+
+
+    /* Remember */
 
     openedCards.add(number);
 
 
-    /* All three cards opened */
+    /*
+        When all 3 are open,
+        reveal the secret box.
+    */
 
-    if (openedCards.size === 3) {
+    if (
+        openedCards.size === 3
+    ) {
 
         page4Completed = true;
 
 
-        setTimeout(function() {
+        setTimeout(
+            function() {
 
-            const secret =
-                document.getElementById("secretBox");
+                const secretBox =
+                    document.getElementById(
+                        "secretBox"
+                    );
 
-            secret.classList.remove("hidden");
+
+                secretBox.classList.remove(
+                    "hidden"
+                );
 
 
-            setTimeout(function() {
+                setTimeout(
+                    function() {
 
-                secret.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
+                        secretBox.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
 
-            }, 150);
+                    },
+                    150
+                );
 
-        }, 500);
+
+            },
+            500
+        );
+
     }
+
 }
 
 
@@ -1406,53 +2322,64 @@ function flipCard(card, number) {
 function createHeart() {
 
     const heart =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    heart.className = "heart";
+
+    heart.className =
+        "heart";
+
 
     heart.textContent =
-        Math.random() > 0.5 ? "❤️" : "💕";
+        Math.random() > 0.5
+            ? "❤️"
+            : "💕";
 
 
     heart.style.left =
-        Math.random() * 100 + "vw";
+        Math.random() * 100 +
+        "vw";
 
 
     heart.style.fontSize =
-        (14 + Math.random() * 14) + "px";
+        (
+            14 +
+            Math.random() * 14
+        ) +
+        "px";
 
 
     heart.style.animationDuration =
-        (4 + Math.random() * 3) + "s";
+        (
+            4 +
+            Math.random() * 3
+        ) +
+        "s";
 
 
-    document.body.appendChild(heart);
+    document.body.appendChild(
+        heart
+    );
 
 
-    setTimeout(function() {
+    setTimeout(
+        function() {
 
-        heart.remove();
+            heart.remove();
 
-    }, 7000);
+        },
+        7000
+    );
+
 }
 
 
-setInterval(createHeart, 900);
+setInterval(
+    createHeart,
+    900
+);
 
-
-/* =====================================================
-   INITIAL PAGE SETUP
-===================================================== */
-
-/*
-   Page 1 initially starts locked.
-   User clicks "Are you excited?"
-   This unlocks Continue.
-*/
-
-document
-    .querySelector("#page1 .excited-box")
-    .style.cursor = "pointer";
 
 </script>
 
