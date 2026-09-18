@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,7 +108,6 @@ body{
 .next-btn.locked{
 
     opacity:.35;
-
     pointer-events:none;
 
 }
@@ -1247,7 +1245,7 @@ body{
 
 
 /* =========================================================
-   PAGE 6 — FINAL MEET UP
+   PAGE 6 — FINAL NOTE + FAVOR
 ========================================================= */
 
 #page6{
@@ -1377,6 +1375,75 @@ body{
 
 
 /* =========================================================
+   FINAL NOTE
+========================================================= */
+
+.final-card{
+
+    width:100%;
+
+    max-width:750px;
+
+    background:
+        rgba(255,255,255,.88);
+
+    padding:45px 35px;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(90,50,90,.15);
+
+    margin-bottom:30px;
+
+}
+
+.final-card h1{
+
+    font-size:
+        clamp(
+            32px,
+            7vw,
+            52px
+        );
+
+    margin-bottom:30px;
+
+    color:#754e70;
+
+}
+
+.final-card p{
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+}
+
+.final-signature{
+
+    margin-top:30px;
+
+    font-size:22px;
+
+    font-style:italic;
+
+    color:#754e70;
+
+}
+
+.final-favor{
+
+    margin-top:25px;
+
+}
+
+
+/* =========================================================
    FLOATING HEARTS
 ========================================================= */
 
@@ -1489,6 +1556,14 @@ body{
     .note,
     .meetup-box,
     .secret-box{
+
+        padding:
+            30px
+            22px;
+
+    }
+
+    .final-card{
 
         padding:
             30px
@@ -2334,7 +2409,7 @@ body{
 
 
 <!-- =========================================================
-     PAGE 6 — MEET UP
+     PAGE 6 — FINAL NOTE + FAVOR
 ========================================================= -->
 
 <section
@@ -2345,80 +2420,147 @@ body{
 <div class="meetup-box">
 
 
-    <h1>
+    <!-- FINAL NOTE -->
 
-        One last question... ❤️
-
-    </h1>
+    <div class="final-card">
 
 
-    <p>
+        <h1>
 
-        I've said what I wanted to say,
-        showed you some little memories,
-        and asked you something from my heart.
+            Happy Birthday Niniitata 🥰
 
-    </p>
+        </h1>
 
 
-    <p>
+        <p>
 
-        But there's still one thing
-        I'd really like...
+            You are special and you will always have
+            a place in my heart.
 
-    </p>
+        </p>
 
 
-    <div class="meetup-question">
+        <p>
 
-        Can we meet soon? 🥰❤️
+            I just miss you each and every time.
+            Somehow, you are always in my mind
+            and always in my heart.
+
+        </p>
+
+
+        <p>
+
+            I'm not sure what destiny has planned,
+            or what the future will look like.
+
+        </p>
+
+
+        <p>
+
+            But one thing I know...
+
+        </p>
+
+
+        <p>
+
+            I want to enjoy each and every second
+            while it lasts.
+
+        </p>
+
+
+        <p>
+
+            Every little moment.
+            Every smile.
+            Every memory.
+
+        </p>
+
+
+        <p>
+
+            Because some people come into your life
+            and simply become unforgettable.
+
+        </p>
+
+
+        <p>
+
+            And you are one of those people. ❤️
+
+        </p>
+
+
+        <div class="final-signature">
+
+            — Ak ❤️
+
+        </div>
+
 
     </div>
 
 
-    <p>
 
-        No digital cake this time.
-        No screen between us.
-
-        <br>
-
-        Just you and me,
-        a little time together,
-        and maybe a real cake. 🎂
-
-    </p>
-
-
-    <div class="meetup-buttons">
-
-
-        <button
-            class="meetup-btn"
-            onclick="meetupAnswer('yes')"
-        >
-
-            Yes, let's meet 🥰
-
-        </button>
-
-
-        <button
-            class="meetup-btn"
-            onclick="meetupAnswer('absolutely')"
-        >
-
-            Absolutely ❤️
-
-        </button>
-
-
-    </div>
-
+    <!-- FAVOR QUESTION -->
 
     <div
-        id="meetupAnswer"
-        class="meetup-answer">
+        id="favorBox"
+        class="final-favor"
+    >
+
+        <div class="meetup-question">
+
+            I want to ask for one favor from you 🥰
+
+        </div>
+
+
+        <p>
+
+            If you can, click Yes.
+            Otherwise, click No. ❤️
+
+        </p>
+
+
+        <div class="meetup-buttons">
+
+
+            <button
+                class="meetup-btn"
+                onclick="finalAnswer('yes')"
+            >
+
+                Yes ❤️
+
+            </button>
+
+
+            <button
+                class="meetup-btn"
+                onclick="finalAnswer('no')"
+            >
+
+                No
+
+            </button>
+
+
+        </div>
+
+
+        <div
+            id="finalAnswer"
+            class="meetup-answer">
+        </div>
+
+
     </div>
 
 
@@ -3355,28 +3497,123 @@ function answerMine(answer){
 
 
 /* =========================================================
-   FINAL MEET-UP
+   PAGE 6 — FAVOR ANSWER
 ========================================================= */
 
-function meetupAnswer(answer){
+function finalAnswer(answer){
 
-    const message =
+    const answerBox =
         document.getElementById(
-            "meetupAnswer"
+            "finalAnswer"
         );
+
+
+    if(answer === "no"){
+
+        answerBox.innerHTML = `
+
+            <p>
+                Happiest birthday to you❤️❤️
+            </p>
+
+            <p>
+                May you achieve everything you want
+                with me or without me.
+            </p>
+
+            <p>
+                Thankyou for giving your time for this.
+            </p>
+
+            <p>
+                Happy birthday once again.
+            </p>
+
+        `;
+
+        return;
+
+    }
 
 
     if(answer === "yes"){
 
-        message.textContent =
-            "Then it's a date... 🥰❤️ I can't wait to see you.";
+        answerBox.innerHTML = `
+
+            <div class="meetup-question">
+
+                Can you meet me today? 🥰❤️
+
+            </div>
+
+            <div class="meetup-buttons">
+
+                <button
+                    class="meetup-btn"
+                    onclick="meetingAnswer('ready')"
+                >
+
+                    Yes, I'm ready ❤️
+
+                </button>
+
+                <button
+                    class="meetup-btn"
+                    onclick="meetingAnswer('later')"
+                >
+
+                    Maybe later
+
+                </button>
+
+            </div>
+
+        `;
 
     }
 
-    else{
+}
 
-        message.textContent =
-            "That is exactly what I was hoping you'd say. ❤️✨";
+
+/* =========================================================
+   MEETING ANSWER
+========================================================= */
+
+function meetingAnswer(answer){
+
+    const answerBox =
+        document.getElementById(
+            "finalAnswer"
+        );
+
+
+    if(answer === "ready"){
+
+        answerBox.innerHTML = `
+
+            <p>
+                HAppiest birthday❤️❤️
+                Can't wait to see you.
+            </p>
+
+        `;
+
+    }
+
+
+    else if(answer === "later"){
+
+        answerBox.innerHTML = `
+
+            <p>
+                No worries ❤️
+            </p>
+
+            <p>
+                Happiest birthday once again 🥰❤️
+            </p>
+
+        `;
 
     }
 
@@ -3475,4 +3712,3 @@ document
 </body>
 
 </html>
-```
