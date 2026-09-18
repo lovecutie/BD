@@ -177,6 +177,10 @@ body{
         "Times New Roman",
         serif;
 
+    font-size:clamp(30px,6vw,58px);
+
+    line-height:1.2;
+
     font-weight:bold;
 
 }
@@ -376,68 +380,100 @@ body{
 
 
 /* =========================================================
-   PARTY POPPERS
+   REALISTIC PARTY POPPERS
 ========================================================= */
 
 .party-popper{
 
     position:fixed;
 
-    top:20%;
+    bottom:18%;
 
-    font-size:45px;
+    width:0;
+
+    height:0;
 
     z-index:500;
 
     pointer-events:none;
 
-    animation:
-        popperBurst 2.2s ease-out forwards;
-
 }
 
 .party-popper.left{
-
     left:8%;
-
 }
 
 .party-popper.right{
-
     right:8%;
+}
+
+
+.popper-cone{
+
+    position:absolute;
+
+    width:55px;
+
+    height:90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5c8a,
+            #ffcc70,
+            #9d6cff
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 50%,
+            0 100%
+        );
+
+    filter:
+        drop-shadow(
+            0 8px 12px
+            rgba(0,0,0,.35)
+        );
 
 }
 
-@keyframes popperBurst{
+.party-popper.left .popper-cone{
+    transform:rotate(-25deg);
+}
+
+.party-popper.right .popper-cone{
+    transform:rotate(205deg);
+}
+
+
+.popper-stream{
+
+    position:absolute;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:3px;
+
+    animation:
+        popperPiece 1.8s ease-out forwards;
+
+}
+
+
+@keyframes popperPiece{
 
     0%{
 
-        opacity:0;
-
-        transform:
-            scale(.2)
-            rotate(-25deg);
-
-    }
-
-    15%{
-
         opacity:1;
 
         transform:
-            scale(1.2)
-            rotate(10deg);
-
-    }
-
-    60%{
-
-        opacity:1;
-
-        transform:
-            translateY(-40px)
-            scale(1.1)
-            rotate(-10deg);
+            translate(0,0)
+            rotate(0)
+            scale(.6);
 
     }
 
@@ -446,9 +482,12 @@ body{
         opacity:0;
 
         transform:
-            translateY(-130px)
-            scale(.7)
-            rotate(20deg);
+            translate(
+                var(--x),
+                var(--y)
+            )
+            rotate(var(--r))
+            scale(1.1);
 
     }
 
@@ -565,6 +604,10 @@ body{
 
     transform:translateX(-50%);
 
+    box-shadow:
+        inset 0 -10px 0
+        rgba(0,0,0,.12);
+
 }
 
 .cake-top{
@@ -590,6 +633,10 @@ body{
 
     transform:translateX(-50%);
 
+    box-shadow:
+        inset 0 8px 0
+        rgba(255,255,255,.18);
+
 }
 
 .icing{
@@ -610,6 +657,10 @@ body{
 
     transform:translateX(-50%);
 
+    box-shadow:
+        0 4px 6px
+        rgba(0,0,0,.12);
+
 }
 
 .candle{
@@ -621,11 +672,12 @@ body{
     height:75px;
 
     background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ffd6df,
-            #fff
+        repeating-linear-gradient(
+            135deg,
+            #fff 0px,
+            #fff 8px,
+            #ffd6df 8px,
+            #ffd6df 14px
         );
 
     bottom:175px;
@@ -635,6 +687,10 @@ body{
     transform:translateX(-50%);
 
     border-radius:5px;
+
+    box-shadow:
+        0 2px 5px
+        rgba(0,0,0,.2);
 
 }
 
@@ -647,23 +703,29 @@ body{
     height:40px;
 
     background:
-        linear-gradient(
-            #fff7a0,
-            #ffb52e,
-            #ff5722
+        radial-gradient(
+            ellipse at center bottom,
+            #fff7a0 0%,
+            #ffd13b 35%,
+            #ff8c00 65%,
+            #ff5722 100%
         );
 
-    border-radius:50%;
+    border-radius:
+        50% 50% 50% 50%;
 
     bottom:60px;
 
     left:50%;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%)
+        rotate(2deg);
 
     box-shadow:
         0 0 15px #ffb52e,
-        0 0 35px #ff8c00;
+        0 0 35px #ff8c00,
+        0 0 55px rgba(255,150,40,.45);
 
     animation:
         flameFlicker .7s
@@ -713,7 +775,8 @@ body{
 
         transform:
             translateX(-50%)
-            scale(1);
+            scale(1)
+            rotate(-2deg);
 
     }
 
@@ -721,7 +784,8 @@ body{
 
         transform:
             translateX(-50%)
-            scale(1.12,.92);
+            scale(1.12,.92)
+            rotate(3deg);
 
     }
 
@@ -1883,7 +1947,7 @@ body{
 
     .party-popper{
 
-        font-size:35px;
+        transform:scale(.8);
 
     }
 
@@ -2982,11 +3046,24 @@ function showPage(pageId){
 
         setupAudio();
 
+
         setTimeout(function(){
 
             startMusic();
 
         },150);
+
+
+        /*
+           Party poppers appear when
+           "Let's begin ❤️" opens Page 2.
+        */
+
+        setTimeout(function(){
+
+            celebrate();
+
+        },250);
 
     }
 
@@ -3003,9 +3080,10 @@ function celebrate(){
 
     createPartyPopper("right");
 
+
     for(
         let i=0;
-        i<45;
+        i<55;
         i++
     ){
 
@@ -3015,7 +3093,7 @@ function celebrate(){
                 createConfetti();
 
             },
-            i*35
+            i*30
         );
 
     }
@@ -3033,8 +3111,103 @@ function createPartyPopper(side){
         "party-popper " + side;
 
 
-    popper.textContent =
-        "🎉";
+    const cone =
+        document.createElement("div");
+
+
+    cone.className =
+        "popper-cone";
+
+
+    popper.appendChild(
+        cone
+    );
+
+
+    const colors=[
+        "#ff4f81",
+        "#ffd166",
+        "#7c5cff",
+        "#4dd0e1",
+        "#ffffff"
+    ];
+
+
+    for(
+        let i=0;
+        i<18;
+        i++
+    ){
+
+        const piece =
+            document.createElement("div");
+
+
+        piece.className =
+            "popper-stream";
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random()
+                    *
+                    colors.length
+                )
+            ];
+
+
+        piece.style.left =
+            (side === "left" ? 35 : -35)
+            + "px";
+
+
+        piece.style.top =
+            (25+Math.random()*40)
+            + "px";
+
+
+        piece.style.setProperty(
+            "--x",
+            (
+                side === "left"
+                ?
+                60+Math.random()*190
+                :
+                -(60+Math.random()*190)
+            ) + "px"
+        );
+
+
+        piece.style.setProperty(
+            "--y",
+            (
+                -80
+                +
+                Math.random()*160
+            ) + "px"
+        );
+
+
+        piece.style.setProperty(
+            "--r",
+            (
+                Math.random()*720
+            ) + "deg"
+        );
+
+
+        piece.style.animationDelay =
+            (
+                Math.random()*.25
+            ) + "s";
+
+
+        popper.appendChild(
+            piece
+        );
+
+    }
 
 
     document.body.appendChild(
@@ -3299,6 +3472,7 @@ function completePage1(
 
 
     setupAudio();
+
 
 }
 
@@ -3589,17 +3763,12 @@ function blowCandle(){
     }
 
 
-    candleBlown=false;
+    /*
+       Keep the candle lit while
+       the 15-second wish is being made.
+    */
 
-
-    document
-        .getElementById("flame")
-        .classList.add("off");
-
-
-    document
-        .getElementById("candleGlow")
-        .style.opacity="0";
+    candleBlown=true;
 
 
     const button =
@@ -3612,7 +3781,7 @@ function blowCandle(){
 
 
     button.textContent =
-        "Candle blown ✨";
+        "Make your wish... ✨";
 
 
     showPage("wishPage");
@@ -3705,8 +3874,8 @@ function startWishCountdown(){
 function finishWish(){
 
     /*
-       Candle is definitely blown out
-       after the wish is complete.
+       Now the wish is complete,
+       so the candle is blown out.
     */
 
     document
@@ -3715,7 +3884,7 @@ function finishWish(){
 
 
     document
-        .getElementById("candleblownout")
+        .getElementById("candleGlow")
         .style.opacity="0";
 
 
@@ -3756,8 +3925,8 @@ function finishWish(){
 
 
     /*
-       Birthday celebration appears
-       after clicking let's begin.
+       Celebration after the wish
+       has been made.
     */
 
     setTimeout(
@@ -3908,13 +4077,6 @@ function finalAnswer(answer){
 
 
         /*
-           Move to the next page.
-        */
-
-        showPage("page7");
-
-
-        /*
            Beautiful birthday message.
         */
 
@@ -3977,6 +4139,9 @@ function finalAnswer(answer){
         `;
 
 
+        showPage("page7");
+
+
         /*
            Birthday celebration for NO.
         */
@@ -4004,7 +4169,16 @@ function finalAnswer(answer){
 
     if(answer === "yes"){
 
-        showPage("page7");
+        document.getElementById(
+            "meetingButtons"
+        ).classList.remove(
+            "hidden"
+        );
+
+
+        document.getElementById(
+            "meetingAnswer"
+        ).textContent="";
 
 
         document.getElementById(
@@ -4024,22 +4198,13 @@ function finalAnswer(answer){
         ).innerHTML = `
 
             <p>
-                Since you said Yes to my little favor...
-                So, I want to ask. 🥰
-            </p>
-
-            <p>
-                Can you meet me today if possible? ❤️
+                Can you meet me today if possible? 🥰❤️
             </p>
 
         `;
 
 
-        document.getElementById(
-            "meetingButtons"
-        ).classList.remove(
-            "hidden"
-        );
+        showPage("page7");
 
     }
 
@@ -4082,14 +4247,14 @@ function meetingAnswer(answer){
         document.getElementById(
             "resultTitle"
         ).textContent =
-            "Thank you so much" and ;
-            "Happiest birthday once again😘😘❤️❤️";
+            "Thank you so much 😊😍😍";
 
 
         message.innerHTML = `
 
             <p>
-                Can't wait to see you.😍😍❤️
+                Happiest birthday once again,
+                can't wait to see you😘😘❤️❤️.
             </p>
 
             <div class="result-signature">
