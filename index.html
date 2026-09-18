@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>For Niniitata ❤️</title>
-
 
 <style>
 
@@ -37,27 +31,26 @@ body{
 
 
 /* =========================================================
-   PAGES
+   COMMON PAGE
 ========================================================= */
 
 .page{
     display:none;
     width:100%;
     min-height:100vh;
-    padding:40px 20px 80px;
+    padding:35px 18px 70px;
     position:relative;
 }
 
 .page.active{
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
-    animation:pageAppear .7s ease;
+    align-items:center;
+    animation:pageIn .7s ease;
 }
 
-@keyframes pageAppear{
-
+@keyframes pageIn{
     from{
         opacity:0;
         transform:translateY(20px);
@@ -67,49 +60,44 @@ body{
         opacity:1;
         transform:translateY(0);
     }
-
 }
 
 .hidden{
     display:none !important;
 }
 
+.content{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
 
-/* =========================================================
-   COMMON BUTTONS
-========================================================= */
+button{
+    font-family:Georgia,"Times New Roman",serif;
+    cursor:pointer;
+    border:none;
+}
 
 .next-btn{
-
     margin-top:30px;
-
-    padding:15px 30px;
-
-    border:none;
-    border-radius:30px;
-
-    background:#8b5a9d;
-    color:white;
-
+    padding:15px 32px;
+    border-radius:50px;
     font-size:17px;
-
-    cursor:pointer;
-
-    transition:.25s;
-
+    background:rgba(255,255,255,.94);
+    color:#674b65;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    transition:.3s ease;
 }
 
 .next-btn:hover{
-
     transform:translateY(-3px);
-
 }
 
 .next-btn.locked{
-
     opacity:.35;
     pointer-events:none;
-
+    cursor:not-allowed;
 }
 
 
@@ -118,197 +106,170 @@ body{
 ========================================================= */
 
 #page1{
-
     background:
         radial-gradient(
-            circle at top,
-            #f7eaff,
-            #ead7f5 45%,
-            #d8bde8
+            circle at top left,
+            rgba(255,255,255,.6),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #d9c5e9,
+            #cbb0df,
+            #e7d5ef
         );
 
-    color:#4b315b;
-
+    color:#503b59;
     text-align:center;
-
 }
 
 .page1-container{
-
     width:100%;
-    max-width:800px;
-
+    max-width:850px;
 }
 
-.page1-title,
-.page1-subtitle{
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-}
+/* MAIN HEADING */
 
 .page1-title{
-
+    margin-top:15px;
     font-size:clamp(30px,6vw,58px);
-
     line-height:1.2;
-
-    margin-bottom:25px;
-
     font-weight:bold;
-
+    margin-bottom:25px;
 }
 
+
+/*
+   NAME IS NOW THE SAME SIZE AS THE MAIN HEADING
+*/
+
 .page1-subtitle{
-
     font-size:clamp(18px,4vw,26px);
-
-    margin-bottom:30px;
-
+    margin-bottom:35px;
 }
 
 .page1-subtitle strong{
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family:Georgia,"Times New Roman",serif;
+    font-weight:bold;
     font-size:clamp(30px,6vw,58px);
-
     line-height:1.2;
-
-    font-weight:bold;
-
+    display:inline-block;
 }
 
-.current-time{
 
-    font-size:16px;
+/* COUNTDOWN */
 
-    opacity:.8;
-
-    margin-bottom:25px;
-
-}
-
-.countdown{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:40px;
-
-}
-
-.time-box{
-
-    width:90px;
-
-    padding:18px 10px;
-
-    background:rgba(255,255,255,.72);
-
-    border-radius:20px;
-
-    box-shadow:
-        0 10px 25px
-        rgba(90,50,100,.15);
-
-}
-
-.time-number{
-
-    font-size:32px;
-
-    font-weight:bold;
-
-}
-
-.time-label{
-
-    font-size:13px;
-
-    margin-top:5px;
-
-}
-
-.excited-title{
-
-    font-size:25px;
-
-    margin-bottom:20px;
-
-}
-
-.choice-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-}
-
-.choice-btn{
-
-    border:none;
-
-    padding:15px 25px;
+.countdown-box{
+    max-width:720px;
+    margin:35px auto 25px;
+    padding:32px 20px;
 
     border-radius:30px;
 
-    background:white;
-
-    color:#663d75;
-
-    font-size:17px;
-
-    cursor:pointer;
+    background:rgba(255,255,255,.42);
+    backdrop-filter:blur(10px);
 
     box-shadow:
-        0 8px 20px
-        rgba(80,40,100,.15);
-
-    transition:.25s;
-
+        0 15px 40px rgba(70,40,80,.15);
 }
 
-.choice-btn:hover{
-
-    transform:
-        translateY(-3px)
-        scale(1.03);
-
+.countdown-title{
+    font-size:22px;
+    margin-bottom:20px;
 }
 
-.choice-btn.selected{
-
-    background:#8c5aa3;
-
-    color:white;
-
+.countdown{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
-.choice-message{
+.time-box{
+    min-width:90px;
+    padding:16px 12px;
 
-    min-height:30px;
+    border-radius:18px;
 
+    background:rgba(255,255,255,.68);
+
+    box-shadow:
+        0 6px 15px rgba(70,40,80,.12);
+}
+
+.time-box span{
+    display:block;
+    font-size:34px;
+    font-weight:bold;
+}
+
+.time-box small{
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.current-time{
     margin-top:20px;
+    font-size:15px;
+    opacity:.8;
+}
 
-    font-size:18px;
 
+/* EXCITEMENT */
+
+.excited-box{
+    max-width:600px;
+    margin:30px auto;
+    padding:25px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.46);
+
+    box-shadow:
+        0 10px 25px rgba(70,40,80,.12);
+}
+
+.excited-box h2{
+    font-size:27px;
+    margin-bottom:8px;
+}
+
+.excited-box p{
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+.excitement-options{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.excitement-btn{
+    padding:13px 25px;
+    border-radius:50px;
+    font-size:17px;
+
+    color:#5c4164;
+    background:rgba(255,255,255,.95);
+
+    box-shadow:
+        0 7px 20px rgba(70,40,80,.15);
+
+    transition:.3s ease;
+}
+
+.excitement-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.page1-choice-message{
+    margin-top:17px;
+    font-size:17px;
+    color:#634967;
 }
 
 
@@ -318,15 +279,21 @@ body{
 
 #page2{
 
-    background:#030204;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,165,60,.08),
+            transparent 30%
+        ),
+        #020202;
 
     color:white;
 
-    overflow:hidden;
-
     transition:
-        background 1.5s ease;
+        background 2.5s ease,
+        color 2.5s ease;
 
+    overflow:hidden;
 }
 
 #page2.lights-on{
@@ -334,534 +301,604 @@ body{
     background:
         radial-gradient(
             circle at 50% 20%,
-            #ffe7b8 0%,
-            #6d4b54 25%,
-            #261d2c 60%,
-            #17131d 100%
+            #fff4df 0%,
+            #f9e2d4 35%,
+            #eed0d1 70%,
+            #e7c7cf 100%
         );
 
+    color:#65434d;
 }
 
-.room{
-
-    width:100%;
-
-    max-width:900px;
-
-    text-align:center;
-
+.birthday-content{
     position:relative;
-
     z-index:2;
-
 }
 
-.birthday-heading{
 
-    font-size:clamp(38px,8vw,70px);
+/* SAME SIZE */
 
-    letter-spacing:5px;
-
-    margin-bottom:5px;
-
-}
-
+.birthday-heading,
 .birthday-name{
 
-    font-size:clamp(38px,8vw,70px);
+    font-size:clamp(42px,8vw,72px);
 
     font-weight:bold;
 
-    color:#ffdca8;
+    letter-spacing:3px;
 
-    margin-bottom:35px;
+    line-height:1.1;
 
+    transition:
+        color 2.5s ease,
+        text-shadow 2.5s ease;
+}
+
+.birthday-heading{
+    padding-top:15px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 12px rgba(255,255,255,.15);
+}
+
+.birthday-name{
+    margin-top:8px;
+    color:#fff;
+}
+
+#page2.lights-on .birthday-heading,
+#page2.lights-on .birthday-name{
+
+    color:#754652;
+    text-shadow:none;
 }
 
 
 /* =========================================================
-   REALISTIC PARTY POPPERS
-========================================================= */
-
-.party-popper{
-
-    position:fixed;
-
-    bottom:18%;
-
-    width:0;
-
-    height:0;
-
-    z-index:500;
-
-    pointer-events:none;
-
-}
-
-.party-popper.left{
-    left:8%;
-}
-
-.party-popper.right{
-    right:8%;
-}
-
-
-.popper-cone{
-
-    position:absolute;
-
-    width:55px;
-
-    height:90px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff5c8a,
-            #ffcc70,
-            #9d6cff
-        );
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 50%,
-            0 100%
-        );
-
-    filter:
-        drop-shadow(
-            0 8px 12px
-            rgba(0,0,0,.35)
-        );
-
-}
-
-.party-popper.left .popper-cone{
-    transform:rotate(-25deg);
-}
-
-.party-popper.right .popper-cone{
-    transform:rotate(205deg);
-}
-
-
-.popper-stream{
-
-    position:absolute;
-
-    width:12px;
-
-    height:12px;
-
-    border-radius:3px;
-
-    animation:
-        popperPiece 1.8s ease-out forwards;
-
-}
-
-
-@keyframes popperPiece{
-
-    0%{
-
-        opacity:1;
-
-        transform:
-            translate(0,0)
-            rotate(0)
-            scale(.6);
-
-    }
-
-    100%{
-
-        opacity:0;
-
-        transform:
-            translate(
-                var(--x),
-                var(--y)
-            )
-            rotate(var(--r))
-            scale(1.1);
-
-    }
-
-}
-
-
-/* =========================================================
-   CONFETTI
-========================================================= */
-
-.confetti{
-
-    position:fixed;
-
-    width:9px;
-
-    height:16px;
-
-    top:-30px;
-
-    z-index:400;
-
-    pointer-events:none;
-
-    animation:
-        confettiFall 3.5s
-        linear forwards;
-
-}
-
-@keyframes confettiFall{
-
-    0%{
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-        opacity:1;
-
-    }
-
-    100%{
-
-        transform:
-            translateY(115vh)
-            rotate(720deg);
-
-        opacity:0;
-
-    }
-
-}
-
-
-/* =========================================================
-   CAKE
+   IMPROVED CAKE
 ========================================================= */
 
 .cake-area{
 
     position:relative;
 
-    width:320px;
+    width:380px;
+    max-width:95vw;
 
-    max-width:90vw;
+    height:410px;
 
-    height:280px;
+    margin:20px auto 0;
 
-    margin:0 auto 25px;
-
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
 }
 
-.cake-plate{
 
-    position:absolute;
-
-    width:310px;
-
-    height:20px;
-
-    background:#ddd;
-
-    border-radius:50%;
-
-    bottom:15px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-}
-
-.cake-bottom{
-
-    position:absolute;
-
-    width:270px;
-
-    height:90px;
-
-    background:
-        linear-gradient(
-            #8c4d5d,
-            #663342
-        );
-
-    border-radius:
-        12px 12px 25px 25px;
-
-    bottom:35px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    box-shadow:
-        inset 0 -10px 0
-        rgba(0,0,0,.12);
-
-}
-
-.cake-top{
-
-    position:absolute;
-
-    width:240px;
-
-    height:75px;
-
-    background:
-        linear-gradient(
-            #e7a3ad,
-            #c97587
-        );
-
-    border-radius:
-        12px 12px 20px 20px;
-
-    bottom:110px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    box-shadow:
-        inset 0 8px 0
-        rgba(255,255,255,.18);
-
-}
-
-.icing{
-
-    position:absolute;
-
-    width:240px;
-
-    height:25px;
-
-    background:#fff0ed;
-
-    border-radius:50%;
-
-    bottom:160px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    box-shadow:
-        0 4px 6px
-        rgba(0,0,0,.12);
-
-}
-
-.candle{
-
-    position:absolute;
-
-    width:18px;
-
-    height:75px;
-
-    background:
-        repeating-linear-gradient(
-            135deg,
-            #fff 0px,
-            #fff 8px,
-            #ffd6df 8px,
-            #ffd6df 14px
-        );
-
-    bottom:175px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    border-radius:5px;
-
-    box-shadow:
-        0 2px 5px
-        rgba(0,0,0,.2);
-
-}
-
-.flame{
-
-    position:absolute;
-
-    width:25px;
-
-    height:40px;
-
-    background:
-        radial-gradient(
-            ellipse at center bottom,
-            #fff7a0 0%,
-            #ffd13b 35%,
-            #ff8c00 65%,
-            #ff5722 100%
-        );
-
-    border-radius:
-        50% 50% 50% 50%;
-
-    bottom:60px;
-
-    left:50%;
-
-    transform:
-        translateX(-50%)
-        rotate(2deg);
-
-    box-shadow:
-        0 0 15px #ffb52e,
-        0 0 35px #ff8c00,
-        0 0 55px rgba(255,150,40,.45);
-
-    animation:
-        flameFlicker .7s
-        infinite alternate;
-
-}
-
-.flame.off{
-
-    display:none;
-
-}
+/* Candle glow */
 
 .candle-glow{
 
     position:absolute;
 
-    width:180px;
+    width:300px;
+    height:300px;
 
-    height:180px;
+    left:50%;
+    top:5px;
+
+    transform:translateX(-50%);
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,180,80,.35),
-            rgba(255,140,50,.12),
-            transparent 70%
+            rgba(255,220,130,.55) 0%,
+            rgba(255,180,70,.25) 30%,
+            rgba(255,140,30,.08) 55%,
+            transparent 72%
         );
 
-    left:50%;
+    filter:blur(12px);
 
-    bottom:140px;
+    z-index:1;
+
+    transition:opacity .8s ease;
+}
+
+
+/* CAKE */
+
+.cake{
+
+    position:absolute;
+
+    bottom:40px;
+
+    width:330px;
+    height:250px;
+
+    z-index:3;
+}
+
+
+/* Plate */
+
+.plate{
+
+    position:absolute;
+
+    bottom:0;
+    left:50%;
 
     transform:translateX(-50%);
 
-    pointer-events:none;
+    width:355px;
+    height:28px;
 
-    transition:opacity .5s;
+    border-radius:50%;
 
+    background:
+        linear-gradient(
+            to bottom,
+            #fff,
+            #d6c5c2
+        );
+
+    box-shadow:
+        0 9px 18px rgba(0,0,0,.5);
+}
+
+
+/* Bottom cake */
+
+.cake-bottom{
+
+    position:absolute;
+
+    bottom:22px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:295px;
+    height:105px;
+
+    border-radius:
+        18px 18px 30px 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #713c36,
+            #a95646 18%,
+            #d0785c 48%,
+            #b35c4b 78%,
+            #703932
+        );
+
+    box-shadow:
+        inset 0 -18px 22px rgba(60,15,10,.28),
+        0 8px 18px rgba(0,0,0,.4);
+}
+
+
+/* Bottom cream */
+
+.bottom-cream{
+
+    position:absolute;
+
+    bottom:105px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:305px;
+    height:30px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fff,
+            #f0d9d0
+        );
+
+    z-index:4;
+}
+
+
+/* Middle cake */
+
+.cake-middle{
+
+    position:absolute;
+
+    bottom:108px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:255px;
+    height:78px;
+
+    border-radius:
+        17px 17px 23px 23px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e29b81,
+            #ffc5ac 50%,
+            #d98670
+        );
+
+    box-shadow:
+        inset 0 -10px 15px rgba(100,45,35,.15);
+}
+
+
+/* Middle cream */
+
+.middle-cream{
+
+    position:absolute;
+
+    bottom:160px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:265px;
+    height:29px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fffdf9,
+            #f0ddd6
+        );
+
+    z-index:5;
+}
+
+
+/* Top cake */
+
+.cake-top{
+
+    position:absolute;
+
+    bottom:163px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:220px;
+    height:63px;
+
+    border-radius:
+        20px 20px 13px 13px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d77e67,
+            #f2b49a 50%,
+            #d47b64
+        );
+
+    box-shadow:
+        inset 0 -8px 12px rgba(100,45,35,.15);
+}
+
+
+/* Frosting */
+
+.frosting{
+
+    position:absolute;
+
+    bottom:200px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:235px;
+    height:56px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fffdf9,
+            #f1d8d1
+        );
+
+    z-index:6;
+
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.12);
+}
+
+
+/* Frosting drips */
+
+.drip{
+
+    position:absolute;
+
+    width:25px;
+    height:37px;
+
+    border-radius:
+        0 0 15px 15px;
+
+    background:#f2dad3;
+
+    bottom:183px;
+
+    z-index:7;
+}
+
+.drip1{
+    left:92px;
+}
+
+.drip2{
+    left:145px;
+    height:46px;
+}
+
+.drip3{
+    left:198px;
+    height:32px;
+}
+
+
+/* Decorations */
+
+.decoration{
+
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:#bb6172;
+
+    z-index:8;
+}
+
+.dec1{
+    left:120px;
+    bottom:214px;
+}
+
+.dec2{
+    left:160px;
+    bottom:225px;
+}
+
+.dec3{
+    left:192px;
+    bottom:211px;
+}
+
+.dec4{
+    left:143px;
+    bottom:197px;
+}
+
+
+/* Candle */
+
+.candle{
+
+    position:absolute;
+
+    left:50%;
+    top:3px;
+
+    transform:translateX(-50%);
+
+    width:21px;
+    height:105px;
+
+    border-radius:5px;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #fff5df,
+            #fff5df 8px,
+            #e6b5b5 8px,
+            #e6b5b5 13px
+        );
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.45);
+
+    z-index:12;
+}
+
+
+/* Wick */
+
+.candle::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+    height:12px;
+
+    top:-9px;
+    left:9px;
+
+    background:#222;
+
+    border-radius:2px;
+}
+
+
+/* Flame */
+
+.flame{
+
+    position:absolute;
+
+    width:31px;
+    height:49px;
+
+    top:-58px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    background:
+        radial-gradient(
+            ellipse at center bottom,
+            #fffbd0 0%,
+            #ffe26b 30%,
+            #ff9b2f 60%,
+            transparent 73%
+        );
+
+    filter:
+        drop-shadow(0 0 10px #ffb43b)
+        drop-shadow(0 0 22px #ff9d32);
+
+    animation:
+        flameFlicker .15s infinite alternate;
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+.flame::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:22px;
+
+    bottom:5px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:#fffde2;
+}
+
+.flame.off{
+
+    opacity:0;
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    animation:none;
 }
 
 @keyframes flameFlicker{
 
     from{
-
         transform:
             translateX(-50%)
             scale(1)
             rotate(-2deg);
-
     }
 
     to{
-
         transform:
             translateX(-50%)
-            scale(1.12,.92)
-            rotate(3deg);
-
+            scale(1.08)
+            rotate(2deg);
     }
-
 }
 
 
-/* =========================================================
-   BLOW BUTTON
-========================================================= */
+/* Blow text */
+
+.blow-text{
+
+    margin-top:5px;
+
+    font-size:20px;
+
+    color:#e8e0df;
+
+    transition:color 2s ease;
+}
+
+#page2.lights-on .blow-text{
+    color:#754652;
+}
+
+
+/* Blow button */
 
 .blow-btn{
 
-    border:none;
+    margin-top:22px;
 
-    padding:15px 28px;
+    padding:15px 32px;
 
-    border-radius:30px;
-
-    background:white;
-
-    color:#4d2733;
+    border-radius:50px;
 
     font-size:17px;
 
-    cursor:pointer;
+    color:#55343d;
 
+    background:#fff;
+
+    box-shadow:
+        0 8px 30px rgba(255,255,255,.12);
+
+    transition:.3s ease;
+}
+
+.blow-btn:hover{
+    transform:scale(1.04);
 }
 
 .blow-btn:disabled{
-
-    opacity:.5;
-
+    opacity:.7;
 }
 
 
-/* =========================================================
-   MUSIC
-========================================================= */
-
-.music-box{
-
-    margin-top:18px;
-
-}
-
-.music-btn{
-
-    border:
-        1px solid
-        rgba(255,255,255,.4);
-
-    background:
-        rgba(255,255,255,.1);
-
-    color:white;
-
-    padding:11px 20px;
-
-    border-radius:25px;
-
-    cursor:pointer;
-
-}
+/* Wish complete */
 
 .wish-complete{
 
-    margin-top:20px;
+    margin-top:22px;
 
     font-size:23px;
 
     color:#ffdca8;
 
-    animation:
-        heartBeat 1s
-        infinite alternate;
-
+    animation:heartBeat 1s infinite alternate;
 }
 
 @keyframes heartBeat{
@@ -873,12 +910,33 @@ body{
     to{
         transform:scale(1.05);
     }
+}
 
+
+/* Music */
+
+.music-box{
+    margin-top:18px;
+}
+
+.music-btn{
+
+    border:1px solid rgba(255,255,255,.4);
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    padding:11px 20px;
+
+    border-radius:25px;
+
+    cursor:pointer;
 }
 
 
 /* =========================================================
-   SEPARATE 15 SECOND WISH PAGE
+   WISH COUNTDOWN PAGE
 ========================================================= */
 
 #wishPage{
@@ -892,60 +950,45 @@ body{
         );
 
     color:white;
-
     text-align:center;
-
 }
 
 .wish-page-content{
-
     width:100%;
-
     max-width:700px;
-
 }
 
 .wish-page-title{
 
-    font-size:
-        clamp(
-            30px,
-            6vw,
-            48px
-        );
-
-    color:#ffe4b8;
+    font-size:clamp(25px,6vw,42px);
 
     margin-bottom:20px;
 
+    color:#ffe4b8;
 }
 
 .wish-page-text{
 
-    font-size:19px;
+    font-size:18px;
 
-    line-height:1.8;
+    line-height:1.7;
 
     margin-bottom:35px;
 
+    color:#e9dfe8;
 }
 
 .big-wish-countdown{
 
     width:190px;
-
     height:190px;
 
     border-radius:50%;
 
-    border:
-        3px solid
-        rgba(255,220,170,.7);
+    border:3px solid rgba(255,220,170,.7);
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     margin:0 auto 30px;
@@ -957,133 +1000,149 @@ body{
     color:#ffe0ad;
 
     box-shadow:
-        0 0 25px
-        rgba(255,180,100,.25),
+        0 0 25px rgba(255,180,100,.25),
+        inset 0 0 25px rgba(255,180,100,.1);
 
-        inset 0 0 25px
-        rgba(255,180,100,.1);
+    animation:pulseCountdown 1s infinite;
+}
 
+@keyframes pulseCountdown{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.04);
+    }
+
+    100%{
+        transform:scale(1);
+    }
 }
 
 .wish-page-small{
-
-    font-size:16px;
-
-    opacity:.75;
-
+    font-size:15px;
+    color:#bcaebc;
 }
 
 
 /* =========================================================
-   PAGE 3
+   PAGE 3 — NOTE
 ========================================================= */
 
 #page3{
 
     background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,255,255,.6),
+            transparent 35%
+        ),
         linear-gradient(
             135deg,
-            #f9eaf2,
-            #f3dce9,
-            #ead1e5
+            #f4dfe0,
+            #efd1d6,
+            #e7c8d1
         );
 
-    color:#583c52;
-
+    color:#613f49;
     text-align:center;
-
 }
 
-.note{
+.note-card{
 
-    width:100%;
+    max-width:730px;
 
-    max-width:750px;
+    margin:30px auto 0;
 
-    background:
-        rgba(255,255,255,.72);
-
-    padding:45px 35px;
+    padding:45px 32px;
 
     border-radius:30px;
 
-    box-shadow:
-        0 15px 40px
-        rgba(100,50,90,.15);
+    background:
+        rgba(255,255,255,.65);
 
+    box-shadow:
+        0 20px 50px rgba(110,65,80,.15);
+
+    border:
+        1px solid rgba(255,255,255,.6);
 }
 
-.note h2{
+.note-card h1{
 
     font-size:
-        clamp(
-            28px,
-            6vw,
-            45px
-        );
+        clamp(38px,7vw,60px);
 
-    margin-bottom:25px;
+    color:#714550;
 
+    margin-bottom:30px;
 }
 
-.note p{
+.note-card p{
 
-    font-size:18px;
+    font-size:19px;
 
     line-height:1.9;
 
-    margin-bottom:20px;
+    color:#694750;
 
+    margin-bottom:20px;
+}
+
+.signature{
+
+    margin-top:30px;
+
+    font-size:24px;
+
+    font-style:italic;
+
+    color:#704451;
 }
 
 
 /* =========================================================
-   PAGE 4
+   PAGE 4 — PHOTOS
 ========================================================= */
 
 #page4{
 
     background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,.7),
+            transparent 35%
+        ),
         linear-gradient(
             135deg,
-            #fff1f5,
-            #f5e5f2,
-            #eadcf0
+            #e8dced,
+            #decce5,
+            #f1d9df
         );
 
-    color:#573e55;
-
+    color:#5d4664;
     text-align:center;
-
 }
 
-.photo-page{
+.photos-title{
 
-    width:100%;
-
-    max-width:1050px;
-
-}
-
-.photo-title{
+    margin-top:15px;
 
     font-size:
-        clamp(
-            30px,
-            6vw,
-            48px
-        );
+        clamp(36px,7vw,58px);
 
-    margin-bottom:12px;
-
+    color:#62476a;
 }
 
-.photo-intro{
+.photos-subtitle{
+
+    margin-top:12px;
 
     font-size:18px;
 
-    margin-bottom:35px;
-
+    color:#745a78;
 }
 
 .photo-grid{
@@ -1091,198 +1150,152 @@ body{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(2,1fr);
 
-    gap:25px;
+    gap:22px;
 
     width:100%;
 
+    max-width:760px;
+
+    margin:40px auto 0;
 }
 
-.photo-card{
+.photo-frame{
 
-    background:white;
+    padding:10px;
 
-    padding:
-        12px
-        12px
-        25px;
+    background:
+        rgba(255,255,255,.75);
+
+    border-radius:22px;
 
     box-shadow:
-        0 10px 25px
-        rgba(80,50,80,.15);
+        0 12px 30px rgba(70,40,80,.16);
 
-    transform:rotate(-2deg);
-
-    transition:.3s;
-
+    transition:.3s ease;
 }
 
-.photo-card:nth-child(2){
-    transform:rotate(2deg);
-}
-
-.photo-card:nth-child(3){
-    transform:rotate(-1deg);
-}
-
-.photo-card:nth-child(4){
-    transform:rotate(2deg);
-}
-
-.photo-card:nth-child(5){
-    transform:rotate(-2deg);
-}
-
-.photo-card:nth-child(6){
-    transform:rotate(1deg);
-}
-
-.photo-card:hover{
+.photo-frame:hover{
 
     transform:
-        rotate(0)
-        scale(1.04);
-
+        translateY(-5px)
+        rotate(-1deg);
 }
 
-.photo-card img{
+.photo-frame:nth-child(even):hover{
+
+    transform:
+        translateY(-5px)
+        rotate(1deg);
+}
+
+.photo-frame img{
 
     width:100%;
 
-    height:250px;
+    aspect-ratio:1/1;
 
     object-fit:cover;
 
     display:block;
 
-    background:#eadbea;
-
+    border-radius:16px;
 }
 
 .photo-caption{
 
-    margin-top:14px;
+    padding:10px 5px 5px;
 
     font-size:16px;
 
-    color:#6a4b65;
-
-}
-
-.memory-line{
-
-    margin:
-        45px auto
-        0;
-
-    max-width:750px;
-
-    font-size:21px;
-
-    line-height:1.7;
-
-    font-style:italic;
-
-}
-
-.memory-heart{
-
-    font-size:28px;
-
-    margin-top:12px;
-
+    color:#694b69;
 }
 
 
 /* =========================================================
-   PAGE 5
+   PAGE 5 — FLIP CARDS
 ========================================================= */
 
 #page5{
 
     background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,.65),
+            transparent 35%
+        ),
         linear-gradient(
             135deg,
-            #f8edf5,
-            #eee1f2,
-            #e6d8ed
+            #e8dced,
+            #decce5,
+            #f1d9df
         );
 
-    color:#553b57;
+    color:#5d4664;
 
     text-align:center;
-
 }
 
 .page5-title{
 
+    margin-top:20px;
+
     font-size:
-        clamp(
-            30px,
-            6vw,
-            48px
-        );
+        clamp(38px,7vw,62px);
 
-    margin-bottom:10px;
-
+    color:#62476a;
 }
 
 .page5-subtitle{
 
+    margin-top:12px;
+
     font-size:18px;
 
-    margin-bottom:35px;
-
+    color:#745a78;
 }
 
-.cards{
+.flip-container{
 
     display:flex;
 
     justify-content:center;
 
-    gap:22px;
-
     flex-wrap:wrap;
 
-    max-width:950px;
+    gap:22px;
 
+    margin-top:45px;
 }
 
 .flip-card{
 
-    width:220px;
-
-    height:280px;
+    width:235px;
+    height:255px;
 
     perspective:1000px;
 
     cursor:pointer;
-
 }
 
 .flip-inner{
 
     width:100%;
-
     height:100%;
 
     position:relative;
 
-    transform-style:preserve-3d;
-
     transition:
         transform .7s;
 
+    transform-style:preserve-3d;
 }
 
-.flip-card.open
-.flip-inner{
+.flip-card.open .flip-inner{
 
     transform:
         rotateY(180deg);
-
 }
 
 .flip-front,
@@ -1291,7 +1304,6 @@ body{
     position:absolute;
 
     width:100%;
-
     height:100%;
 
     backface-visibility:hidden;
@@ -1301,110 +1313,80 @@ body{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    padding:25px;
+    padding:22px;
 
     box-shadow:
-        0 12px 30px
-        rgba(70,40,80,.15);
-
+        0 12px 30px rgba(80,50,90,.14);
 }
 
 .flip-front{
 
     background:
-        linear-gradient(
-            135deg,
-            #cba6d8,
-            #b88bc9
-        );
+        rgba(255,255,255,.68);
 
-    color:white;
+    color:#634967;
 
-    font-size:35px;
-
+    font-size:23px;
 }
 
 .flip-back{
 
     background:
-        rgba(255,255,255,.9);
+        rgba(255,248,250,.9);
 
-    color:#563d58;
+    color:#684651;
 
     transform:
         rotateY(180deg);
 
-    font-size:18px;
+    font-size:19px;
 
-    line-height:1.7;
-
+    line-height:1.6;
 }
+
+
+/* Secret box */
 
 .secret-box{
 
-    width:100%;
+    max-width:700px;
 
-    max-width:650px;
+    margin:45px auto 0;
 
-    margin-top:45px;
+    padding:35px 25px;
 
-    padding:40px 30px;
+    border-radius:28px;
 
     background:
-        rgba(255,255,255,.88);
-
-    border-radius:30px;
+        rgba(255,255,255,.72);
 
     box-shadow:
-        0 15px 40px
-        rgba(70,40,80,.18);
+        0 15px 40px rgba(70,40,80,.15);
 
     animation:
-        secretAppear .8s ease;
-
-}
-
-@keyframes secretAppear{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(30px)
-            scale(.95);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
+        fadeUp 1s ease;
 }
 
 .secret-box h2{
 
     font-size:30px;
 
-    margin-bottom:20px;
+    color:#704653;
 
+    margin-bottom:15px;
 }
 
 .secret-box p{
 
-    font-size:18px;
+    font-size:19px;
 
     line-height:1.8;
 
+    color:#694650;
+
+    margin-bottom:25px;
 }
 
 .mine-options{
@@ -1416,42 +1398,49 @@ body{
     gap:15px;
 
     flex-wrap:wrap;
-
-    margin-top:25px;
-
 }
 
 .mine-btn{
 
-    border:none;
+    padding:15px 28px;
 
-    padding:14px 25px;
+    border-radius:50px;
 
-    border-radius:30px;
+    font-size:18px;
 
-    background:#9b6bad;
+    color:#704653;
 
-    color:white;
+    background:
+        rgba(255,255,255,.95);
 
-    font-size:17px;
+    box-shadow:
+        0 8px 22px rgba(70,40,80,.14);
 
-    cursor:pointer;
+    transition:.3s ease;
+}
 
+.mine-btn:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
 }
 
 .answer-message{
 
-    min-height:30px;
-
     margin-top:20px;
 
-    font-size:19px;
+    font-size:21px;
 
+    color:#704653;
+
+    animation:
+        fadeUp .7s ease;
 }
 
 
 /* =========================================================
-   PAGE 6 — FINAL NOTE
+   PAGE 6 — FINAL MESSAGE + FAVOR
 ========================================================= */
 
 #page6{
@@ -1459,167 +1448,111 @@ body{
     background:
         radial-gradient(
             circle at top,
-            #ffe8f1,
-            #f2d9e8 45%,
-            #dfc6df
+            rgba(255,255,255,.65),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e8cbd4,
+            #ddc1ce,
+            #d7c2df
         );
 
-    color:#54394e;
+    color:#593e52;
 
     text-align:center;
-
-}
-
-.meetup-box{
-
-    width:100%;
-
-    max-width:800px;
-
-    background:
-        rgba(255,255,255,.78);
-
-    padding:55px 35px;
-
-    border-radius:35px;
-
-    box-shadow:
-        0 18px 45px
-        rgba(90,50,90,.16);
-
 }
 
 .final-card{
 
-    width:100%;
+    max-width:760px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.95),
-            rgba(255,244,249,.92)
-        );
+    margin:35px auto 0;
 
-    padding:45px 35px;
+    padding:45px 30px;
 
     border-radius:30px;
 
+    background:
+        rgba(255,255,255,.58);
+
+    border:
+        1px solid rgba(255,255,255,.7);
+
     box-shadow:
-        0 15px 40px
-        rgba(90,50,90,.15);
-
-    margin-bottom:30px;
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.final-card::before{
-
-    content:"❤️";
-
-    position:absolute;
-
-    top:15px;
-
-    left:20px;
-
-    font-size:25px;
-
-    opacity:.45;
-
-}
-
-.final-card::after{
-
-    content:"✨";
-
-    position:absolute;
-
-    bottom:15px;
-
-    right:20px;
-
-    font-size:25px;
-
-    opacity:.45;
-
+        0 20px 60px rgba(90,55,80,.15);
 }
 
 .final-card h1{
 
     font-size:
-        clamp(
-            32px,
-            7vw,
-            52px
-        );
+        clamp(40px,8vw,68px);
+
+    color:#684457;
 
     margin-bottom:30px;
-
-    color:#754e70;
-
 }
 
 .final-card p{
 
-    font-size:19px;
+    font-size:20px;
 
     line-height:1.9;
 
-    margin-bottom:20px;
+    color:#634652;
 
+    margin-bottom:18px;
 }
 
 .final-signature{
 
-    margin-top:30px;
+    margin-top:35px;
 
-    font-size:22px;
+    font-size:28px;
 
     font-style:italic;
 
-    color:#754e70;
-
+    color:#704653;
 }
 
 
-/* =========================================================
-   FAVOR QUESTION
-========================================================= */
+/* FAVOR */
 
 .final-favor{
 
-    margin-top:25px;
+    max-width:700px;
+
+    margin:35px auto 0;
 
     padding:35px 25px;
 
-    border-radius:28px;
+    border-radius:30px;
 
     background:
-        rgba(255,255,255,.6);
+        rgba(255,255,255,.72);
 
+    box-shadow:
+        0 15px 40px rgba(70,40,80,.15);
 }
 
 .meetup-question{
 
-    font-size:
-        clamp(
-            25px,
-            5vw,
-            38px
-        );
+    font-size:24px;
 
-    font-weight:bold;
+    line-height:1.6;
 
-    margin:20px 0;
+    color:#704653;
 
-    color:#754e70;
+    margin-bottom:15px;
+}
 
-    line-height:1.4;
+.final-favor p{
 
+    font-size:17px;
+
+    color:#694650;
+
+    margin-bottom:20px;
 }
 
 .meetup-buttons{
@@ -1632,28 +1565,25 @@ body{
 
     flex-wrap:wrap;
 
-    margin-top:25px;
-
+    margin-top:20px;
 }
 
 .meetup-btn{
 
-    border:none;
+    padding:15px 28px;
 
-    padding:16px 30px;
+    border-radius:50px;
 
-    border-radius:30px;
+    background:#fff;
 
-    background:#9b6bad;
+    color:#704653;
 
-    color:white;
+    font-size:17px;
 
-    font-size:18px;
+    box-shadow:
+        0 8px 22px rgba(70,40,80,.14);
 
-    cursor:pointer;
-
-    transition:.25s;
-
+    transition:.3s ease;
 }
 
 .meetup-btn:hover{
@@ -1661,22 +1591,11 @@ body{
     transform:
         translateY(-3px)
         scale(1.03);
-
-}
-
-.meetup-answer{
-
-    min-height:35px;
-
-    margin-top:25px;
-
-    font-size:21px;
-
 }
 
 
 /* =========================================================
-   PAGE 7 — NO / YES RESULT
+   PAGE 7 — RESULT
 ========================================================= */
 
 #page7{
@@ -1684,15 +1603,19 @@ body{
     background:
         radial-gradient(
             circle at top,
-            #fff0f5,
-            #f3dce8 50%,
-            #dfc7df
+            rgba(255,255,255,.7),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #f5dce4,
+            #e9cddd,
+            #d9c8e4
         );
 
-    color:#563c51;
+    color:#5b4055;
 
     text-align:center;
-
 }
 
 .result-card{
@@ -1701,93 +1624,269 @@ body{
 
     max-width:750px;
 
-    padding:55px 35px;
-
-    background:
-        rgba(255,255,255,.88);
+    padding:50px 30px;
 
     border-radius:35px;
 
+    background:
+        rgba(255,255,255,.72);
+
     box-shadow:
-        0 20px 50px
-        rgba(90,50,90,.18);
-
-    animation:
-        resultAppear .9s ease;
-
-}
-
-@keyframes resultAppear{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            scale(.9)
-            translateY(25px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            scale(1)
-            translateY(0);
-
-    }
-
+        0 20px 55px rgba(90,50,90,.18);
 }
 
 .result-heart{
 
-    font-size:60px;
+    font-size:70px;
 
-    margin-bottom:20px;
+    margin-bottom:15px;
 
     animation:
-        heartBeat 1s
-        infinite alternate;
-
+        heartBeat 1s infinite alternate;
 }
 
 .result-card h1{
 
     font-size:
-        clamp(
-            30px,
-            6vw,
-            48px
-        );
+        clamp(34px,7vw,55px);
 
-    color:#754e70;
+    color:#684457;
 
     margin-bottom:25px;
-
 }
 
-.result-card p{
+.result-message{
 
     font-size:20px;
 
     line-height:1.9;
 
-    margin-bottom:20px;
+    color:#634652;
+}
 
+.result-message p{
+
+    margin-bottom:18px;
 }
 
 .result-signature{
 
     margin-top:30px;
 
-    font-size:22px;
+    font-size:27px;
 
     font-style:italic;
 
-    color:#754e70;
+    color:#704653;
+}
 
+.meetup-answer{
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    color:#704653;
+}
+
+
+/* =========================================================
+   PARTY POPPERS
+========================================================= */
+
+.party-popper{
+
+    position:fixed;
+
+    bottom:70px;
+
+    width:60px;
+    height:75px;
+
+    z-index:9999;
+
+    pointer-events:none;
+}
+
+.party-popper.left{
+    left:25px;
+    transform:rotate(-18deg);
+}
+
+.party-popper.right{
+    right:25px;
+    transform:rotate(18deg);
+}
+
+
+/* Cone */
+
+.popper-cone{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:45px;
+    height:65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7ca8,
+            #d83d73
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    filter:
+        drop-shadow(
+            0 7px 7px
+            rgba(0,0,0,.25)
+        );
+}
+
+
+/* Cone stripes */
+
+.popper-cone::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 8px,
+            rgba(255,255,255,.45) 8px 12px
+        );
+}
+
+
+/* Popper opening */
+
+.popper-opening{
+
+    position:absolute;
+
+    top:-5px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:48px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:#8d244e;
+
+    box-shadow:
+        inset 0 3px 4px rgba(0,0,0,.35);
+}
+
+
+/* Particles */
+
+.popper-particle{
+
+    position:absolute;
+
+    width:7px;
+    height:15px;
+
+    border-radius:2px;
+
+    animation:
+        popperFly 1.7s ease-out forwards;
+
+    opacity:0;
+}
+
+@keyframes popperFly{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(0,0)
+            rotate(0)
+            scale(.7);
+    }
+
+    25%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            rotate(
+                var(--r)
+            )
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:9px;
+    height:14px;
+
+    z-index:9998;
+
+    pointer-events:none;
+
+    animation:
+        confettiFall
+        3.5s linear forwards;
+}
+
+@keyframes confettiFall{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+    }
 }
 
 
@@ -1801,16 +1900,15 @@ body{
 
     bottom:-30px;
 
-    font-size:20px;
-
     pointer-events:none;
-
-    animation:
-        floatHeart 7s
-        linear forwards;
 
     z-index:100;
 
+    opacity:.7;
+
+    animation:
+        floatHeart
+        5s linear forwards;
 }
 
 @keyframes floatHeart{
@@ -1819,28 +1917,48 @@ body{
 
         transform:
             translateY(0)
-            rotate(0);
+            scale(.8);
 
         opacity:0;
-
     }
 
-    10%{
-
+    15%{
         opacity:.8;
-
     }
 
     100%{
 
         transform:
             translateY(-110vh)
-            rotate(360deg);
+            scale(1.3)
+            rotate(20deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   FADE
+========================================================= */
+
+@keyframes fadeUp{
+
+    from{
 
         opacity:0;
 
+        transform:
+            translateY(15px);
     }
 
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
 }
 
 
@@ -1848,121 +1966,77 @@ body{
    MOBILE
 ========================================================= */
 
-@media(max-width:700px){
+@media(max-width:600px){
 
     .page{
-
         padding:
-            30px
-            15px
+            25px
+            14px
             60px;
-
     }
 
     .time-box{
-
-        width:75px;
-
+        min-width:72px;
     }
 
-    .time-number{
-
-        font-size:25px;
-
+    .time-box span{
+        font-size:27px;
     }
 
     .cake-area{
-
-        transform:scale(.9);
-
+        height:350px;
     }
 
-    .photo-grid{
-
-        grid-template-columns:1fr;
-
-        max-width:350px;
-
-        margin:auto;
-
+    .cake{
+        transform:scale(.82);
+        transform-origin:bottom center;
     }
 
-    .photo-card img{
+    .birthday-heading,
+    .birthday-name{
+        font-size:43px;
+    }
 
-        height:300px;
+    .note-card,
+    .final-card,
+    .secret-box,
+    .final-favor,
+    .result-card{
+        padding:30px 20px;
+    }
 
+    .note-card p,
+    .final-card p{
+        font-size:17px;
     }
 
     .flip-card{
-
-        width:260px;
-
-        height:260px;
-
+        width:90%;
+        max-width:300px;
     }
 
-    .note,
-    .meetup-box,
-    .secret-box{
-
-        padding:
-            30px
-            22px;
-
-    }
-
-    .final-card{
-
-        padding:
-            30px
-            22px;
-
-    }
-
-    .final-favor{
-
-        padding:
-            25px
-            18px;
-
-    }
-
-    .result-card{
-
-        padding:
-            40px
-            22px;
-
+    .photo-grid{
+        grid-template-columns:1fr;
+        max-width:400px;
     }
 
     .big-wish-countdown{
-
         width:160px;
-
         height:160px;
-
         font-size:60px;
-
-    }
-
-    .party-popper{
-
-        transform:scale(.8);
-
     }
 
     .party-popper.left{
-
-        left:3%;
-
+        left:8px;
     }
 
     .party-popper.right{
-
-        right:3%;
-
+        right:8px;
     }
 
+    .party-popper{
+        transform:scale(.8);
+    }
 }
 
 </style>
@@ -1984,148 +2058,103 @@ body{
 
 <div class="page1-container">
 
-
     <div class="page1-title">
-
         Today is about one very special person ✨
-
     </div>
-
 
     <div class="page1-subtitle">
-
         And that person is...
         <strong>Niniitata ❤️</strong>
-
     </div>
 
 
-    <div class="current-time">
+    <div class="countdown-box">
 
-        Current time:
-        <span id="currentTime">
-            Loading...
-        </span>
+        <div class="countdown-title">
+            Something beautiful is coming... 💕
+        </div>
 
-    </div>
+        <div class="countdown">
 
-
-    <div class="countdown">
-
-        <div class="time-box">
-
-            <div
-                class="time-number"
-                id="days">
-                00
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>DAYS</small>
             </div>
 
-            <div class="time-label">
-                Days
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>HOURS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>SECONDS</small>
             </div>
 
         </div>
 
-
-        <div class="time-box">
-
-            <div
-                class="time-number"
-                id="hours">
-                00
-            </div>
-
-            <div class="time-label">
-                Hours
-            </div>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <div
-                class="time-number"
-                id="minutes">
-                00
-            </div>
-
-            <div class="time-label">
-                Minutes
-            </div>
-
-        </div>
-
-
-        <div class="time-box">
-
-            <div
-                class="time-number"
-                id="seconds">
-                00
-            </div>
-
-            <div class="time-label">
-                Seconds
-            </div>
-
+        <div class="current-time">
+            Current time:
+            <span id="currentTime">
+                Loading...
+            </span>
         </div>
 
     </div>
 
 
-    <div class="excited-title">
+    <div class="excited-box">
 
-        Are you excited? 🥰
+        <h2>
+            Are you excited? 🥰
+        </h2>
 
-    </div>
+        <p>
+            Because there's something waiting for you...
+        </p>
 
+        <div class="excitement-options">
 
-    <div class="choice-buttons">
+            <button
+                class="excitement-btn"
+                onclick="completePage1('yes',this)"
+            >
+                Yes 🥰
+            </button>
 
-        <button
-            class="choice-btn"
-            onclick="completePage1('yes',this)"
-        >
+            <button
+                class="excitement-btn"
+                onclick="completePage1('very',this)"
+            >
+                Very excited! 💕
+            </button>
 
-            Yes 🥰
+        </div>
 
-        </button>
+        <div
+            id="page1ChoiceMessage"
+            class="page1-choice-message"
+        ></div>
 
-
-        <button
-            class="choice-btn"
-            onclick="completePage1('very',this)"
-        >
-
-            Very excited! 💕
-
-        </button>
-
-    </div>
-
-
-    <div
-        id="page1ChoiceMessage"
-        class="choice-message">
     </div>
 
 
     <button
         id="page1Next"
         class="next-btn locked"
-        onclick="showPage('page2')"
+        onclick="beginBirthday()"
     >
-
         Let's begin ❤️
-
     </button>
-
 
 </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -2137,51 +2166,67 @@ body{
     id="page2"
 >
 
-<div class="room">
-
+<div class="content birthday-content">
 
     <h1 class="birthday-heading">
-
         HAPPY BIRTHDAY
-
     </h1>
 
-
     <div class="birthday-name">
-
         Niniitata
-
     </div>
 
 
     <div class="cake-area">
 
-
         <div
             class="candle-glow"
-            id="candleGlow">
-        </div>
+            id="candleGlow"
+        ></div>
 
 
-        <div class="candle">
+        <div class="cake">
 
-            <div
-                id="flame"
-                class="flame">
+            <div class="plate"></div>
+
+            <div class="cake-bottom"></div>
+
+            <div class="bottom-cream"></div>
+
+            <div class="cake-middle"></div>
+
+            <div class="middle-cream"></div>
+
+            <div class="cake-top"></div>
+
+            <div class="frosting"></div>
+
+            <div class="drip drip1"></div>
+            <div class="drip drip2"></div>
+            <div class="drip drip3"></div>
+
+            <div class="decoration dec1"></div>
+            <div class="decoration dec2"></div>
+            <div class="decoration dec3"></div>
+            <div class="decoration dec4"></div>
+
+
+            <div class="candle">
+
+                <div
+                    id="flame"
+                    class="flame"
+                ></div>
+
             </div>
 
         </div>
 
-
-        <div class="icing"></div>
-
-        <div class="cake-top"></div>
-
-        <div class="cake-bottom"></div>
-
-        <div class="cake-plate"></div>
+    </div>
 
 
+    <div class="blow-text">
+        🕯️ Blow the candle & make a wish ✨
     </div>
 
 
@@ -2190,9 +2235,7 @@ body{
         class="blow-btn"
         onclick="blowCandle()"
     >
-
         Blow the candle 💨
-
     </button>
 
 
@@ -2203,9 +2246,7 @@ body{
             class="music-btn"
             onclick="toggleMusic()"
         >
-
             🔊 Play Birthday Music
-
         </button>
 
     </div>
@@ -2215,31 +2256,25 @@ body{
         id="wishComplete"
         class="wish-complete hidden"
     >
-
         Wish made! ❤️✨
-
     </div>
 
 
     <button
         id="page2Next"
         class="next-btn locked"
-        onclick="showPage('page3')"
+        onclick="nextPage(3)"
     >
-
         Continue ❤️
-
     </button>
-
 
 </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     WISH PAGE
+     WISH COUNTDOWN
 ========================================================= -->
 
 <section
@@ -2249,20 +2284,15 @@ body{
 
 <div class="wish-page-content">
 
-
     <div class="wish-page-title">
-
         Close your eyes... ✨
-
     </div>
-
 
     <div class="wish-page-text">
 
         Make your birthday wish.<br>
 
-        Take your time and make it
-        a beautiful one. ❤️
+        Take your time and make it a beautiful one. ❤️
 
     </div>
 
@@ -2271,24 +2301,17 @@ body{
         id="bigWishCountdown"
         class="big-wish-countdown"
     >
-
         15
-
     </div>
 
 
     <div class="wish-page-small">
-
-        Your wish is between you
-        and the universe ✨
-
+        Your wish is between you and the universe ✨
     </div>
-
 
 </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -2300,93 +2323,74 @@ body{
     id="page3"
 >
 
-<div class="note">
+<div class="content">
+
+    <div class="note-card">
+
+        <h1>
+            A little note for you 💌
+        </h1>
 
 
-    <h2>
-
-        A little note for you 💌
-
-    </h2>
+        <p>
+            This time, I'm sending you this digital cake instead. 🎂
+        </p>
 
 
-    <p>
-
-        This time, I'm sending you
-        this digital cake instead. 🎂
-
-    </p>
-
-
-    <p>
-
-        I know it's not the same as
-        actually being there, sitting beside you,
-        watching you smile, cutting the cake
-        together and making a wish.
-
-    </p>
+        <p>
+            I know it's not the same as being there,
+            sitting beside you, watching you smile,
+            cutting the cake and making a wish together.
+        </p>
 
 
-    <p>
-
-        But I really hope that next year,
-        we won't need a digital cake anymore.
-
-    </p>
+        <p>
+            But I really hope that next year,
+            we won't need a digital cake.
+        </p>
 
 
-    <p>
-
-        Maybe next year we'll celebrate together,
-        cut a real cake, make a real wish,
-        laugh about silly things and create a memory
-        that we'll remember for our life time. ❤️
-
-    </p>
-
-
-    <p>
-
-        Until then, consider this little cake
-        a tiny piece of my wish reaching you from here.
-
-    </p>
+        <p>
+            Maybe we'll celebrate together,
+            cut a real cake,
+            make a real wish,
+            laugh a little too much,
+            and create a memory of our own. ❤️
+        </p>
 
 
-    <p>
-
-        Happy Birthday once again,
-        Niniitata. ❤️
-
-    </p>
+        <p>
+            Until then, consider this little cake
+            a tiny piece of my wish reaching you from here.
+        </p>
 
 
-    <p>
+        <p>
+            Happy Birthday once again, Niniitata. ❤️
+        </p>
 
-        — Ak
 
-    </p>
+        <div class="signature">
+            — Ak
+        </div>
+
+    </div>
 
 
     <button
         class="next-btn"
-        onclick="showPage('page4')"
+        onclick="completePage3AndContinue()"
     >
-
-        Some memories for you 📸
-
+        There's something else... 👀
     </button>
-
 
 </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     PAGE 4
+     PAGE 4 — PHOTOS
 ========================================================= -->
 
 <section
@@ -2394,142 +2398,60 @@ body{
     id="page4"
 >
 
-<div class="photo-page">
+<div class="content">
 
-
-    <h1 class="photo-title">
-
-        A few little moments of you 📸💕
-
+    <h1 class="photos-title">
+        Some cute memories of yours ❤️
     </h1>
 
-
-    <p class="photo-intro">
-
-        Some pictures I just couldn't
-        stop myself from smiling at. 🥰
-
+    <p class="photos-subtitle">
+        Some sweet and cute memories of yours
+        that I loved and watched on a regular basis. 🥰
     </p>
 
 
     <div class="photo-grid">
 
-
-        <div class="photo-card">
-
-            <img
-                src="photo1.jpg"
-                alt="Cute memory 1"
-            >
-
+        <div class="photo-frame">
+            <img src="photo1.jpg" alt="Memory 1">
             <div class="photo-caption">
-
-                This smile ❤️
-
+                A smile I could never get tired of ❤️
             </div>
-
         </div>
 
-
-        <div class="photo-card">
-
-            <img
-                src="photo2.jpg"
-                alt="Cute memory 2"
-            >
-
+        <div class="photo-frame">
+            <img src="photo2.jpg" alt="Memory 2">
             <div class="photo-caption">
-
-                Just adorable 🥰
-
+                One of those moments I loved seeing ✨
             </div>
-
         </div>
 
-
-        <div class="photo-card">
-
-            <img
-                src="photo3.jpg"
-                alt="Cute memory 3"
-            >
-
+        <div class="photo-frame">
+            <img src="photo3.jpg" alt="Memory 3">
             <div class="photo-caption">
-
-                One of my favourites 💕
-
+                Just too cute not to remember 🥰
             </div>
-
         </div>
 
-
-        <div class="photo-card">
-
-            <img
-                src="photo4.jpg"
-                alt="Cute memory 4"
-            >
-
+        <div class="photo-frame">
+            <img src="photo4.jpg" alt="Memory 4">
             <div class="photo-caption">
-
-                You being you ✨
-
+                A little memory that stayed with me ❤️
             </div>
-
         </div>
 
-
-        <div class="photo-card">
-
-            <img
-                src="photo5.jpg"
-                alt="Cute memory 5"
-            >
-
+        <div class="photo-frame">
+            <img src="photo5.jpg" alt="Memory 5">
             <div class="photo-caption">
-
-                Can't stop smiling ❤️
-
+                One of my favourite little moments 💕
             </div>
-
         </div>
 
-
-        <div class="photo-card">
-
-            <img
-                src="photo6.jpg"
-                alt="Cute memory 6"
-            >
-
+        <div class="photo-frame">
+            <img src="photo6.jpg" alt="Memory 6">
             <div class="photo-caption">
-
-                Another little favourite 💗
-
+                And this one... simply special ❤️
             </div>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="memory-line">
-
-        Some sweet and cute little memories
-        of yours that I've loved watching
-        over and over again. ❤️
-
-        <br>
-
-        I don't know why, but I never get
-        tired of seeing them. 🥰
-
-
-        <div class="memory-heart">
-
-            💕✨💕
-
         </div>
 
     </div>
@@ -2537,22 +2459,18 @@ body{
 
     <button
         class="next-btn"
-        onclick="showPage('page5')"
+        onclick="nextPage(5)"
     >
-
         There's something else... 💕
-
     </button>
-
 
 </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     PAGE 5
+     PAGE 5 — FLIP CARDS
 ========================================================= -->
 
 <section
@@ -2560,208 +2478,178 @@ body{
     id="page5"
 >
 
-<h1 class="page5-title">
+<div class="content">
 
-    Three little secrets 🥰
+    <h1 class="page5-title">
+        Three little things ❤️
+    </h1>
 
-</h1>
-
-
-<p class="page5-subtitle">
-
-    Open all three to discover
-    something special...
-
-</p>
-
-
-<div class="cards">
-
-
-    <div
-        class="flip-card"
-        onclick="flipCard(this,1)"
-    >
-
-        <div class="flip-inner">
-
-            <div class="flip-front">
-
-                💕
-
-            </div>
-
-
-            <div class="flip-back">
-
-                Your smile ❤️
-
-                <br><br>
-
-                It has a way of making
-                everything feel a little better.
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <div
-        class="flip-card"
-        onclick="flipCard(this,2)"
-    >
-
-        <div class="flip-inner">
-
-            <div class="flip-front">
-
-                ✨
-
-            </div>
-
-
-            <div class="flip-back">
-
-                Your existence ✨
-
-                <br><br>
-
-                Your existence feels like
-                a soft exhale.
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <div
-        class="flip-card"
-        onclick="flipCard(this,3)"
-    >
-
-        <div class="flip-inner">
-
-            <div class="flip-front">
-
-                ❤️
-
-            </div>
-
-
-            <div class="flip-back">
-
-                Your place ❤️
-
-                <br><br>
-
-                Somehow, you've created
-                a place in my heart that is yours and always be yours
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-</div>
-
-
-
-<div
-    id="secretBox"
-    class="secret-box hidden"
->
-
-
-    <h2>
-
-        One last little thing... 🥰
-
-    </h2>
-
-
-    <p>
-
-        Some things are difficult
-        to explain with words.
-
-        <br>
-
-        Some feelings don't fit
-        inside a message.
-
-        <br>
-
-        So maybe I'll just leave
-        this one simple...
-
-        <br><br>
-
-        <strong>
-
-            Will you be mine? ❤️
-
-        </strong>
-
+    <p class="page5-subtitle">
+        Open them one by one...
     </p>
 
 
-    <div class="mine-options">
+    <div class="flip-container">
 
 
-        <button
-            class="mine-btn"
-            onclick="answerMine('loved')"
+        <!-- CARD 1 -->
+
+        <div
+            class="flip-card"
+            onclick="flipCard(this,1)"
         >
 
-            Loved to be 🥰
+            <div class="flip-inner">
 
-        </button>
+                <div class="flip-front">
+                    Open me 💌
+                </div>
+
+                <div class="flip-back">
+
+                    Your smile ❤️
+
+                    <br><br>
+
+                    It has a way of making
+                    everything feel a little better.
+
+                </div>
+
+            </div>
+
+        </div>
 
 
-        <button
-            class="mine-btn"
-            onclick="answerMine('always')"
+        <!-- CARD 2 -->
+
+        <div
+            class="flip-card"
+            onclick="flipCard(this,2)"
         >
 
-            Always ❤️
+            <div class="flip-inner">
 
-        </button>
+                <div class="flip-front">
+                    Open me ✨
+                </div>
 
+                <div class="flip-back">
+
+                    Your existence ✨
+
+                    <br><br>
+
+                    I'm genuinely glad
+                    that you exist in this world.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div
+            class="flip-card"
+            onclick="flipCard(this,3)"
+        >
+
+            <div class="flip-inner">
+
+                <div class="flip-front">
+                    Open me ❤️
+                </div>
+
+                <div class="flip-back">
+
+                    Your place ❤️
+
+                    <br><br>
+
+                    Somehow, you've created
+                    a place in my heart that is yours.
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
+
+    <!-- SECRET BOX -->
 
     <div
-        id="answerMessage"
-        class="answer-message">
-    </div>
-
-
-    <button
-        id="page5Next"
-        class="next-btn locked"
-        onclick="showPage('page6')"
+        id="secretBox"
+        class="secret-box hidden"
     >
 
-        And before this little surprise comes to an end,
-        here’s one more little note from my heart…
-        not a goodbye, just something special for you. 🥰❤️💌
+        <h2>
+            One last little thing... 🥰
+        </h2>
 
-    </button>
 
+        <p>
+
+            Some things are difficult to explain with words.
+
+            Some feelings don't fit inside a message.
+
+            <br><br>
+
+            So maybe I'll just leave this one simple...
+
+            <br><br>
+
+            <strong>
+                Will you be mine? ❤️
+            </strong>
+
+        </p>
+
+
+        <div class="mine-options">
+
+            <button
+                class="mine-btn"
+                onclick="answerMine('loved')"
+            >
+                Loved to be 🥰
+            </button>
+
+            <button
+                class="mine-btn"
+                onclick="answerMine('always')"
+            >
+                Always ❤️
+            </button>
+
+        </div>
+
+
+        <div
+            id="answerMessage"
+            class="answer-message"
+        ></div>
+
+
+        <button
+            id="page5Next"
+            class="next-btn locked"
+            onclick="nextPage(6)"
+        >
+            One final message 💌
+        </button>
+
+    </div>
 
 </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -2773,114 +2661,84 @@ body{
     id="page6"
 >
 
-<div class="meetup-box">
+<div class="content">
 
 
     <div class="final-card">
 
-
         <h1>
-
             Happy Birthday Niniitata 🥰
-
         </h1>
 
 
         <p>
-
             You are special and you will always have
             a place in my heart.
-
         </p>
 
 
         <p>
-
             I just miss you each and every time.
             Somehow, you are always in my mind
             and always in my heart.
-
         </p>
 
 
         <p>
-
             I'm not sure what destiny has planned,
             or what the future will look like.
-
         </p>
 
 
         <p>
-
             But one thing I know...
-
         </p>
 
 
         <p>
-
             I want to enjoy each and every second
             while it lasts.
-
         </p>
 
 
         <p>
-
             Every little moment.
             Every smile.
             Every memory.
-
         </p>
 
 
         <p>
-
             Because some people come into your life
             and simply become unforgettable.
-
         </p>
 
 
         <p>
-
             And you are one of those people. ❤️
-
         </p>
 
 
         <div class="final-signature">
-
             — Ak ❤️
-
         </div>
-
 
     </div>
 
 
-
-    <!-- FAVOR QUESTION -->
-
-    <div
-        id="favorBox"
-        class="final-favor"
-    >
+    <div class="final-favor">
 
         <div class="meetup-question">
 
-            And lastly, there’s one little favor
-            I want to ask from you… 🥰❤️
+            And lastly, there's one little favor
+            I want to ask from you... 🥰❤️
 
         </div>
 
 
         <p>
-
             If you can, click Yes.
             Otherwise, click No. ❤️
-
         </p>
 
 
@@ -2894,34 +2752,27 @@ body{
                 class="meetup-btn"
                 onclick="finalAnswer('yes')"
             >
-
                 Yes ❤️
-
             </button>
-
 
             <button
                 class="meetup-btn"
                 onclick="finalAnswer('no')"
             >
-
                 No
-
             </button>
 
         </div>
 
     </div>
 
-
 </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     PAGE 7 — AFTER FAVOR
+     PAGE 7 — RESULT
 ========================================================= -->
 
 <section
@@ -2933,21 +2784,21 @@ body{
 
     <div
         id="resultIcon"
-        class="result-heart">
+        class="result-heart"
+    >
         ❤️
     </div>
 
 
     <h1 id="resultTitle">
-
         Happiest Birthday ❤️
-
     </h1>
 
 
-    <div id="resultMessage">
-
-    </div>
+    <div
+        id="resultMessage"
+        class="result-message"
+    ></div>
 
 
     <div
@@ -2959,19 +2810,14 @@ body{
             class="meetup-btn"
             onclick="meetingAnswer('ready')"
         >
-
             Yes, I'm ready ❤️
-
         </button>
-
 
         <button
             class="meetup-btn"
             onclick="meetingAnswer('later')"
         >
-
             Maybe later
-
         </button>
 
     </div>
@@ -2979,316 +2825,33 @@ body{
 
     <div
         id="meetingAnswer"
-        class="meetup-answer">
-    </div>
-
+        class="meetup-answer"
+    ></div>
 
 </div>
 
 </section>
 
 
-
 <script>
 
-
 /* =========================================================
-   STATE
+   VARIABLES
 ========================================================= */
 
 let page1Completed = false;
+let page2Completed = false;
+let page3Completed = false;
+let page4Completed = false;
+let page5Completed = false;
 
-let candleBlown = false;
-
-let wishCountdownRunning = false;
+let wishCountdownStarted = false;
 
 let openedCards = new Set();
 
-let page5Completed = false;
-
 
 /* =========================================================
-   PAGE SHOWING SYSTEM
-========================================================= */
-
-function showPage(pageId){
-
-    document
-        .querySelectorAll(".page")
-        .forEach(function(page){
-
-            page.classList.remove("active");
-
-        });
-
-
-    const page =
-        document.getElementById(pageId);
-
-
-    if(!page){
-
-        return;
-
-    }
-
-
-    page.classList.add("active");
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"instant"
-    });
-
-
-    if(pageId === "page2"){
-
-        setupAudio();
-
-
-        setTimeout(function(){
-
-            startMusic();
-
-        },150);
-
-
-        /*
-           Party poppers appear when
-           "Let's begin ❤️" opens Page 2.
-        */
-
-        setTimeout(function(){
-
-            celebrate();
-
-        },250);
-
-    }
-
-}
-
-
-/* =========================================================
-   PARTY POPPER / CONFETTI
-========================================================= */
-
-function celebrate(){
-
-    createPartyPopper("left");
-
-    createPartyPopper("right");
-
-
-    for(
-        let i=0;
-        i<55;
-        i++
-    ){
-
-        setTimeout(
-            function(){
-
-                createConfetti();
-
-            },
-            i*30
-        );
-
-    }
-
-}
-
-
-function createPartyPopper(side){
-
-    const popper =
-        document.createElement("div");
-
-
-    popper.className =
-        "party-popper " + side;
-
-
-    const cone =
-        document.createElement("div");
-
-
-    cone.className =
-        "popper-cone";
-
-
-    popper.appendChild(
-        cone
-    );
-
-
-    const colors=[
-        "#ff4f81",
-        "#ffd166",
-        "#7c5cff",
-        "#4dd0e1",
-        "#ffffff"
-    ];
-
-
-    for(
-        let i=0;
-        i<18;
-        i++
-    ){
-
-        const piece =
-            document.createElement("div");
-
-
-        piece.className =
-            "popper-stream";
-
-
-        piece.style.background =
-            colors[
-                Math.floor(
-                    Math.random()
-                    *
-                    colors.length
-                )
-            ];
-
-
-        piece.style.left =
-            (side === "left" ? 35 : -35)
-            + "px";
-
-
-        piece.style.top =
-            (25+Math.random()*40)
-            + "px";
-
-
-        piece.style.setProperty(
-            "--x",
-            (
-                side === "left"
-                ?
-                60+Math.random()*190
-                :
-                -(60+Math.random()*190)
-            ) + "px"
-        );
-
-
-        piece.style.setProperty(
-            "--y",
-            (
-                -80
-                +
-                Math.random()*160
-            ) + "px"
-        );
-
-
-        piece.style.setProperty(
-            "--r",
-            (
-                Math.random()*720
-            ) + "deg"
-        );
-
-
-        piece.style.animationDelay =
-            (
-                Math.random()*.25
-            ) + "s";
-
-
-        popper.appendChild(
-            piece
-        );
-
-    }
-
-
-    document.body.appendChild(
-        popper
-    );
-
-
-    setTimeout(
-        function(){
-
-            popper.remove();
-
-        },
-        2300
-    );
-
-}
-
-
-function createConfetti(){
-
-    const piece =
-        document.createElement("div");
-
-
-    piece.className =
-        "confetti";
-
-
-    const shapes=[
-        "❤️",
-        "💕",
-        "✨",
-        "💗",
-        "💖",
-        "🎀",
-        "•"
-    ];
-
-
-    piece.textContent =
-        shapes[
-            Math.floor(
-                Math.random()
-                *
-                shapes.length
-            )
-        ];
-
-
-    piece.style.left =
-        Math.random()*100+"vw";
-
-
-    piece.style.fontSize =
-        (8+Math.random()*15)+"px";
-
-
-    piece.style.animationDuration =
-        (2.5+Math.random()*2)+"s";
-
-
-    document.body.appendChild(
-        piece
-    );
-
-
-    setTimeout(
-        function(){
-
-            piece.remove();
-
-        },
-        5000
-    );
-
-}
-
-
-/* =========================================================
-   PAGE 1 COUNTDOWN
+   BIRTHDAY COUNTDOWN
 ========================================================= */
 
 const targetDate =
@@ -3299,58 +2862,50 @@ const targetDate =
 
 function updateCountdown(){
 
-    const now =
-        new Date();
-
+    const now = new Date();
 
     const difference =
-        targetDate.getTime()
-        -
+        targetDate.getTime() -
         now.getTime();
 
 
     if(difference <= 0){
 
         document.getElementById("days")
-            .textContent="00";
+            .textContent = "00";
 
         document.getElementById("hours")
-            .textContent="00";
+            .textContent = "00";
 
         document.getElementById("minutes")
-            .textContent="00";
+            .textContent = "00";
 
         document.getElementById("seconds")
-            .textContent="00";
+            .textContent = "00";
 
-    }
-
-    else{
+    }else{
 
         const days =
             Math.floor(
                 difference /
-                (1000*60*60*24)
+                (1000 * 60 * 60 * 24)
             );
-
 
         const hours =
             Math.floor(
                 (
                     difference /
-                    (1000*60*60)
+                    (1000 * 60 * 60)
                 ) % 24
             );
-
 
         const minutes =
             Math.floor(
                 (
                     difference /
-                    (1000*60)
+                    (1000 * 60)
                 ) % 60
             );
-
 
         const seconds =
             Math.floor(
@@ -3365,16 +2920,13 @@ function updateCountdown(){
             .textContent =
             String(days).padStart(2,"0");
 
-
         document.getElementById("hours")
             .textContent =
             String(hours).padStart(2,"0");
 
-
         document.getElementById("minutes")
             .textContent =
             String(minutes).padStart(2,"0");
-
 
         document.getElementById("seconds")
             .textContent =
@@ -3391,23 +2943,17 @@ function updateCountdown(){
                 timeZone:"Asia/Kolkata",
 
                 day:"2-digit",
-
                 month:"short",
-
                 year:"numeric",
 
                 hour:"2-digit",
-
                 minute:"2-digit",
-
                 second:"2-digit",
 
                 hour12:true
             }
         );
-
 }
-
 
 updateCountdown();
 
@@ -3418,31 +2964,28 @@ setInterval(
 
 
 /* =========================================================
-   PAGE 1 CHOICE
+   PAGE 1
 ========================================================= */
 
-function completePage1(
-    choice,
-    button
-){
+function completePage1(choice,button){
 
-    page1Completed=true;
+    page1Completed = true;
 
 
     document
-        .querySelectorAll(".choice-btn")
-        .forEach(function(btn){
-
-            btn.classList.remove(
-                "selected"
-            );
-
-        });
+        .querySelectorAll(".excitement-btn")
+        .forEach(
+            btn =>
+                btn.style.background =
+                    "rgba(255,255,255,.95)"
+        );
 
 
-    button.classList.add(
-        "selected"
-    );
+    button.style.background =
+        "#8c5aa3";
+
+    button.style.color =
+        "white";
 
 
     const message =
@@ -3454,26 +2997,47 @@ function completePage1(
     if(choice === "very"){
 
         message.textContent =
-            "Glad to know that! 🥰❤️";
+            "That's what I wanted to hear! 🥰❤️";
 
-    }
-
-    else{
+    }else{
 
         message.textContent =
-            "Hope you liked it! ❤️";
-
+            "Yay! I knew you would be excited! ❤️";
     }
 
 
     document
         .getElementById("page1Next")
-        .classList.remove("locked");
+        .classList
+        .remove("locked");
 
 
     setupAudio();
+}
 
 
+/* =========================================================
+   PAGE 1 → PAGE 2
+========================================================= */
+
+function beginBirthday(){
+
+    if(!page1Completed){
+        return;
+    }
+
+
+    nextPage(2);
+
+
+    setTimeout(
+        function(){
+
+            celebrate();
+
+        },
+        350
+    );
 }
 
 
@@ -3481,14 +3045,14 @@ function completePage1(
    AUDIO
 ========================================================= */
 
-let audioContext=null;
+let audioContext = null;
 
-let musicPlaying=false;
+let musicPlaying = false;
 
-let musicTimer=null;
+let musicTimer = null;
 
 
-const frequencies={
+const frequencies = {
 
     C4:261.63,
     D4:293.66,
@@ -3497,16 +3061,16 @@ const frequencies={
     G4:392,
     A4:440,
     B4:493.88,
+
     C5:523.25,
     D5:587.33,
     E5:659.25,
     F5:698.46,
     G5:783.99
-
 };
 
 
-const birthdayNotes=[
+const birthdayNotes = [
 
     ["G4",0],
     ["G4",.30],
@@ -3536,7 +3100,6 @@ const birthdayNotes=[
     ["C5",12.60],
     ["D5",13.20],
     ["C5",13.80]
-
 ];
 
 
@@ -3554,23 +3117,19 @@ function setupAudio(){
 
         audioContext =
             new AudioContext();
-
     }
 
 
     if(
         audioContext &&
-        audioContext.state ===
-        "suspended"
+        audioContext.state === "suspended"
     ){
 
         audioContext.resume();
-
     }
 
 
     return !!audioContext;
-
 }
 
 
@@ -3581,21 +3140,19 @@ function playNote(
 ){
 
     if(!audioContext){
-
         return;
-
     }
 
 
     const oscillator =
         audioContext.createOscillator();
 
-
     const gain =
         audioContext.createGain();
 
 
-    oscillator.type="sine";
+    oscillator.type =
+        "sine";
 
 
     oscillator.frequency.value =
@@ -3603,7 +3160,6 @@ function playNote(
 
 
     oscillator.connect(gain);
-
 
     gain.connect(
         audioContext.destination
@@ -3615,50 +3171,45 @@ function playNote(
         startTime
     );
 
-
     gain.gain.linearRampToValueAtTime(
         .22,
-        startTime+.03
+        startTime + .03
     );
-
 
     gain.gain.linearRampToValueAtTime(
         .001,
-        startTime+duration
+        startTime + duration
     );
 
 
-    oscillator.start(
-        startTime
-    );
-
+    oscillator.start(startTime);
 
     oscillator.stop(
-        startTime+duration+.05
+        startTime +
+        duration +
+        .05
     );
-
 }
 
 
 function playMelody(){
 
     if(!setupAudio()){
-
         return;
-
     }
 
 
     const now =
-        audioContext.currentTime+.1;
+        audioContext.currentTime +
+        .1;
 
 
     birthdayNotes.forEach(
-        function(item){
+        item => {
 
             playNote(
                 item[0],
-                now+item[1],
+                now + item[1],
                 .5
             );
 
@@ -3666,23 +3217,20 @@ function playMelody(){
     );
 
 
-    musicPlaying=true;
+    musicPlaying = true;
 
 
     document.getElementById(
         "musicButton"
     ).textContent =
         "🔊 Birthday Music Playing";
-
 }
 
 
 function startMusic(){
 
     if(musicPlaying){
-
         return;
-
     }
 
 
@@ -3702,13 +3250,12 @@ function startMusic(){
             },
             16000
         );
-
 }
 
 
 function stopMusic(){
 
-    musicPlaying=false;
+    musicPlaying = false;
 
 
     if(musicTimer){
@@ -3717,8 +3264,7 @@ function stopMusic(){
             musicTimer
         );
 
-        musicTimer=null;
-
+        musicTimer = null;
     }
 
 
@@ -3726,7 +3272,6 @@ function stopMusic(){
         "musicButton"
     ).textContent =
         "🔊 Play Birthday Music";
-
 }
 
 
@@ -3739,85 +3284,185 @@ function toggleMusic(){
 
         stopMusic();
 
-    }
-
-    else{
+    }else{
 
         startMusic();
-
     }
-
 }
 
 
 /* =========================================================
-   BLOW CANDLE
+   PAGE NAVIGATION
+========================================================= */
+
+function nextPage(pageNumber){
+
+    if(
+        pageNumber === 2 &&
+        !page1Completed
+    ){
+        return;
+    }
+
+
+    if(
+        pageNumber === 3 &&
+        !page2Completed
+    ){
+        return;
+    }
+
+
+    if(
+        pageNumber === 4 &&
+        !page3Completed
+    ){
+        return;
+    }
+
+
+    if(
+        pageNumber === 5 &&
+        !page4Completed
+    ){
+        return;
+    }
+
+
+    if(
+        pageNumber === 6 &&
+        !page5Completed
+    ){
+        return;
+    }
+
+
+    document
+        .querySelectorAll(".page")
+        .forEach(
+            page =>
+                page.classList.remove(
+                    "active"
+                )
+        );
+
+
+    const destination =
+        document.getElementById(
+            "page" + pageNumber
+        );
+
+
+    if(!destination){
+        return;
+    }
+
+
+    destination.classList.add(
+        "active"
+    );
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"instant"
+    });
+
+
+    if(pageNumber === 2){
+
+        setupAudio();
+
+        setTimeout(
+            function(){
+
+                startMusic();
+
+            },
+            150
+        );
+    }
+}
+
+
+/* =========================================================
+   CANDLE + WISH COUNTDOWN
 ========================================================= */
 
 function blowCandle(){
 
-    if(candleBlown){
-
+    if(wishCountdownStarted){
         return;
-
     }
 
 
-    /*
-       Keep the candle lit while
-       the 15-second wish is being made.
-    */
-
-    candleBlown=true;
+    wishCountdownStarted = true;
 
 
-    const button =
+    const blowButton =
         document.getElementById(
             "blowButton"
         );
 
 
-    button.disabled=true;
+    blowButton.disabled =
+        true;
 
 
-    button.textContent =
+    blowButton.textContent =
         "Make your wish... ✨";
 
 
-    showPage("wishPage");
+    /*
+       IMPORTANT:
+
+       DO NOT TURN OFF THE FLAME HERE.
+
+       The flame stays lit for all 15 seconds.
+    */
+
+
+    document
+        .querySelectorAll(".page")
+        .forEach(
+            page =>
+                page.classList.remove(
+                    "active"
+                )
+        );
+
+
+    document
+        .getElementById("wishPage")
+        .classList.add("active");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"instant"
+    });
 
 
     startWishCountdown();
-
 }
 
 
 /* =========================================================
-   WISH COUNTDOWN
+   EXACTLY 15 SECOND WISH COUNTDOWN
 ========================================================= */
 
 function startWishCountdown(){
 
-    if(wishCountdownRunning){
-
-        return;
-
-    }
+    let count = 15;
 
 
-    wishCountdownRunning=true;
-
-
-    let count=15;
-
-
-    const counter =
+    const countdownElement =
         document.getElementById(
             "bigWishCountdown"
         );
 
 
-    counter.textContent =
+    countdownElement.textContent =
         count;
 
 
@@ -3830,40 +3475,27 @@ function startWishCountdown(){
 
                 if(count > 0){
 
-                    counter.textContent =
+                    countdownElement.textContent =
                         count;
 
-                }
+                }else{
 
-                else{
-
-                    clearInterval(
-                        timer
-                    );
+                    clearInterval(timer);
 
 
-                    counter.textContent =
+                    countdownElement.textContent =
                         "0";
 
 
-                    wishCountdownRunning=false;
-
-
                     setTimeout(
-                        function(){
-
-                            finishWish();
-
-                        },
+                        finishWish,
                         500
                     );
-
                 }
 
             },
             1000
         );
-
 }
 
 
@@ -3874,8 +3506,8 @@ function startWishCountdown(){
 function finishWish(){
 
     /*
-       Now the wish is complete,
-       so the candle is blown out.
+       NOW — and only now —
+       turn the candle OFF.
     */
 
     document
@@ -3885,24 +3517,39 @@ function finishWish(){
 
     document
         .getElementById("candleGlow")
-        .style.opacity="0";
+        .style.opacity = "0";
 
 
-    document
-        .getElementById("page2")
-        .classList.add(
-            "lights-on"
+    /*
+       Turn lights on.
+    */
+
+    const page2 =
+        document.getElementById(
+            "page2"
         );
 
+
+    page2.classList.add(
+        "lights-on"
+    );
+
+
+    /*
+       Show wish complete.
+    */
 
     document
         .getElementById(
             "wishComplete"
         )
-        .classList.remove(
-            "hidden"
-        );
+        .classList
+        .remove("hidden");
 
+
+    /*
+       Update button.
+    */
 
     document
         .getElementById(
@@ -3912,21 +3559,48 @@ function finishWish(){
         "Wish made ✨";
 
 
+    /*
+       Page 2 completed.
+    */
+
+    page2Completed = true;
+
+
     document
         .getElementById(
             "page2Next"
         )
-        .classList.remove(
-            "locked"
-        );
-
-
-    showPage("page2");
+        .classList
+        .remove("locked");
 
 
     /*
-       Celebration after the wish
-       has been made.
+       Return to Page 2.
+    */
+
+    document
+        .querySelectorAll(".page")
+        .forEach(
+            page =>
+                page.classList.remove(
+                    "active"
+                )
+        );
+
+
+    page2.classList.add(
+        "active"
+    );
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"instant"
+    });
+
+
+    /*
+       Celebrate AFTER wish.
     */
 
     setTimeout(
@@ -3935,43 +3609,40 @@ function finishWish(){
             celebrate();
 
         },
-        300
+        400
     );
-
 }
 
 
 /* =========================================================
-   FLIP CARDS
+   PAGE 3
 ========================================================= */
 
-function flipCard(
-    card,
-    number
-){
+function completePage3AndContinue(){
 
-    if(
-        openedCards.has(number)
-    ){
+    page3Completed = true;
 
+    nextPage(4);
+}
+
+
+/* =========================================================
+   PAGE 5 — FLIP CARDS
+========================================================= */
+
+function flipCard(card,number){
+
+    if(openedCards.has(number)){
         return;
-
     }
 
 
-    card.classList.add(
-        "open"
-    );
+    card.classList.add("open");
+
+    openedCards.add(number);
 
 
-    openedCards.add(
-        number
-    );
-
-
-    if(
-        openedCards.size === 3
-    ){
+    if(openedCards.size === 3){
 
         setTimeout(
             function(){
@@ -4002,9 +3673,7 @@ function flipCard(
             },
             500
         );
-
     }
-
 }
 
 
@@ -4014,27 +3683,24 @@ function flipCard(
 
 function answerMine(answer){
 
-    const message =
+    page5Completed = true;
+
+
+    const answerMessage =
         document.getElementById(
             "answerMessage"
         );
 
 
-    page5Completed=true;
-
-
     if(answer === "loved"){
 
-        message.textContent =
+        answerMessage.textContent =
             "That made my heart smile. 🥰❤️";
 
-    }
+    }else{
 
-    else{
-
-        message.textContent =
+        answerMessage.textContent =
             "Always sounds perfect to me. ❤️✨";
-
     }
 
 
@@ -4042,172 +3708,180 @@ function answerMine(answer){
         .getElementById(
             "page5Next"
         )
-        .classList.remove(
-            "locked"
-        );
-
+        .classList
+        .remove("locked");
 }
 
 
 /* =========================================================
-   PAGE 6 — FAVOR ANSWER
+   FINAL FAVOR
 ========================================================= */
 
 function finalAnswer(answer){
 
-    /*
-       If she chooses NO,
-       remove the Yes option
-       immediately.
-    */
-
-    if(answer === "no"){
-
-        const yesButton =
-            document.getElementById(
-                "favorYesButton"
-            );
-
-
-        if(yesButton){
-
-            yesButton.remove();
-
-        }
-
-
-        /*
-           Beautiful birthday message.
-        */
-
-        document.getElementById(
-            "resultIcon"
-        ).textContent =
-            "🌸❤️✨";
-
-
-        document.getElementById(
-            "resultTitle"
-        ).textContent =
-            "Happiest Birthday, Niniitata ❤️";
-
-
+    const resultMessage =
         document.getElementById(
             "resultMessage"
-        ).innerHTML = `
+        );
 
-            <p>
-                No matter what your answer is,
-                I just want you to know that
-                you are someone truly special to me. ❤️
-            </p>
+    const resultTitle =
+        document.getElementById(
+            "resultTitle"
+        );
 
-            <p>
-                Thank you for giving your time,
-                for being here, and for letting me
-                create this little birthday surprise for you. 🥰
-            </p>
+    const resultIcon =
+        document.getElementById(
+            "resultIcon"
+        );
 
-            <p>
-                I hope this new year of your life
-                brings you beautiful moments,
-                genuine smiles, peaceful days
-                and everything your heart quietly wishes for. ✨
-            </p>
-
-            <p>
-                May you achieve everything you want,
-                with me or without me.
-            </p>
-
-            <p>
-                And wherever life takes us,
-                I will always be happy that
-                our paths crossed. ❤️
-            </p>
-
-            <p>
-                Thank you for being you.
-                And once again...
-                <strong>Happy Birthday, Niniitata. 🎂❤️</strong>
-            </p>
-
-            <div class="result-signature">
-                — Ak ❤️
-            </div>
-
-        `;
-
-
-        showPage("page7");
-
-
-        /*
-           Birthday celebration for NO.
-        */
-
-        setTimeout(
-            function(){
-
-                celebrate();
-
-            },
-            350
+    const meetingButtons =
+        document.getElementById(
+            "meetingButtons"
         );
 
 
-        return;
-
-    }
-
-
     /*
-       If YES is selected,
-       go to the next page and
-       ask about meeting.
+       YES
     */
 
     if(answer === "yes"){
 
-        document.getElementById(
-            "meetingButtons"
-        ).classList.remove(
-            "hidden"
-        );
+        resultTitle.textContent =
+            "One little question... 🥰";
 
+        resultIcon.textContent =
+            "❤️";
 
-        document.getElementById(
-            "meetingAnswer"
-        ).textContent="";
-
-
-        document.getElementById(
-            "resultIcon"
-        ).textContent =
-            "🥰❤️";
-
-
-        document.getElementById(
-            "resultTitle"
-        ).textContent =
-            "One more little question...";
-
-
-        document.getElementById(
-            "resultMessage"
-        ).innerHTML = `
+        resultMessage.innerHTML = `
 
             <p>
-                Can you meet me today if possible? 🥰❤️
+                Since you said Yes to my little favor...
+            </p>
+
+            <p>
+                So, I want to ask. 🥰
+            </p>
+
+            <p>
+                Can you meet me today if possible? ❤️
             </p>
 
         `;
 
 
-        showPage("page7");
+        meetingButtons.classList.remove(
+            "hidden"
+        );
 
+
+        showPage7();
+
+        return;
     }
 
+
+    /*
+       NO
+    */
+
+    resultTitle.textContent =
+        "Thank you for being honest. ❤️";
+
+    resultIcon.textContent =
+        "🌸";
+
+    resultMessage.innerHTML = `
+
+        <p>
+            No matter what your answer is,
+            I just want you to know that you
+            are someone truly special to me. ❤️
+        </p>
+
+        <p>
+            Thank you for giving your time,
+            for being here, and for letting me
+            create this little birthday surprise
+            for you. 🥰
+        </p>
+
+        <p>
+            I hope this new year of your life
+            brings you beautiful moments,
+            genuine smiles, peaceful days and
+            everything your heart quietly wishes for. ✨
+        </p>
+
+        <p>
+            May you achieve everything you want,
+            with me or without me.
+        </p>
+
+        <p>
+            And wherever life takes us,
+            I will always be happy that our
+            paths crossed. ❤️
+        </p>
+
+        <p>
+            Thank you for being you.
+            And once again...
+            <strong>
+                Happy Birthday, Niniitata. 🎂❤️
+            </strong>
+        </p>
+
+        <div class="result-signature">
+            — Ak ❤️
+        </div>
+
+    `;
+
+
+    meetingButtons.classList.add(
+        "hidden"
+    );
+
+
+    showPage7();
+
+
+    setTimeout(
+        function(){
+
+            celebrate();
+
+        },
+        400
+    );
+}
+
+
+/* =========================================================
+   SHOW PAGE 7
+========================================================= */
+
+function showPage7(){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(
+            page =>
+                page.classList.remove(
+                    "active"
+                )
+        );
+
+
+    document
+        .getElementById("page7")
+        .classList.add("active");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"instant"
+    });
 }
 
 
@@ -4217,13 +3891,27 @@ function finalAnswer(answer){
 
 function meetingAnswer(answer){
 
-    const buttons =
+    const resultTitle =
+        document.getElementById(
+            "resultTitle"
+        );
+
+    const resultIcon =
+        document.getElementById(
+            "resultIcon"
+        );
+
+    const resultMessage =
+        document.getElementById(
+            "resultMessage"
+        );
+
+    const meetingButtons =
         document.getElementById(
             "meetingButtons"
         );
 
-
-    const message =
+    const meetingAnswerBox =
         document.getElementById(
             "meetingAnswer"
         );
@@ -4232,67 +3920,369 @@ function meetingAnswer(answer){
     if(answer === "ready"){
 
         /*
-           Remove buttons after agreeing.
+           REMOVE THE QUESTION COMPLETELY.
+           Remove the buttons as well.
         */
 
-        buttons.innerHTML="";
+        meetingButtons.innerHTML = "";
+
+        meetingButtons.classList.add(
+            "hidden"
+        );
 
 
-        document.getElementById(
-            "resultIcon"
-        ).textContent =
+        meetingAnswerBox.innerHTML =
+            "";
+
+
+        resultIcon.textContent =
             "🎉🥰❤️";
 
 
-        document.getElementById(
-            "resultTitle"
-        ).textContent =
+        resultTitle.textContent =
             "Thank you so much 😊😍😍";
 
 
-        message.innerHTML = `
+        resultMessage.innerHTML = `
 
             <p>
                 Happiest birthday once again,
                 can't wait to see you😘😘❤️❤️.
             </p>
 
-            <div class="result-signature">
-                — Ak ❤️
-            </div>
-
         `;
 
-
-        /*
-           Big celebration!
-        */
 
         celebrate();
 
+        return;
     }
 
 
-    else if(answer === "later"){
+    /*
+       MAYBE LATER
+    */
 
-        buttons.innerHTML="";
+    resultTitle.textContent =
+        "No problem ❤️";
+
+    resultIcon.textContent =
+        "🥰";
+
+    resultMessage.innerHTML = `
+
+        <p>
+            Maybe another time then. ❤️
+        </p>
+
+        <p>
+            I'll still be waiting for that
+            beautiful smile of yours. 🥰
+        </p>
+
+    `;
 
 
-        message.innerHTML = `
+    meetingButtons.classList.add(
+        "hidden"
+    );
 
-            <p>
-                No worries ❤️
-            </p>
 
-            <p>
-                Happiest birthday once again 🥰❤️
-                I hope you will 😊😊
-            </p>
+    meetingAnswerBox.innerHTML =
+        "";
+}
 
-        `;
 
+/* =========================================================
+   PARTY POPPERS + CONFETTI
+========================================================= */
+
+function celebrate(){
+
+    createPartyPopper("left");
+
+    createPartyPopper("right");
+
+
+    for(
+        let i = 0;
+        i < 55;
+        i++
+    ){
+
+        setTimeout(
+            function(){
+
+                createConfetti();
+
+            },
+            i * 35
+        );
+    }
+}
+
+
+function createPartyPopper(side){
+
+    const popper =
+        document.createElement(
+            "div"
+        );
+
+
+    popper.className =
+        "party-popper " + side;
+
+
+    const cone =
+        document.createElement(
+            "div"
+        );
+
+    cone.className =
+        "popper-cone";
+
+
+    const opening =
+        document.createElement(
+            "div"
+        );
+
+    opening.className =
+        "popper-opening";
+
+
+    popper.appendChild(cone);
+
+    popper.appendChild(opening);
+
+
+    /*
+       Create multiple realistic
+       paper pieces coming out.
+    */
+
+    for(
+        let i = 0;
+        i < 22;
+        i++
+    ){
+
+        const particle =
+            document.createElement(
+                "div"
+            );
+
+
+        particle.className =
+            "popper-particle";
+
+
+        const shapes = [
+            "7px",
+            "9px",
+            "12px"
+        ];
+
+
+        particle.style.width =
+            shapes[
+                Math.floor(
+                    Math.random() *
+                    shapes.length
+                )
+            ];
+
+
+        particle.style.height =
+            shapes[
+                Math.floor(
+                    Math.random() *
+                    shapes.length
+                )
+            ];
+
+
+        /*
+           Different paper colours
+           using inline background.
+        */
+
+        const particleColors = [
+            "#ff4f81",
+            "#ffd166",
+            "#4cc9f0",
+            "#8ac926",
+            "#9b5de5",
+            "#ffffff"
+        ];
+
+
+        particle.style.background =
+            particleColors[
+                Math.floor(
+                    Math.random() *
+                    particleColors.length
+                )
+            ];
+
+
+        particle.style.left =
+            "50%";
+
+        particle.style.top =
+            "0";
+
+
+        const direction =
+            side === "left"
+                ? 1
+                : -1;
+
+
+        const x =
+            direction *
+            (
+                50 +
+                Math.random() * 130
+            );
+
+
+        const y =
+            -(
+                50 +
+                Math.random() * 150
+            );
+
+
+        const rotation =
+            (
+                Math.random() *
+                900
+            ) - 450;
+
+
+        particle.style.setProperty(
+            "--x",
+            x + "px"
+        );
+
+        particle.style.setProperty(
+            "--y",
+            y + "px"
+        );
+
+        particle.style.setProperty(
+            "--r",
+            rotation + "deg"
+        );
+
+
+        particle.style.animationDelay =
+            (
+                Math.random() * .25
+            ) + "s";
+
+
+        popper.appendChild(
+            particle
+        );
     }
 
+
+    document.body.appendChild(
+        popper
+    );
+
+
+    setTimeout(
+        function(){
+
+            popper.remove();
+
+        },
+        2500
+    );
+}
+
+
+function createConfetti(){
+
+    const confetti =
+        document.createElement(
+            "div"
+        );
+
+
+    confetti.className =
+        "confetti";
+
+
+    const colors = [
+
+        "#ff4f81",
+        "#ffd166",
+        "#4cc9f0",
+        "#8ac926",
+        "#9b5de5",
+        "#ffffff",
+        "#ff8fab"
+
+    ];
+
+
+    confetti.style.background =
+        colors[
+            Math.floor(
+                Math.random() *
+                colors.length
+            )
+        ];
+
+
+    confetti.style.left =
+        Math.random() *
+        100 +
+        "vw";
+
+
+    confetti.style.width =
+        (
+            5 +
+            Math.random() * 7
+        ) +
+        "px";
+
+
+    confetti.style.height =
+        (
+            8 +
+            Math.random() * 10
+        ) +
+        "px";
+
+
+    confetti.style.animationDuration =
+        (
+            2.5 +
+            Math.random() * 2
+        ) +
+        "s";
+
+
+    document.body.appendChild(
+        confetti
+    );
+
+
+    setTimeout(
+        function(){
+
+            confetti.remove();
+
+        },
+        5000
+    );
 }
 
 
@@ -4308,36 +4298,48 @@ function createHeart(){
         );
 
 
-    heart.className="heart";
+    heart.className =
+        "heart";
 
 
-    const hearts=[
-
+    const hearts = [
         "❤️",
         "💕",
         "💗",
         "💖",
         "✨"
-
     ];
 
 
     heart.textContent =
         hearts[
             Math.floor(
-                Math.random()
-                *
+                Math.random() *
                 hearts.length
             )
         ];
 
 
     heart.style.left =
-        Math.random()*100+"vw";
+        Math.random() *
+        100 +
+        "vw";
+
+
+    heart.style.fontSize =
+        (
+            14 +
+            Math.random() * 14
+        ) +
+        "px";
 
 
     heart.style.animationDuration =
-        (5+Math.random()*4)+"s";
+        (
+            4 +
+            Math.random() * 3
+        ) +
+        "s";
 
 
     document.body.appendChild(
@@ -4351,9 +4353,8 @@ function createHeart(){
             heart.remove();
 
         },
-        9000
+        7000
     );
-
 }
 
 
@@ -4362,27 +4363,7 @@ setInterval(
     1800
 );
 
-
-/* =========================================================
-   START ONLY PAGE 1
-========================================================= */
-
-document
-    .querySelectorAll(".page")
-    .forEach(function(page){
-
-        if(page.id !== "page1"){
-
-            page.classList.remove(
-                "active"
-            );
-
-        }
-
-    });
-
 </script>
 
 </body>
-
 </html>
